@@ -171,6 +171,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5583899169139090561, guid: 4c7b98c86dde000408bf2f4563d76973, type: 3}
+      propertyPath: _speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583899169139090561, guid: 4c7b98c86dde000408bf2f4563d76973, type: 3}
+      propertyPath: _rotationSpeed
+      value: 720
+      objectReference: {fileID: 0}
     - target: {fileID: 8451769924759124360, guid: 4c7b98c86dde000408bf2f4563d76973, type: 3}
       propertyPath: m_Name
       value: MeleeEnemy
@@ -2417,6 +2425,7 @@ GameObject:
   - component: {fileID: 1522820033}
   - component: {fileID: 1522820032}
   - component: {fileID: 1522820036}
+  - component: {fileID: 1522820037}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2493,6 +2502,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 85278d09-4d60-4120-bfc4-6ff22960f452
     m_ActionName: Gameplay/Frenzy[/Keyboard/q,/XInputControllerWindows/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0442b070-3ea3-4ea7-a39b-c51fe13b0bd6
+    m_ActionName: Gameplay/Fire[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -2558,6 +2571,21 @@ MonoBehaviour:
   _DashLength: 0.06
   _DashCoolDown: 0.55
   _RotationSpeed: 960
+--- !u!114 &1522820037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522820031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 258de652c69a7d64bb6a55bd73082c5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletPrefab: {fileID: 582729923470578621, guid: 5499fdaab1939b3458dfd6aafe126307, type: 3}
+  _bulletSpeed: 5
+  _gunOffset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
