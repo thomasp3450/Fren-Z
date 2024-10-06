@@ -18,15 +18,18 @@ public class PlayerController : MonoBehaviour{
     private Vector2 _SmoothedMovement; //damped movement
     private Vector2 _SmoothedMovementVelocity; //speed of damping
 
+    private bool _isFrenzied;
+    private float _FrenzyMeter;
+
     private Rigidbody2D _Rigidbody;
 
     private void Awake() {
         _Rigidbody =  GetComponent<Rigidbody2D>();
         _ActiveSpeed = _Speed;
-
+        _FrenzyMeter = 100;
     }
 
-    public void OnMovement(InputAction.CallbackContext context){
+    public void onMovement(InputAction.CallbackContext context){
         _Movement = context.ReadValue<Vector2>(); 
     }
 
@@ -40,10 +43,27 @@ public class PlayerController : MonoBehaviour{
         
     }
 
+    public void onFrenzy(InputAction.CallbackContext context){
+        //if(_isFrenzied = true && _FrenzyMeter => 100){} 
+    }
+
+    
+    private void OnTriggerEnter2D (Collider2D collision) { // if enemy touches you, take damage 
+        if (collision.GetComponent<EnemyMovement>()) {
+            GetComponent<HealthController>().TakeDamage(1);
+        }
+
+    }
+
+
     private void FixedUpdate() { //move and rotate with input
         SetPlayerVelocity();
         RotateWithDirection();
+        
+        if(_isFrenzied){
+            _FrenzyMeter -= Time.deltaTime/2;
 
+        }
         if(_DashCounter > 0){ // dash cooldown counter calculation
             _DashCounter -= Time.deltaTime;
 

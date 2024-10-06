@@ -25,6 +25,10 @@ public class HealthController : MonoBehaviour
 
     public bool IsInvincible { get; set; }
 
+    public float getHealth(){
+        return _currentHealth;
+    }
+
     public void TakeDamage(float amount)
     {
         if (IsInvincible == true || _currentHealth == 0)
