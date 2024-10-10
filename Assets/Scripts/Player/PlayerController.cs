@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour{
     [SerializeField] float _DashLength; // how long to dash for
     [SerializeField] float _DashCoolDown; // how long before you can dash again
     [SerializeField] float _RotationSpeed; //how quickly your character rotates to face your input direction
+    [SerializeField] float _standardDamage;
+    private float _power;
 
     private float _DashCounter;
     private float _DashCoolDownCounter; //timers for dash cooldown functionality
@@ -27,6 +29,7 @@ public class PlayerController : MonoBehaviour{
         _Rigidbody =  GetComponent<Rigidbody2D>();
         _ActiveSpeed = _Speed;
         _FrenzyMeter = 100;
+        _power = _standardDamage;
     }
 
     public void onMovement(InputAction.CallbackContext context){
@@ -97,5 +100,15 @@ public class PlayerController : MonoBehaviour{
             _Rigidbody.MoveRotation(rotation);
 
         }
+    }
+
+    public void SetPlayerDamageMultiplier(float damageMultiplier){
+        // Multiplies the player's damage by a float.
+        _power *= damageMultiplier;
+    }
+
+    public void ResetPlayerPower() {
+        // Resets player's power to default level.
+        _power = _standardDamage;
     }
 }
