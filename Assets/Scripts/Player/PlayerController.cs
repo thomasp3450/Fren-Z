@@ -133,6 +133,7 @@ public class PlayerController : MonoBehaviour{
 
     public void ChangeFrenzyGauge(float increase){
         // Increases or decreases the frenzy gauge's value.
+        Debug.Log("Increase in player's frenzy gauge.");
         if (_isFrenzied == true) _FrenzyMeter += increase;
     }
 

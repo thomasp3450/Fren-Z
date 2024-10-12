@@ -397,6 +397,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce21cf5d4fa835247b3cb895feb3f7ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!70 &553425877
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553425867}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 0.5}
+  m_Direction: 0
 --- !u!1 &1133219605
 GameObject:
   m_ObjectHideFlags: 0
@@ -16799,6 +16834,7 @@ MonoBehaviour:
   _DashCoolDown: 0.55
   _RotationSpeed: 960
   _standardDamage: 0
+  _FrenzyMeterMax: 0
 --- !u!114 &1522820037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17174,7 +17210,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6043323418008464058, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 553425877}
   m_SourcePrefab: {fileID: 100100000, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
 --- !u!1001 &2053180627
 PrefabInstance:
