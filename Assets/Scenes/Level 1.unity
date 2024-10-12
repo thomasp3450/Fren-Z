@@ -132,9 +132,69 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: _currentHealth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: _maximumHealth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Damaged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 200795137}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1522820036}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ChangeFrenzyGauge
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5143115512968446565, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18.88
@@ -326,6 +386,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6043323418008464058, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
   m_PrefabInstance: {fileID: 1728598681}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &553425871 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+  m_PrefabInstance: {fileID: 1728598681}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553425867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce21cf5d4fa835247b3cb895feb3f7ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1133219605
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,9 +568,69 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: _currentHealth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: _maximumHealth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Damaged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1368521063}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1522820036}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ChangeFrenzyGauge
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5143115512968446565, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.9375
@@ -579,9 +710,69 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: _currentHealth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: _maximumHealth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Damaged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1377865276}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1522820036}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ChangeFrenzyGauge
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5143115512968446565, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18.94
@@ -16174,268 +16365,198 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1420028560}
     m_ColliderPaths:
-    - - X: 91200000
-        Y: -50497056
-      - X: 91200000
-        Y: 160497056
-      - X: 90497056
-        Y: 161200016
-      - X: -138800000
-        Y: 161200016
-      - X: -138800000
-        Y: 220497056
-      - X: -139502944
-        Y: 221200016
-      - X: -198799984
-        Y: 221200016
-      - X: -198799984
-        Y: 358800000
-      - X: -21199998
-        Y: 358800000
-      - X: -21199998
-        Y: 249502944
-      - X: -20497056
-        Y: 248799984
-      - X: 128800000
-        Y: 248799984
-      - X: 128800000
-        Y: 199502944
-      - X: 129502944
-        Y: 198799984
-      - X: 138800000
-        Y: 198799984
-      - X: 138800000
-        Y: 189502944
-      - X: 139502944
-        Y: 188799984
-      - X: 260497056
-        Y: 188799984
-      - X: 261200016
-        Y: 189502944
-      - X: 261200016
-        Y: 198799984
-      - X: 280497056
-        Y: 198799984
-      - X: 281200000
-        Y: 199502944
-      - X: 281200000
-        Y: 208799984
-      - X: 290497056
-        Y: 208799984
-      - X: 291200000
-        Y: 209502944
-      - X: 291200000
-        Y: 218799984
-      - X: 300497056
-        Y: 218799984
-      - X: 301200000
-        Y: 219502944
-      - X: 301200000
-        Y: 258799984
-      - X: 310497056
-        Y: 258799984
-      - X: 311200000
-        Y: 259502944
-      - X: 311200000
-        Y: 308800000
-      - X: 320497056
-        Y: 308800000
-      - X: 321200000
-        Y: 309502944
-      - X: 321200000
-        Y: 380497056
-      - X: 320497056
-        Y: 381200000
-      - X: 311200000
-        Y: 381200000
-      - X: 311200000
-        Y: 400497056
-      - X: 310497056
-        Y: 401200000
-      - X: 301200000
-        Y: 401200000
-      - X: 301200000
-        Y: 420497056
-      - X: 300497056
-        Y: 421200000
-      - X: 291200000
-        Y: 421200000
-      - X: 291200000
-        Y: 440497056
-      - X: 290497056
-        Y: 441200000
-      - X: 281200000
-        Y: 441200000
-      - X: 281200000
-        Y: 450497056
-      - X: 280497056
-        Y: 451200000
-      - X: 271200000
-        Y: 451200000
-      - X: 271200000
-        Y: 460497056
-      - X: 270497056
-        Y: 461200000
-      - X: 261200016
-        Y: 461200000
-      - X: 261200016
-        Y: 470497056
-      - X: 260497056
-        Y: 471200000
-      - X: 231200016
-        Y: 471200000
-      - X: 231200016
-        Y: 480497056
-      - X: 230497056
-        Y: 481200000
-      - X: 179502944
-        Y: 481200000
-      - X: 178799984
-        Y: 480497056
-      - X: 178799984
-        Y: 471200000
-      - X: 99502944
-        Y: 471200000
-      - X: 98800000
-        Y: 470497056
-      - X: 98800000
-        Y: 431200000
-      - X: -20497056
-        Y: 431200000
-      - X: -21199998
-        Y: 430497056
-      - X: -21199998
-        Y: 401200000
-      - X: -250497056
-        Y: 401200000
-      - X: -251200016
-        Y: 400497056
-      - X: -251200016
-        Y: 221200016
-      - X: -300497056
-        Y: 221200016
-      - X: -301200000
-        Y: 220497056
-      - X: -301200000
-        Y: 39502944
-      - X: -300497056
-        Y: 38800000
-      - X: -139502944
-        Y: 38800000
-      - X: -138800000
-        Y: 39502944
-      - X: -138800000
-        Y: 118800000
-      - X: 48800000
-        Y: 118800000
-      - X: 48800000
-        Y: 51200000
-      - X: -90497056
-        Y: 51200000
-      - X: -91200000
-        Y: 50497056
-      - X: -91200000
-        Y: -50497056
-      - X: -90497056
-        Y: -51200000
-      - X: 90497056
-        Y: -51200000
+    - - X: 90000000
+        Y: 160000000
+      - X: -140000000
+        Y: 160000000
+      - X: -140000000
+        Y: 220000000
+      - X: -200000000
+        Y: 220000000
+      - X: -200000000
+        Y: 360000000
+      - X: -20000000
+        Y: 360000000
+      - X: -20000000
+        Y: 250000000
+      - X: 130000000
+        Y: 250000000
+      - X: 130000000
+        Y: 200000000
+      - X: 140000000
+        Y: 200000000
+      - X: 140000000
+        Y: 190000000
+      - X: 260000000
+        Y: 190000000
+      - X: 260000000
+        Y: 200000000
+      - X: 280000000
+        Y: 200000000
+      - X: 280000000
+        Y: 210000000
+      - X: 290000000
+        Y: 210000000
+      - X: 290000000
+        Y: 220000000
+      - X: 300000000
+        Y: 220000000
+      - X: 300000000
+        Y: 260000000
+      - X: 310000000
+        Y: 260000000
+      - X: 310000000
+        Y: 310000000
+      - X: 320000000
+        Y: 310000000
+      - X: 320000000
+        Y: 380000000
+      - X: 310000000
+        Y: 380000000
+      - X: 310000000
+        Y: 400000000
+      - X: 300000000
+        Y: 400000000
+      - X: 300000000
+        Y: 420000000
+      - X: 290000000
+        Y: 420000000
+      - X: 290000000
+        Y: 440000000
+      - X: 280000000
+        Y: 440000000
+      - X: 280000000
+        Y: 450000000
+      - X: 270000000
+        Y: 450000000
+      - X: 270000000
+        Y: 460000000
+      - X: 260000000
+        Y: 460000000
+      - X: 260000000
+        Y: 470000000
+      - X: 230000000
+        Y: 470000000
+      - X: 230000000
+        Y: 480000000
+      - X: 180000000
+        Y: 480000000
+      - X: 180000000
+        Y: 470000000
+      - X: 100000000
+        Y: 470000000
+      - X: 100000000
+        Y: 430000000
+      - X: -20000000
+        Y: 430000000
+      - X: -20000000
+        Y: 400000000
+      - X: -250000000
+        Y: 400000000
+      - X: -250000000
+        Y: 220000000
+      - X: -300000000
+        Y: 220000000
+      - X: -300000000
+        Y: 40000000
+      - X: -140000000
+        Y: 40000000
+      - X: -140000000
+        Y: 120000000
+      - X: 50000000
+        Y: 120000000
+      - X: 50000000
+        Y: 50000000
+      - X: -90000000
+        Y: 50000000
+      - X: -90000000
+        Y: -50000000
+      - X: 90000000
+        Y: -50000000
   m_CompositePaths:
     m_Paths:
-    - - {x: 9.12, y: -4.2296047}
-      - {x: 9.12, y: 15.229607}
-      - {x: 8.229605, y: 16.12}
-      - {x: -12.989605, y: 16.12}
-      - {x: -13.88, y: 17.010397}
-      - {x: -13.88, y: 21.229607}
-      - {x: -14.770395, y: 22.120003}
-      - {x: -18.989603, y: 22.120003}
-      - {x: -19.88, y: 23.010397}
-      - {x: -19.88, y: 34.989605}
-      - {x: -18.989603, y: 35.88}
-      - {x: -3.0103953, y: 35.88}
-      - {x: -2.12, y: 34.989605}
-      - {x: -2.12, y: 25.770393}
-      - {x: -1.2296044, y: 24.88}
-      - {x: 11.989605, y: 24.88}
-      - {x: 12.88, y: 23.989603}
-      - {x: 12.88, y: 20.485542}
-      - {x: 13.111403, y: 19.926882}
-      - {x: 13.9268675, y: 19.111408}
-      - {x: 14.485535, y: 18.88}
-      - {x: 25.327421, y: 18.88}
-      - {x: 25.758944, y: 19.010899}
-      - {x: 27.059643, y: 19.88}
-      - {x: 27.514463, y: 19.88}
-      - {x: 28.073133, y: 20.111408}
-      - {x: 28.694643, y: 20.732925}
-      - {x: 28.797066, y: 20.77535}
-      - {x: 29.224648, y: 21.202934}
-      - {x: 29.267063, y: 21.30534}
-      - {x: 29.8886, y: 21.926882}
-      - {x: 30.12, y: 22.485542}
-      - {x: 30.12, y: 24.940355}
-      - {x: 30.989101, y: 26.241062}
-      - {x: 31.12, y: 26.672586}
-      - {x: 31.12, y: 29.94036}
-      - {x: 31.989098, y: 31.241056}
-      - {x: 32.12, y: 31.672579}
-      - {x: 32.12, y: 37.327423}
-      - {x: 31.989098, y: 37.758945}
-      - {x: 31.12, y: 39.059643}
-      - {x: 31.12, y: 39.327423}
-      - {x: 30.989098, y: 39.758945}
-      - {x: 30.12, y: 41.059643}
-      - {x: 30.12, y: 41.327423}
-      - {x: 29.989098, y: 41.758945}
-      - {x: 29.12, y: 43.059643}
-      - {x: 29.12, y: 43.51446}
-      - {x: 28.888596, y: 44.073128}
-      - {x: 28.267069, y: 44.69465}
-      - {x: 28.224648, y: 44.797066}
-      - {x: 27.797066, y: 45.224648}
-      - {x: 27.69465, y: 45.26707}
-      - {x: 27.267069, y: 45.69465}
-      - {x: 27.224648, y: 45.797066}
-      - {x: 26.797064, y: 46.224648}
-      - {x: 26.694656, y: 46.267067}
-      - {x: 26.073124, y: 46.888596}
-      - {x: 25.514462, y: 47.12}
-      - {x: 24.059645, y: 47.12}
-      - {x: 22.758938, y: 47.9891}
-      - {x: 22.327415, y: 48.12}
-      - {x: 18.672586, y: 48.12}
-      - {x: 18.241062, y: 47.9891}
-      - {x: 16.940355, y: 47.12}
-      - {x: 10.770395, y: 47.12}
-      - {x: 9.88, y: 46.229603}
-      - {x: 9.88, y: 44.0104}
-      - {x: 8.989605, y: 43.12}
-      - {x: -1.2296044, y: 43.12}
-      - {x: -2.12, y: 42.229603}
-      - {x: -2.12, y: 41.0104}
-      - {x: -3.0103953, y: 40.12}
-      - {x: -24.229607, y: 40.12}
-      - {x: -25.120003, y: 39.229603}
-      - {x: -25.120003, y: 23.010397}
-      - {x: -26.010397, y: 22.120003}
-      - {x: -29.229603, y: 22.120003}
-      - {x: -30.12, y: 21.229607}
-      - {x: -30.12, y: 4.7703953}
-      - {x: -29.229603, y: 3.88}
-      - {x: -14.770395, y: 3.88}
-      - {x: -13.88, y: 4.7703953}
-      - {x: -13.88, y: 10.989605}
-      - {x: -12.989605, y: 11.88}
-      - {x: 3.989605, y: 11.88}
-      - {x: 4.88, y: 10.989605}
-      - {x: 4.88, y: 6.010395}
-      - {x: 3.989605, y: 5.12}
-      - {x: -8.229605, y: 5.12}
-      - {x: -9.12, y: 4.2296047}
-      - {x: -9.12, y: -4.2296047}
-      - {x: -8.229605, y: -5.12}
-      - {x: 8.229605, y: -5.12}
+    - - {x: 9, y: -4.109605}
+      - {x: 9, y: 15.109605}
+      - {x: 8.109605, y: 16}
+      - {x: -13.109605, y: 16}
+      - {x: -14, y: 16.890396}
+      - {x: -14, y: 21.109606}
+      - {x: -14.890395, y: 22}
+      - {x: -19.109606, y: 22}
+      - {x: -20, y: 22.890396}
+      - {x: -20, y: 35.109604}
+      - {x: -19.109606, y: 36}
+      - {x: -2.8903954, y: 36}
+      - {x: -2, y: 35.109604}
+      - {x: -2, y: 25.890396}
+      - {x: -1.1096046, y: 25}
+      - {x: 12.109605, y: 25}
+      - {x: 13, y: 24.109606}
+      - {x: 13, y: 20.436863}
+      - {x: 13.231406, y: 19.878199}
+      - {x: 13.878199, y: 19.231407}
+      - {x: 14.436863, y: 19}
+      - {x: 25.563137, y: 19}
+      - {x: 26.121801, y: 19.231407}
+      - {x: 26.890398, y: 20}
+      - {x: 27.563137, y: 20}
+      - {x: 28.121801, y: 20.231407}
+      - {x: 29.768595, y: 21.878199}
+      - {x: 30, y: 22.436863}
+      - {x: 30, y: 25.109606}
+      - {x: 30.768595, y: 25.878199}
+      - {x: 31, y: 26.436863}
+      - {x: 31, y: 30.109604}
+      - {x: 31.768595, y: 30.878199}
+      - {x: 32, y: 31.436865}
+      - {x: 32, y: 37.563137}
+      - {x: 31.768595, y: 38.121803}
+      - {x: 31, y: 38.890396}
+      - {x: 31, y: 39.563137}
+      - {x: 30.768595, y: 40.121803}
+      - {x: 30, y: 40.890396}
+      - {x: 30, y: 41.563137}
+      - {x: 29.768595, y: 42.121803}
+      - {x: 29, y: 42.890396}
+      - {x: 29, y: 43.563137}
+      - {x: 28.768595, y: 44.121803}
+      - {x: 26.121801, y: 46.768597}
+      - {x: 25.563137, y: 47}
+      - {x: 23.890396, y: 47}
+      - {x: 23.121801, y: 47.768597}
+      - {x: 22.563137, y: 48}
+      - {x: 18.436863, y: 48}
+      - {x: 17.878199, y: 47.768597}
+      - {x: 17.109606, y: 47}
+      - {x: 10.890395, y: 47}
+      - {x: 10, y: 46.109604}
+      - {x: 10, y: 43.890396}
+      - {x: 9.109605, y: 43}
+      - {x: -1.1096046, y: 43}
+      - {x: -2, y: 42.109604}
+      - {x: -2, y: 40.890396}
+      - {x: -2.8903954, y: 40}
+      - {x: -24.109606, y: 40}
+      - {x: -25, y: 39.109604}
+      - {x: -25, y: 22.890396}
+      - {x: -25.890396, y: 22}
+      - {x: -29.109604, y: 22}
+      - {x: -30, y: 21.109606}
+      - {x: -30, y: 4.890395}
+      - {x: -29.109604, y: 4}
+      - {x: -14.890395, y: 4}
+      - {x: -14, y: 4.890395}
+      - {x: -14, y: 11.109605}
+      - {x: -13.109605, y: 12}
+      - {x: 4.109605, y: 12}
+      - {x: 5, y: 11.109605}
+      - {x: 5, y: 5.890395}
+      - {x: 4.109605, y: 5}
+      - {x: -8.109605, y: 5}
+      - {x: -9, y: 4.109605}
+      - {x: -9, y: -4.109605}
+      - {x: -8.109605, y: -5}
+      - {x: 8.109605, y: -5}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 1.52
   m_UseDelaunayMesh: 0
@@ -16518,6 +16639,7 @@ GameObject:
   - component: {fileID: 1522820037}
   - component: {fileID: 1522820038}
   - component: {fileID: 1522820040}
+  - component: {fileID: 1522820041}
   - component: {fileID: 1522820039}
   m_Layer: 0
   m_Name: Player
@@ -16693,6 +16815,8 @@ MonoBehaviour:
   _bulletSpeed: 10
   _bulletLifetime: 1
   _gunOffset: {fileID: 1522820035}
+  _timeBetweenShots: 0.5
+  _fireContinuously: 0
 --- !u!70 &1522820038
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -16762,12 +16886,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1522820036}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: EnterFrenzyMode
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -16775,6 +16899,42 @@ MonoBehaviour:
         m_CallState: 2
   _maximumHealth: 1
   _currentHealth: 1
+  _isInvincible: 0
+--- !u!70 &1522820041
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522820031}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!1 &1597491025
 GameObject:
   m_ObjectHideFlags: 0
@@ -16856,9 +17016,113 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: _currentHealth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: _maximumHealth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Damaged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 553425867}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1522820036}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Damaged.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Damaged.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 553425871}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ChangeFrenzyGauge
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Damaged.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Damaged.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: set_IsInvincible
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Damaged.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: HealthController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Damaged.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Damaged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Damaged.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_FloatArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Damaged.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5143115512968446565, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.4500003
@@ -16921,9 +17185,73 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: _isInvincible
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: _currentHealth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: _maximumHealth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Damaged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2053180628}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1522820036}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ChangeFrenzyGauge
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5143115512968446565, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -25.02
