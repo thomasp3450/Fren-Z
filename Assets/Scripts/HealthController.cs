@@ -23,7 +23,7 @@ public class HealthController : MonoBehaviour
         }
     }
 
-    public bool IsInvincible { get; set; }
+    public bool _isInvincible;
 
     public float getHealth(){
         return _currentHealth;
@@ -31,12 +31,15 @@ public class HealthController : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        if (IsInvincible == true || _currentHealth == 0)
+        // Enemy is invincible or their health is 0 => return statement/function does not activate
+        if (_isInvincible == true || _currentHealth == 0)
         {
             return;
         }
 
-        _currentHealth -= amount;
+        // Causes the invocation of the health-related events declared in the components.
+
+        if (!_isInvincible) _currentHealth -= amount;
         
         HealthChanged.Invoke();
 
@@ -54,6 +57,7 @@ public class HealthController : MonoBehaviour
 
     public void AddHealth(float amount)
     {
+        // Heals
         _currentHealth += amount;
         ClampCurrentHealth();
 
@@ -62,12 +66,23 @@ public class HealthController : MonoBehaviour
 
     public void SetHealth(float amount)
     {
+        // Sets health to defined value
         _currentHealth = amount;
         ClampCurrentHealth();
     }
 
-    private void ClampCurrentHealth()
-    {
+    public void InitIFrames() {
+        // Makes entity invincible
+        _isInvincible = true;
+    }
+
+    public void ExitIFrames() {
+        // Makes entity not invincible.
+        _isInvincible = false;
+    }
+
+    private void ClampCurrentHealth() {
+        // Makes health a workable value.
         _currentHealth = Mathf.Clamp(_currentHealth, 0, _maximumHealth);
     }
 }

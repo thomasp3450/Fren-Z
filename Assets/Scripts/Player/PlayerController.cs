@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour{
 
     private bool _isFrenzied;
     private float _FrenzyMeter;
+    [SerializeField] private float _FrenzyMeterMax;
+    private bool _isInvincible;
 
     private Rigidbody2D _Rigidbody;
 
@@ -52,10 +54,9 @@ public class PlayerController : MonoBehaviour{
 
     
     private void OnTriggerEnter2D (Collider2D collision) { // if enemy touches you, take damage 
-        if (collision.GetComponent<EnemyMovement>()) {
-            GetComponent<HealthController>().TakeDamage(1);
+        if (collision.GetComponent<EnemyMovement>() && _isInvincible == false) {
+            gameObject.GetComponent<HealthController>().TakeDamage(1);
         }
-
     }
 
 
@@ -65,7 +66,6 @@ public class PlayerController : MonoBehaviour{
         
         if(_isFrenzied){
             _FrenzyMeter -= Time.deltaTime/2;
-
         }
         if(_DashCounter > 0){ // dash cooldown counter calculation
             _DashCounter -= Time.deltaTime;
@@ -79,6 +79,16 @@ public class PlayerController : MonoBehaviour{
 
         if(_DashCoolDownCounter > 0){
              _DashCoolDownCounter -= Time.deltaTime;
+        }
+
+        // If player fills the Frenzy gauge.
+        if (_isFrenzied && _FrenzyMeter >= _FrenzyMeterMax) { 
+            ExitFrenzyMode();
+        }
+        // Player depletes the Frenzy gauge and loses.
+        if (_isFrenzied && _FrenzyMeter <= 0) {
+            _FrenzyMeter = 0;
+            gameObject.SetActive(false);
         }
     }
 
@@ -105,6 +115,26 @@ public class PlayerController : MonoBehaviour{
     public void SetPlayerDamageMultiplier(float damageMultiplier){
         // Multiplies the player's damage by a float.
         _power *= damageMultiplier;
+    }
+
+    public void EnterFrenzyMode(){
+        // To be called when the player is to enter frenzy mode.
+        Debug.Log("Frenzy mode entered.");
+        _isFrenzied = true;
+        _isInvincible = true;
+        _FrenzyMeter = 50;
+    }
+
+    public void ExitFrenzyMode(){
+        // To be called when the player is to exit frenzy mode.
+        _isFrenzied = false;
+        _isInvincible = false;
+    }
+
+    public void ChangeFrenzyGauge(float increase){
+        // Increases or decreases the frenzy gauge's value.
+        Debug.Log("Increase in player's frenzy gauge.");
+        if (_isFrenzied == true) _FrenzyMeter += increase;
     }
 
     public void ResetPlayerPower() {
