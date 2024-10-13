@@ -28,16 +28,17 @@ public class PlayerShoot : MonoBehaviour {
     private bool _fireContinuously;
     private float _lastFireTime;
     
+    Animator animator;
 
     // Start is called before the first frame update
     void Start() {
-      
-    }
+      animator = GetComponent<Animator>();
+    }   
 
     // Update is called once per frame
     void Update() {
         _bulletLifetime -= Time.deltaTime; //despawn timer
-        
+      /*  
         float timeSinceLastFire = Time.time - _lastFireTime;
         
         if (_fireContinuously && (timeSinceLastFire >= _timeBetweenShots || _lastFireTime == 0)) {
@@ -60,6 +61,7 @@ public class PlayerShoot : MonoBehaviour {
         Rigidbody2D rigidbody = bullet.GetComponent<Rigidbody2D>();
         rigidbody.velocity = _bulletSpeed * transform.up;
         Destroy(bullet, 1); //destroy bullet after 1 second of shooting them 
+        
     }
 
 
@@ -69,6 +71,9 @@ public class PlayerShoot : MonoBehaviour {
         
         if (timeSinceLastFire >= _timeBetweenShots || _lastFireTime == 0) {
             FireBullet();  
+            animator.SetBool("Shooting", true);
+        }else{
+            animator.SetBool("Shooting",false);
         }
     }
 }

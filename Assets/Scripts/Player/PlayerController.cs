@@ -12,10 +12,8 @@ public class PlayerController : MonoBehaviour{
     [SerializeField] float _RotationSpeed; //how quickly your character rotates to face your input direction
     [SerializeField] float _standardDamage;
     private float _power;
-
-    private float _DashCounter;
-    private float _DashCoolDownCounter; //timers for dash cooldown functionality
-
+    private float _DashCounter; // for how long to dash
+    private float _DashCoolDownCounter; // how long until you can dash again
     private Vector2 _Movement; //raw movement
     private Vector2 _SmoothedMovement; //damped movement
     private Vector2 _SmoothedMovementVelocity; //speed of damping
@@ -27,11 +25,14 @@ public class PlayerController : MonoBehaviour{
 
     private Rigidbody2D _Rigidbody;
 
+    Animator animator;
+
     private void Awake() {
         _Rigidbody =  GetComponent<Rigidbody2D>();
         _ActiveSpeed = _Speed;
         _FrenzyMeter = 100;
         _power = _standardDamage;
+        animator = GetComponent<Animator>();
     }
 
     public void onMovement(InputAction.CallbackContext context){
@@ -48,8 +49,13 @@ public class PlayerController : MonoBehaviour{
         
     }
 
-    public void onFrenzy(InputAction.CallbackContext context){
-        //if(_isFrenzied = true && _FrenzyMeter => 100){} 
+    public void onFrenzy(InputAction.CallbackContext context) {
+        if (_isFrenzied == true && _FrenzyMeter >= 100 ) {
+            ExitFrenzyMode();
+        }
+        else{
+            EnterFrenzyMode();
+        }
     }
 
     
@@ -69,10 +75,11 @@ public class PlayerController : MonoBehaviour{
         }
         if(_DashCounter > 0){ // dash cooldown counter calculation
             _DashCounter -= Time.deltaTime;
-
+            animator.SetBool("Dashing", true);
             if(_DashCounter <= 0){ 
                 _ActiveSpeed = _Speed;
                 _DashCoolDownCounter = _DashCoolDown;
+                animator.SetBool("Dashing", false);
             }
 
         }
@@ -100,6 +107,7 @@ public class PlayerController : MonoBehaviour{
         0.05f); 
        
         _Rigidbody.velocity = _SmoothedMovement * _ActiveSpeed;
+        animator.SetFloat("Velocity", Mathf.Abs(_SmoothedMovement.x + _SmoothedMovement.y)); 
     }
 
     private void RotateWithDirection(){ //rotates player sprite to look towards where moving
