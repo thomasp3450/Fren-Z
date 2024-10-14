@@ -16572,6 +16572,7 @@ GameObject:
   - component: {fileID: 1522820039}
   - component: {fileID: 1522820042}
   - component: {fileID: 1522820043}
+  - component: {fileID: 1522820044}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -16637,11 +16638,35 @@ MonoBehaviour:
     m_ActionId: b0b5d2ad-330e-45e4-8a5c-0433e1ccc443
     m_ActionName: Gameplay/Dash[/Keyboard/shift,/XInputControllerWindows/buttonEast]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1522820036}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: ExecuteLightAttack1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 17cff58e-7658-499a-8e8f-ed7a20135f04
     m_ActionName: Gameplay/AttackLight[/Keyboard/e,/XInputControllerWindows/buttonWest]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1522820036}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: ExecuteHeavyAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: d378bf18-418c-4509-8b6a-43312a07be9e
     m_ActionName: Gameplay/AttackHeavy[/Keyboard/r,/XInputControllerWindows/buttonNorth]
   - m_PersistentCalls:
@@ -16742,8 +16767,8 @@ MonoBehaviour:
   _RotationSpeed: 960
   _standardDamage: 0
   _FrenzyMeterMax: 0
-  Shooting: 0
-  velocity: 0
+  _lightAttack: {fileID: 6418040206497973099, guid: 316ba9889f7990442b4e1c85bd3fbb1d, type: 3}
+  _heavyAttack: {fileID: 7662931250973109321, guid: f70dff8d5c981f24ba2dffd8f022def8, type: 3}
 --- !u!114 &1522820037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16953,6 +16978,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1522820044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522820031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d65a495382066a54ab7b9772b6d94451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1597491025
 GameObject:
   m_ObjectHideFlags: 0

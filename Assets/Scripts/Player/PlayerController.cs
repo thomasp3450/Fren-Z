@@ -21,11 +21,17 @@ public class PlayerController : MonoBehaviour{
     private bool _isFrenzied;
     private float _FrenzyMeter;
     [SerializeField] private float _FrenzyMeterMax;
-    private bool _isInvincible;
 
     private Rigidbody2D _Rigidbody;
 
     Animator animator;
+
+    // The bullet object to be instantiated.
+    [SerializeField]
+    private GameObject _lightAttack;
+    private float _lastLightAttackTime;
+    [SerializeField]
+    private GameObject _heavyAttack;
 
     private void Awake() {
         _Rigidbody =  GetComponent<Rigidbody2D>();
@@ -44,7 +50,10 @@ public class PlayerController : MonoBehaviour{
         if(_DashCoolDownCounter <= 0 && _DashCounter <= 0){ //if cooldown is 0 and if the counter is 0, Dash!
             _ActiveSpeed = _DashSpeed;
             _DashCounter = _DashLength;
-        } 
+            if (_isFrenzied) GetComponent<HealthController>().InitIFrames();
+        } else if (GetComponent<HealthController>()._isInvincible) {
+            GetComponent<HealthController>().ExitIFrames();
+        }
   
         
     }
@@ -60,7 +69,7 @@ public class PlayerController : MonoBehaviour{
 
     
     private void OnTriggerEnter2D (Collider2D collision) { // if enemy touches you, take damage 
-        if (collision.GetComponent<EnemyMovement>() && _isInvincible == false) {
+        if (collision.GetComponent<EnemyMovement>() && GetComponent<HealthController>()._isInvincible == false) {
             gameObject.GetComponent<HealthController>().TakeDamage(1);
         }
     }
@@ -127,16 +136,24 @@ public class PlayerController : MonoBehaviour{
 
     public void EnterFrenzyMode(){
         // To be called when the player is to enter frenzy mode.
+        PlayerInput pi = GetComponent<PlayerInput>();
+        pi.actions.FindAction("Fire").Disable();
+        pi.actions.FindAction("AttackLight").Enable();
+        pi.actions.FindAction("AttackHeavy").Enable();
         Debug.Log("Frenzy mode entered.");
         _isFrenzied = true;
-        _isInvincible = true;
+        GetComponent<HealthController>()._isInvincible = true;
         _FrenzyMeter = 50;
     }
 
     public void ExitFrenzyMode(){
         // To be called when the player is to exit frenzy mode.
         _isFrenzied = false;
-        _isInvincible = false;
+        GetComponent<HealthController>()._isInvincible = false;
+        PlayerInput pi = GetComponent<PlayerInput>();
+        pi.actions.FindAction("AttackLight").Disable();
+        pi.actions.FindAction("AttackHeavy").Disable();
+        pi.actions.FindAction("Fire").Enable();
     }
 
     public void ChangeFrenzyGauge(float increase){
@@ -148,5 +165,47 @@ public class PlayerController : MonoBehaviour{
     public void ResetPlayerPower() {
         // Resets player's power to default level.
         _power = _standardDamage;
+    }
+
+    public IEnumerator ComboAttack() {
+        _lightAttack.SetActive(true);
+        yield return new WaitForSeconds(.01f);
+        _lightAttack.SetActive(false);
+        yield return new WaitForSeconds(.01f);
+        _lightAttack.SetActive(true);
+        yield return new WaitForSeconds(.01f);
+        _lightAttack.SetActive(false);
+        yield return new WaitForSeconds(.01f);
+        _lightAttack.SetActive(true);
+        yield return new WaitForSeconds(.01f);
+        _lightAttack.SetActive(false);
+    }
+    
+    public void ExecuteLightAttack() {
+        GameObject lightAttack = Instantiate(_lightAttack, gameObject.transform.position, transform.rotation);
+        _lastLightAttackTime = Time.time;
+        Rigidbody2D rigidbody = lightAttack.GetComponent<Rigidbody2D>();
+        StartCoroutine(ComboAttack());
+        Destroy(lightAttack, 1);
+    }
+
+    public void ExecuteLightAttack1() {
+        // Claw attack. Combo link 1
+        _lightAttack.SetActive(true);
+    }
+
+    public void ExecuteLightAttack2() {
+        // Blade attack. Combo link 2
+        _lightAttack.SetActive(true);
+    }
+
+    public void ExecuteLightAttack3() {
+        // Shield attack. Combo link 3
+        _lightAttack.SetActive(true);
+    }
+
+    public void ExecuteHeavyAttack() {
+        // Narrow, spike attack
+        _heavyAttack.SetActive(true);
     }
 }
