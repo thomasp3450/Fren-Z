@@ -16641,7 +16641,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1522820036}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: ExecuteLightAttack1
+        m_MethodName: OnLightAttack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16657,7 +16657,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1522820036}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: ExecuteHeavyAttack
+        m_MethodName: OnHeavyAttack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16766,7 +16766,8 @@ MonoBehaviour:
   _DashCoolDown: 0.55
   _RotationSpeed: 960
   _standardDamage: 0
-  _FrenzyMeterMax: 0
+  _isFrenzied: 0
+  _FrenzyMeterMax: 50
   _lightAttack: {fileID: 6418040206497973099, guid: 316ba9889f7990442b4e1c85bd3fbb1d, type: 3}
   _heavyAttack: {fileID: 7662931250973109321, guid: f70dff8d5c981f24ba2dffd8f022def8, type: 3}
 --- !u!114 &1522820037

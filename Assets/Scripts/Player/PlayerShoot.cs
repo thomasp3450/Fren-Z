@@ -29,6 +29,7 @@ public class PlayerShoot : MonoBehaviour {
     private float _lastFireTime;
     
     Animator animator;
+    GameObject player;
 
     // Start is called before the first frame update
     void Start() {
@@ -67,13 +68,15 @@ public class PlayerShoot : MonoBehaviour {
 
 
     public void OnFire(InputAction.CallbackContext context) {
-        float timeSinceLastFire = Time.time - _lastFireTime;
-        
-        if (timeSinceLastFire >= _timeBetweenShots || _lastFireTime == 0) {
-            FireBullet();  
-            animator.SetBool("Shooting", true);
-        }else{
-            animator.SetBool("Shooting",false);
+        // Debug.Log(gameObject.GetComponent<PlayerController>()._isFrenzied);
+        if (!gameObject.GetComponent<PlayerController>()._isFrenzied) {
+            float timeSinceLastFire = Time.time - _lastFireTime;
+            if (timeSinceLastFire >= _timeBetweenShots || _lastFireTime == 0) {
+                FireBullet();  
+                animator.SetBool("Shooting", true);
+            }else{
+                animator.SetBool("Shooting",false);
+            }
         }
     }
 }
