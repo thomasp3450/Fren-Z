@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour{
     public bool _isFrenzied;
     private float _FrenzyMeter;
     [SerializeField] private float _FrenzyMeterMax;
+    private bool _isAttacking = false;
 
     private Rigidbody2D _Rigidbody;
 
@@ -171,6 +172,7 @@ public class PlayerController : MonoBehaviour{
     }
 
     public IEnumerator ComboAttack() {
+        _isAttacking = true;
         _ActiveSpeed = 0;
         _lightAttack.SetActive(true);
         yield return new WaitForSeconds(.01f);
@@ -185,11 +187,13 @@ public class PlayerController : MonoBehaviour{
         _lightAttack.SetActive(false);
         yield return new WaitForSeconds(1);
         _ActiveSpeed = _Speed;
+        _isAttacking = false;
     }
     
     public void OnLightAttack() {
-        if (gameObject.GetComponent<PlayerController>()._isFrenzied) {
+        if (gameObject.GetComponent<PlayerController>()._isFrenzied && !_isAttacking) {
             GameObject lightAttack = Instantiate(_lightAttack, gameObject.transform.position, transform.rotation);
+            lightAttack.SetActive(true);
             _lastLightAttackTime = Time.time;
             Rigidbody2D rigidbody = lightAttack.GetComponent<Rigidbody2D>();
             StartCoroutine(ComboAttack());
@@ -198,15 +202,16 @@ public class PlayerController : MonoBehaviour{
     }
 
     public IEnumerator HeavyAttack() {
-        _lightAttack.SetActive(true);
+        _isAttacking = true;
         yield return new WaitForSeconds(1);
-        _lightAttack.SetActive(false);
         _ActiveSpeed = _Speed;
+        _isAttacking = false;
     }
 
     public void OnHeavyAttack() {
-        if (gameObject.GetComponent<PlayerController>()._isFrenzied) {
+        if (gameObject.GetComponent<PlayerController>()._isFrenzied && !_isAttacking) {
             GameObject heavyAttack = Instantiate(_heavyAttack, gameObject.transform.position, transform.rotation);
+            heavyAttack.SetActive(true);
             _lastLightAttackTime = Time.time;
             Rigidbody2D rigidbody = heavyAttack.GetComponent<Rigidbody2D>();
             StartCoroutine(HeavyAttack());
