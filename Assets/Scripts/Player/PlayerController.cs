@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour{
     [SerializeField] float _Speed; //how fast you go normally
@@ -24,6 +25,8 @@ public class PlayerController : MonoBehaviour{
     private bool _isAttacking = false;
 
     private Rigidbody2D _Rigidbody;
+    [SerializeField] public GameObject _frenzyBar;
+    [SerializeField] public GameObject _frenzyBarBackground;
 
     Animator animator;
 
@@ -77,9 +80,9 @@ public class PlayerController : MonoBehaviour{
             if (collision.GetComponent<EnemyMovement>() && GetComponent<HealthController>()._isInvincible == false) {
                 gameObject.GetComponent<HealthController>().TakeDamage(1);
             }
-        } else {
+        } else if (collision.GetComponent<EnemyMovement>()) {
             // Takes a small fraction of the player's frenzy gauge
-            _FrenzyMeter -= Time.deltaTime/2;
+            _FrenzyMeter -= 2;
             Debug.Log("Player's frenzy gauge was reduced.");
         }
     }
@@ -117,6 +120,8 @@ public class PlayerController : MonoBehaviour{
             _FrenzyMeter = 0;
             gameObject.SetActive(false);
         }
+
+        _frenzyBar.GetComponent<Image>().fillAmount = _FrenzyMeter / _FrenzyMeterMax;
     }
 
     private void SetPlayerVelocity(){ // creates smoother movement by transitioning vectors over 0.05 seconds
@@ -150,19 +155,23 @@ public class PlayerController : MonoBehaviour{
         Debug.Log("Frenzy mode entered.");
         _isFrenzied = true;
         GetComponent<HealthController>()._isInvincible = true;
-        _FrenzyMeter = _FrenzyMeterMax;
+        _FrenzyMeter = _FrenzyMeterMax/2;
         // Debug.Log(_FrenzyMeter);
+        _frenzyBar.SetActive(true);
+        _frenzyBarBackground.SetActive(true);
     }
 
     public void ExitFrenzyMode(){
         // To be called when the player is to exit frenzy mode.
         _isFrenzied = false;
         GetComponent<HealthController>()._isInvincible = false;
+        _frenzyBar.SetActive(false);
+        _frenzyBarBackground.SetActive(false);
     }
 
     public void ChangeFrenzyGauge(float increase){
         // Increases or decreases the frenzy gauge's value.
-        Debug.Log("Increase in player's frenzy gauge.");
+        Debug.Log("Change in player's frenzy gauge. " + _FrenzyMeter + "/" + _FrenzyMeterMax);
         if (_isFrenzied == true) _FrenzyMeter += increase;
     }
 
@@ -172,6 +181,7 @@ public class PlayerController : MonoBehaviour{
     }
 
     public IEnumerator ComboAttack() {
+        // Coroutine for the multi-hitting combo attack.
         _isAttacking = true;
         _ActiveSpeed = 0;
         _lightAttack.SetActive(true);
@@ -185,12 +195,13 @@ public class PlayerController : MonoBehaviour{
         _lightAttack.SetActive(true);
         yield return new WaitForSeconds(.01f);
         _lightAttack.SetActive(false);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.05f);
         _ActiveSpeed = _Speed;
         _isAttacking = false;
     }
     
     public void OnLightAttack() {
+        // Initiates the combo attack.
         if (gameObject.GetComponent<PlayerController>()._isFrenzied && !_isAttacking) {
             GameObject lightAttack = Instantiate(_lightAttack, gameObject.transform.position, transform.rotation);
             lightAttack.SetActive(true);
@@ -202,15 +213,17 @@ public class PlayerController : MonoBehaviour{
     }
 
     public IEnumerator HeavyAttack() {
+        // Coroutine for the heavy attack.
         _isAttacking = true;
         _heavyAttack.SetActive(true);
-        yield return new WaitForSeconds(9);
+        yield return new WaitForSeconds(4);
         _heavyAttack.SetActive(false);
         _ActiveSpeed = _Speed;
         _isAttacking = false;
     }
 
     public void OnHeavyAttack() {
+        // Initiates the heavy attack.
         if (gameObject.GetComponent<PlayerController>()._isFrenzied && !_isAttacking) {
             GameObject heavyAttack = Instantiate(_heavyAttack, gameObject.transform.position, transform.rotation);
             heavyAttack.SetActive(true);
