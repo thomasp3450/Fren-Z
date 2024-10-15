@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour{
     }
 
     public void onFrenzy(InputAction.CallbackContext context) {
-        Debug.Log(_FrenzyMeter);
+        Debug.Log("Frenzy value: " + _FrenzyMeter);
         if (_isFrenzied == true && _FrenzyMeter >= 100 ) {
             ExitFrenzyMode();
         }
@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour{
     private void FixedUpdate() { //move and rotate with input
         SetPlayerVelocity();
         RotateWithDirection();
-        Debug.Log("Active speed: " + _ActiveSpeed);
+        // Debug.Log("Active speed: " + _ActiveSpeed);
         
         if(_isFrenzied){
             _FrenzyMeter -= Time.deltaTime/2;
@@ -203,7 +203,9 @@ public class PlayerController : MonoBehaviour{
 
     public IEnumerator HeavyAttack() {
         _isAttacking = true;
-        yield return new WaitForSeconds(1);
+        _heavyAttack.SetActive(true);
+        yield return new WaitForSeconds(9);
+        _heavyAttack.SetActive(false);
         _ActiveSpeed = _Speed;
         _isAttacking = false;
     }
