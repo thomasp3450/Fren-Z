@@ -18,14 +18,21 @@ public class PlayerController : MonoBehaviour{
     private Vector2 _SmoothedMovement; //damped movement
     private Vector2 _SmoothedMovementVelocity; //speed of damping
 
-    private bool _isFrenzied;
+    public bool _isFrenzied;
     private float _FrenzyMeter;
     [SerializeField] private float _FrenzyMeterMax;
-    private bool _isInvincible;
+    private bool _isAttacking = false;
 
     private Rigidbody2D _Rigidbody;
 
     Animator animator;
+
+    // The bullet object to be instantiated.
+    [SerializeField]
+    private GameObject _lightAttack;
+    private float _lastLightAttackTime;
+    [SerializeField]
+    private GameObject _heavyAttack;
 
     private void Awake() {
         _Rigidbody =  GetComponent<Rigidbody2D>();
@@ -44,12 +51,16 @@ public class PlayerController : MonoBehaviour{
         if(_DashCoolDownCounter <= 0 && _DashCounter <= 0){ //if cooldown is 0 and if the counter is 0, Dash!
             _ActiveSpeed = _DashSpeed;
             _DashCounter = _DashLength;
-        } 
+            if (_isFrenzied) GetComponent<HealthController>().InitIFrames();
+        } else if (GetComponent<HealthController>()._isInvincible) {
+            GetComponent<HealthController>().ExitIFrames();
+        }
   
         
     }
 
     public void onFrenzy(InputAction.CallbackContext context) {
+        Debug.Log(_FrenzyMeter);
         if (_isFrenzied == true && _FrenzyMeter >= 100 ) {
             ExitFrenzyMode();
         }
@@ -59,9 +70,17 @@ public class PlayerController : MonoBehaviour{
     }
 
     
-    private void OnTriggerEnter2D (Collider2D collision) { // if enemy touches you, take damage 
-        if (collision.GetComponent<EnemyMovement>() && _isInvincible == false) {
-            gameObject.GetComponent<HealthController>().TakeDamage(1);
+    private void OnTriggerEnter2D (Collider2D collision) { 
+        if (!_isFrenzied) {
+            Debug.Log("Player's HP was reduced.");
+            // if enemy touches you, take damage 
+            if (collision.GetComponent<EnemyMovement>() && GetComponent<HealthController>()._isInvincible == false) {
+                gameObject.GetComponent<HealthController>().TakeDamage(1);
+            }
+        } else {
+            // Takes a small fraction of the player's frenzy gauge
+            _FrenzyMeter -= Time.deltaTime/2;
+            Debug.Log("Player's frenzy gauge was reduced.");
         }
     }
 
@@ -69,6 +88,7 @@ public class PlayerController : MonoBehaviour{
     private void FixedUpdate() { //move and rotate with input
         SetPlayerVelocity();
         RotateWithDirection();
+        Debug.Log("Active speed: " + _ActiveSpeed);
         
         if(_isFrenzied){
             _FrenzyMeter -= Time.deltaTime/2;
@@ -129,14 +149,15 @@ public class PlayerController : MonoBehaviour{
         // To be called when the player is to enter frenzy mode.
         Debug.Log("Frenzy mode entered.");
         _isFrenzied = true;
-        _isInvincible = true;
-        _FrenzyMeter = 50;
+        GetComponent<HealthController>()._isInvincible = true;
+        _FrenzyMeter = _FrenzyMeterMax;
+        // Debug.Log(_FrenzyMeter);
     }
 
     public void ExitFrenzyMode(){
         // To be called when the player is to exit frenzy mode.
         _isFrenzied = false;
-        _isInvincible = false;
+        GetComponent<HealthController>()._isInvincible = false;
     }
 
     public void ChangeFrenzyGauge(float increase){
@@ -148,5 +169,53 @@ public class PlayerController : MonoBehaviour{
     public void ResetPlayerPower() {
         // Resets player's power to default level.
         _power = _standardDamage;
+    }
+
+    public IEnumerator ComboAttack() {
+        _isAttacking = true;
+        _ActiveSpeed = 0;
+        _lightAttack.SetActive(true);
+        yield return new WaitForSeconds(.01f);
+        _lightAttack.SetActive(false);
+        yield return new WaitForSeconds(.01f);
+        _lightAttack.SetActive(true);
+        yield return new WaitForSeconds(.01f);
+        _lightAttack.SetActive(false);
+        yield return new WaitForSeconds(.01f);
+        _lightAttack.SetActive(true);
+        yield return new WaitForSeconds(.01f);
+        _lightAttack.SetActive(false);
+        yield return new WaitForSeconds(1);
+        _ActiveSpeed = _Speed;
+        _isAttacking = false;
+    }
+    
+    public void OnLightAttack() {
+        if (gameObject.GetComponent<PlayerController>()._isFrenzied && !_isAttacking) {
+            GameObject lightAttack = Instantiate(_lightAttack, gameObject.transform.position, transform.rotation);
+            lightAttack.SetActive(true);
+            _lastLightAttackTime = Time.time;
+            Rigidbody2D rigidbody = lightAttack.GetComponent<Rigidbody2D>();
+            StartCoroutine(ComboAttack());
+            Destroy(lightAttack, 1);
+        }
+    }
+
+    public IEnumerator HeavyAttack() {
+        _isAttacking = true;
+        yield return new WaitForSeconds(1);
+        _ActiveSpeed = _Speed;
+        _isAttacking = false;
+    }
+
+    public void OnHeavyAttack() {
+        if (gameObject.GetComponent<PlayerController>()._isFrenzied && !_isAttacking) {
+            GameObject heavyAttack = Instantiate(_heavyAttack, gameObject.transform.position, transform.rotation);
+            heavyAttack.SetActive(true);
+            _lastLightAttackTime = Time.time;
+            Rigidbody2D rigidbody = heavyAttack.GetComponent<Rigidbody2D>();
+            StartCoroutine(HeavyAttack());
+            Destroy(heavyAttack, 1);
+        }
     }
 }
