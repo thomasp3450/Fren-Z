@@ -8,8 +8,9 @@ public class HeavyAttack : MonoBehaviour
 
         if (collision.GetComponent<EnemyMovement>()) {
             gameObject.SetActive(false);
-            collision.GetComponent<HealthController>().TakeDamage(1);
-            collision.GetComponent<HealthController>().InitIFrames();
+            Debug.Log("Heavy attack landed.");
+            collision.GetComponent<HealthController>().TakeDamage(3);
+            // collision.GetComponent<HealthController>().InitIFrames();
         }
 
     }

@@ -7,6 +7,7 @@ public class LightAttack : MonoBehaviour {
 
         if (collision.GetComponent<EnemyMovement>()) {
             gameObject.SetActive(false);
+            Debug.Log("Light attack landed.");
             collision.GetComponent<HealthController>().TakeDamage(1);
             collision.GetComponent<HealthController>().InitIFrames();
         }
