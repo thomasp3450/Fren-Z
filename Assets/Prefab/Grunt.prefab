@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3243552080780060703}
   - component: {fileID: 5416840772348841286}
   - component: {fileID: 3335706242044380641}
+  - component: {fileID: 5739209152339838099}
   m_Layer: 0
   m_Name: Grunt
   m_TagString: Untagged
@@ -205,6 +206,7 @@ MonoBehaviour:
         m_CallState: 2
   _maximumHealth: 4
   _currentHealth: 4
+  _isInvincible: 0
 --- !u!114 &3243552080780060703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,3 +269,24 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0065083983, y: 0.027156478}
   m_Size: {x: 0.1630168, y: 0.19429545}
   m_Direction: 0
+--- !u!95 &5739209152339838099
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6043323418008464058}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 60a6881a858ab564caf719e8d62a63d1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
