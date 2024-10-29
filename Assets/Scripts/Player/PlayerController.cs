@@ -190,8 +190,8 @@ public class PlayerController : MonoBehaviour{
 
     public IEnumerator ComboAttack() {
         // Coroutine for the multi-hitting combo attack.
-        // Stops player
-        _ActiveSpeed = 0;
+        // Slows player
+        _ActiveSpeed = 4;
         // The three hits
         _lightAttack.SetActive(true);
         yield return new WaitForSeconds(.01f);
@@ -205,7 +205,7 @@ public class PlayerController : MonoBehaviour{
         yield return new WaitForSeconds(.01f);
         _lightAttack.SetActive(false);
         // endlag
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.1f);
         // Returns player to speed
         _ActiveSpeed = _Speed;
         _isAttacking = false;
@@ -237,7 +237,7 @@ public class PlayerController : MonoBehaviour{
             _isAttacking = true;
             // Activates the heavy attack's hitbox and keeps it up for 2 seconds, feel free to change
             _heavyAttack.SetActive(true);
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(.5f);
             _heavyAttack.SetActive(false);
             _ActiveSpeed = _Speed;
             _isAttacking = false;

@@ -18,6 +18,13 @@ public class EnemyMovement : MonoBehaviour {
     float _speed;
     [SerializeField]
     float _rotationSpeed;
+    [SerializeField]
+    bool _isRangedEnemy;
+    [SerializeField]
+    float _TargettingRange;
+
+    //animator variables
+    
 
     private void Awake() {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -29,11 +36,16 @@ public class EnemyMovement : MonoBehaviour {
     private void FixedUpdate() {
         UpdateTargetDirection();
         RotateTowardsTarget();
-        SetVelocity();
+        if(_isRangedEnemy && _awareOfPlayerController.AwareOfPlayer){
+            SetVelocity(0);
+        }else{
+            SetVelocity(_speed);
+        }
+        
     }
 
-    private void SetVelocity() {
-        _rigidbody.velocity = transform.up * _speed;
+    private void SetVelocity(float value) {
+        _rigidbody.velocity = transform.up * value;
     }
 
     private void UpdateTargetDirection() {
