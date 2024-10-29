@@ -20,10 +20,9 @@ public class EnemyMovement : MonoBehaviour {
     float _rotationSpeed;
     [SerializeField]
     bool _isRangedEnemy;
-    [SerializeField]
-    float _TargettingRange;
 
-    //animator variables
+
+    Animator animator;
     
 
     private void Awake() {
@@ -31,6 +30,7 @@ public class EnemyMovement : MonoBehaviour {
         _awareOfPlayerController = GetComponent<PlayerAwarenessController>();
         _camera = Camera.main;
         _targetDirection = Vector2.up;
+        animator = GetComponent<Animator>();
     }
     
     private void FixedUpdate() {

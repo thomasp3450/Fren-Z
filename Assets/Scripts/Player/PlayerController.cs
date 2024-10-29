@@ -30,7 +30,6 @@ public class PlayerController : MonoBehaviour{
 
     Animator animator;
 
-    // The bullet object to be instantiated.
     [SerializeField]
     private GameObject _lightAttack;
     private float _lastLightAttackTime;
