@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour{
         _FrenzyMeter = 50;
         _power = _standardDamage;
         animator = GetComponent<Animator>();
+        animator.SetBool("Frenzied", false);
     }
 
     public void onMovement(InputAction.CallbackContext context){
@@ -161,6 +162,7 @@ public class PlayerController : MonoBehaviour{
         // To be called when the player is to enter frenzy mode.
         Debug.Log("Frenzy mode entered.");
         _isFrenzied = true;
+        animator.SetBool("Frenzied", true);
         GetComponent<HealthController>()._isInvincible = true;
         _FrenzyMeter = _FrenzyMeterMax/2;
         // Debug.Log(_FrenzyMeter);
@@ -171,6 +173,7 @@ public class PlayerController : MonoBehaviour{
     public void ExitFrenzyMode(){
         // To be called when the player is to exit frenzy mode.
         _isFrenzied = false;
+        animator.SetBool("Frenzied", false);
         GetComponent<HealthController>()._isInvincible = false;
         _frenzyBar.SetActive(false);
         _frenzyBarBackground.SetActive(false);
@@ -193,16 +196,26 @@ public class PlayerController : MonoBehaviour{
         _ActiveSpeed = 4;
         // The three hits
         _lightAttack.SetActive(true);
+        animator.SetInteger("ComboInt", 1);
+        animator.SetBool("isLightAttack", true);
         yield return new WaitForSeconds(.01f);
         _lightAttack.SetActive(false);
+        animator.SetBool("isLightAttack", false);
         yield return new WaitForSeconds(.01f);
         _lightAttack.SetActive(true);
+        animator.SetInteger("ComboInt", 2);
+        animator.SetBool("isLightAttack", true);
         yield return new WaitForSeconds(.01f);
         _lightAttack.SetActive(false);
+        animator.SetBool("isLightAttack", false);
         yield return new WaitForSeconds(.01f);
         _lightAttack.SetActive(true);
+         animator.SetInteger("ComboInt", 3);
+         animator.SetBool("isLightAttack", true);
         yield return new WaitForSeconds(.01f);
         _lightAttack.SetActive(false);
+        animator.SetBool("isLightAttack", false);
+         animator.SetInteger("ComboInt", 0);
         // endlag
         yield return new WaitForSeconds(.1f);
         // Returns player to speed
@@ -234,12 +247,14 @@ public class PlayerController : MonoBehaviour{
         if (!_isAttacking) {
             // prevents player from attacking repeatedly.
             _isAttacking = true;
+            animator.SetBool("isHeavyAttack", true);
             // Activates the heavy attack's hitbox and keeps it up for 2 seconds, feel free to change
             _heavyAttack.SetActive(true);
             yield return new WaitForSeconds(.5f);
             _heavyAttack.SetActive(false);
             _ActiveSpeed = _Speed;
             _isAttacking = false;
+            animator.SetBool("isHeavyAttack", false);
         }
     }
 
