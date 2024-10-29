@@ -11,25 +11,22 @@ public class PlayerShoot : MonoBehaviour {
     // The velocity of which the bullet travels.
     [SerializeField]
     private float _bulletSpeed;
-    [SerializeField]
-    private float _bulletLifetime; // sets how long a bullet can survive before despawning 
+
     private float _bulletLifetimeMax;
 
-    // The positional offset of the gun in comparison to the player.
+   //where the player is
     [SerializeField]
     private Transform _gunOffset;
+
 
     // Frames between each shot.
     [SerializeField]
     private float _timeBetweenShots;
     
-    // Is the player pressing the shoot button?
-    [SerializeField]
-    private bool _fireContinuously;
     private float _lastFireTime;
     
     Animator animator;
-    GameObject player;
+
 
     // Start is called before the first frame update
     void Start() {
@@ -38,21 +35,6 @@ public class PlayerShoot : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        _bulletLifetime -= Time.deltaTime; //despawn timer
-      /*  
-        float timeSinceLastFire = Time.time - _lastFireTime;
-        
-        if (_fireContinuously && (timeSinceLastFire >= _timeBetweenShots || _lastFireTime == 0)) {
-            FireBullet();  
-        }
-
-        /* if (_fireContinuously) {
-            float timeSinceLastFire = Time.time - _lastFireTime;
-        
-            if (timeSinceLastFire >= _timeBetweenShots) {
-                _lastFireTime = Time.deltaTime; 
-            }
-        } */
 
     }
 
