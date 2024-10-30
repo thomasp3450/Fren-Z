@@ -19,7 +19,7 @@ public class EnemyMovement : MonoBehaviour {
     [SerializeField]
     float _rotationSpeed;
     [SerializeField]
-    bool _isRangedEnemy;
+    public bool _isRangedEnemy;
 
 
     Animator animator;

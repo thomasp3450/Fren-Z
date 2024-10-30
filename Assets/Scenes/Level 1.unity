@@ -2263,12 +2263,15 @@ GameObject:
   - component: {fileID: 1284934662}
   - component: {fileID: 1284934661}
   - component: {fileID: 1284934660}
-  - component: {fileID: 1284934659}
+  - component: {fileID: 1284934665}
   - component: {fileID: 1284934658}
   - component: {fileID: 1284934664}
   - component: {fileID: 1284934663}
-  - component: {fileID: 1284934665}
   - component: {fileID: 1284934666}
+  - component: {fileID: 1284934669}
+  - component: {fileID: 1284934668}
+  - component: {fileID: 1284934667}
+  - component: {fileID: 1284934659}
   m_Layer: 0
   m_Name: Guard (Ranged enemy)
   m_TagString: Untagged
@@ -2349,7 +2352,19 @@ MonoBehaviour:
       m_Calls: []
   Damaged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1284934668}
+        m_TargetAssemblyTypeName: EnemyHitFlash, Assembly-CSharp
+        m_MethodName: StartFlash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   Died:
     m_PersistentCalls:
       m_Calls:
@@ -2441,7 +2456,7 @@ Transform:
   m_GameObject: {fileID: 1284934657}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.74, y: -0.27, z: -0.9654201}
+  m_LocalPosition: {x: 6.74, y: -0.27, z: -1}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2519,6 +2534,68 @@ MonoBehaviour:
   _bulletSpeed: 5
   _EnemyOffset: {fileID: 1284934662}
   _timeBetweenShots: 1
+--- !u!70 &1284934667
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284934657}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.25, y: 0.145}
+  m_Direction: 0
+--- !u!114 &1284934668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284934657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f20522ee22e0ddc4893fc70b5b0da635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flashLength: 3
+  _flashColor: {r: 0.7075472, g: 0.06341223, b: 0.10576664, a: 0}
+  _numberOfFlashes: 1
+--- !u!114 &1284934669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284934657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de25ae2036255548b640a46fc83fb4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1368521062
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -229,7 +229,7 @@ public class PlayerController : MonoBehaviour{
             // Prevents concurrent attack
             _isAttacking = true;
             // A minor cost
-            if(_FrenzyMeter > 3) _FrenzyMeter -= 3;
+            // if(_FrenzyMeter > 3) _FrenzyMeter -= 3;
             // Instantiates hitbox prefab
             GameObject lightAttack = Instantiate(_lightAttack, gameObject.transform.position, transform.rotation);
             lightAttack.SetActive(true);
@@ -262,7 +262,7 @@ public class PlayerController : MonoBehaviour{
         // Initiates the heavy attack.
         if (gameObject.GetComponent<PlayerController>()._isFrenzied && !_isAttacking) {
             // A minor cost
-            if(_FrenzyMeter > 3) _FrenzyMeter -= 3;
+            // if(_FrenzyMeter > 3) _FrenzyMeter -= 3;
             // Instantiates hitbox prefab
             GameObject heavyAttack = Instantiate(_heavyAttack, gameObject.transform.position, transform.rotation);
             heavyAttack.SetActive(true);
