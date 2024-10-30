@@ -19,7 +19,7 @@ public class SaveData {
     // Will save data for the enemies that are alive.
     // public List<EnemyData> m_EnemyData = new List<EnemyData>();
     
-    public PlayerData playerData = PlayerData
+    public PlayerData playerData;
     
     public string ToJson() {
         return JsonUtility.ToJson(this);
