@@ -7,16 +7,13 @@ public class PlayerThrowBloodBomb : MonoBehaviour {
     [SerializeField]
     private GameObject _bloodBombPrefab;
 
-    // The velocity of which the bullet travels.
     [SerializeField]
     private float _throwingSpeed;
 
-   //where the player is
     [SerializeField]
     private Transform _throwOffset;
 
 
-    // Frames between each shot.
     [SerializeField]
     private float _timeBetweenShots;
     
