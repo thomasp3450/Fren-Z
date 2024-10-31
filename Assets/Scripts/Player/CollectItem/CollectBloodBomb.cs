@@ -7,6 +7,7 @@ public class CollectBloodBomb : MonoBehaviour {
 
         if (collision.GetComponent<PlayerController>()) {
             gameObject.SetActive(false);
+            collision.GetComponent<PlayerController>()._amountOfBloodBombs++;
         }
 
     }

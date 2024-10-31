@@ -18906,6 +18906,7 @@ GameObject:
   - component: {fileID: 1522820042}
   - component: {fileID: 1522820043}
   - component: {fileID: 1522820044}
+  - component: {fileID: 1522820046}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -19094,13 +19095,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Speed: 7
+  _ActiveSpeed: 0
   _DashSpeed: 12
   _DashLength: 0.25
   _DashCoolDown: 0.55
   _RotationSpeed: 960
   _standardDamage: 0
+  _amountOfBloodBombs: 0
   _isFrenzied: 0
   _FrenzyMeterMax: 100
+  _isAttacking: 0
   _frenzyBar: {fileID: 1991570999}
   _frenzyBarBackground: {fileID: 1374483940}
   _lightAttack: {fileID: 6418040206497973099, guid: 316ba9889f7990442b4e1c85bd3fbb1d, type: 3}
@@ -19324,6 +19328,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.03}
   m_Size: {x: 0.19, y: 0.15}
   m_Direction: 1
+--- !u!114 &1522820046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522820031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf35256de0088b94781ef148b7b90ad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bloodBombPrefab: {fileID: 0}
+  _throwingSpeed: 10
+  _throwOffset: {fileID: 0}
+  _timeBetweenShots: 0.5
 --- !u!1 &1597491025
 GameObject:
   m_ObjectHideFlags: 0

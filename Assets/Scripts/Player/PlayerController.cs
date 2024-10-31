@@ -5,13 +5,14 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour{
-    [SerializeField] float _Speed; //how fast you go normally
-    private float _ActiveSpeed; //how fast you are currently going
+    [SerializeField] public float _Speed; //how fast you go normally
+    public float _ActiveSpeed; //how fast you are currently going
     [SerializeField] float _DashSpeed; //how fast you dash
     [SerializeField] float _DashLength; // how long to dash for
     [SerializeField] float _DashCoolDown; // how long before you can dash again
     [SerializeField] float _RotationSpeed; //how quickly your character rotates to face your input direction
     [SerializeField] float _standardDamage;
+    [SerializeField] public int _amountOfBloodBombs;
     private float _power;
     private float _DashCounter; // for how long to dash
     private float _DashCoolDownCounter; // how long until you can dash again
@@ -22,7 +23,7 @@ public class PlayerController : MonoBehaviour{
     public bool _isFrenzied;
     private float _FrenzyMeter;
     [SerializeField] private float _FrenzyMeterMax;
-    private bool _isAttacking = false;
+    public bool _isAttacking = false; // Will create a public function to check _isAttacking later and make _isattacking private again
 
     private Rigidbody2D _Rigidbody;
     [SerializeField] public GameObject _frenzyBar;
