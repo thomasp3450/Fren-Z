@@ -9,7 +9,7 @@ using UnityEngine;
 public class Frenzy : MonoBehaviour {
 
     [SerializeField]
-    private float _speedIncreaseAmount = 20;
+    private float _speedIncreaseAmount;
     [SerializeField]
     private float _powerMultiplier = (float)1.2;
     [SerializeField]

@@ -211,12 +211,12 @@ public class PlayerController : MonoBehaviour{
         animator.SetBool("isLightAttack", false);
         yield return new WaitForSeconds(.01f);
         _lightAttack.SetActive(true);
-         animator.SetInteger("ComboInt", 3);
-         animator.SetBool("isLightAttack", true);
+        animator.SetInteger("ComboInt", 3);
+        animator.SetBool("isLightAttack", true);
         yield return new WaitForSeconds(.01f);
         _lightAttack.SetActive(false);
         animator.SetBool("isLightAttack", false);
-         animator.SetInteger("ComboInt", 0);
+        animator.SetInteger("ComboInt", 0);
         // endlag
         yield return new WaitForSeconds(.1f);
         // Returns player to speed
@@ -229,8 +229,6 @@ public class PlayerController : MonoBehaviour{
         if (gameObject.GetComponent<PlayerController>()._isFrenzied && !_isAttacking) {
             // Prevents concurrent attack
             _isAttacking = true;
-            // A minor cost
-            // if(_FrenzyMeter > 3) _FrenzyMeter -= 3;
             // Instantiates hitbox prefab
             GameObject lightAttack = Instantiate(_lightAttack, gameObject.transform.position, transform.rotation);
             lightAttack.SetActive(true);
@@ -251,7 +249,7 @@ public class PlayerController : MonoBehaviour{
             animator.SetBool("isHeavyAttack", true);
             // Activates the heavy attack's hitbox and keeps it up for 2 seconds, feel free to change
             _heavyAttack.SetActive(true);
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(.3f);
             _heavyAttack.SetActive(false);
             _ActiveSpeed = _Speed;
             _isAttacking = false;
@@ -262,8 +260,6 @@ public class PlayerController : MonoBehaviour{
     public void OnHeavyAttack() {
         // Initiates the heavy attack.
         if (gameObject.GetComponent<PlayerController>()._isFrenzied && !_isAttacking) {
-            // A minor cost
-            // if(_FrenzyMeter > 3) _FrenzyMeter -= 3;
             // Instantiates hitbox prefab
             GameObject heavyAttack = Instantiate(_heavyAttack, gameObject.transform.position, transform.rotation);
             heavyAttack.SetActive(true);

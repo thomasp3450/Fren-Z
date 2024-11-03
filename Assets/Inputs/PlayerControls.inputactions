@@ -67,6 +67,15 @@
                     "processors": "",
                     "interactions": "Tap",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Syringe",
+                    "type": "Button",
+                    "id": "143bfbd5-04ed-4c3c-b52d-c18e5e1400d6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -116,6 +125,17 @@
                 },
                 {
                     "name": "",
+                    "id": "879d9aba-779a-4230-ba0a-16f54819d844",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AttackLight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "87dfdfd6-cd66-4dc4-b142-97efeefbda56",
                     "path": "<Keyboard>/r",
                     "interactions": "",
@@ -129,6 +149,17 @@
                     "name": "",
                     "id": "0217aa8d-2ad1-4929-b861-88819c7659a5",
                     "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AttackHeavy",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4c60a032-2dc3-4809-ae67-5adcdb8dc691",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -159,7 +190,18 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "Arrow Keys",
+                    "name": "",
+                    "id": "06bdace6-f264-465c-9ce5-84ca2bc2bb21",
+                    "path": "<Mouse>/forwardButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Frenzy",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "WASD",
                     "id": "647ecc07-f05f-4da8-b78f-2ab76ded71e9",
                     "path": "2DVector",
                     "interactions": "",
@@ -172,7 +214,7 @@
                 {
                     "name": "up",
                     "id": "c234db66-01c5-4c85-a394-a00ad0f48e6e",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -183,7 +225,7 @@
                 {
                     "name": "down",
                     "id": "8f3098de-eca7-4f8b-865d-62a4108c4157",
-                    "path": "<Keyboard>/downArrow",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -194,7 +236,7 @@
                 {
                     "name": "left",
                     "id": "433ff6bc-98d1-47cc-95fc-4bf6b639622f",
-                    "path": "<Keyboard>/leftArrow",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -205,7 +247,7 @@
                 {
                     "name": "right",
                     "id": "e962e94b-07fc-4a38-9716-8565fb0a9ac7",
-                    "path": "<Keyboard>/rightArrow",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -292,12 +334,12 @@
                 },
                 {
                     "name": "",
-                    "id": "6096e4d5-97b3-403d-928c-963c67ad5f14",
-                    "path": "<Keyboard>/s",
+                    "id": "b19ca807-72d9-4b46-beb2-8a7795355c69",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Blood Bomb",
+                    "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -309,6 +351,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "Blood Bomb",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "12d9cf74-889f-4b46-8576-ab0e2629037b",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Blood Bomb",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0c7f0caa-e6ef-42d6-8233-fa52d6273a83",
+                    "path": "<Mouse>/middleButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Blood Bomb",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6cca59d0-c88e-422d-b343-4b6a35dbe0d6",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Syringe",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b97a675b-35a0-4a89-9390-46feb6c817cf",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Syringe",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
