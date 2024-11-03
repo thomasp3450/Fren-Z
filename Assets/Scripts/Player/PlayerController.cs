@@ -194,29 +194,25 @@ public class PlayerController : MonoBehaviour{
     public IEnumerator ComboAttack() {
         // Coroutine for the multi-hitting combo attack.
         // Slows player
-        _ActiveSpeed = 4;
+        _ActiveSpeed = 5;
         // The three hits
         _lightAttack.SetActive(true);
         animator.SetInteger("ComboInt", 1);
         animator.SetBool("isLightAttack", true);
         yield return new WaitForSeconds(.01f);
-        _lightAttack.SetActive(false);
-        animator.SetBool("isLightAttack", false);
+        _lightAttack.SetActive(false); 
         yield return new WaitForSeconds(.01f);
         _lightAttack.SetActive(true);
         animator.SetInteger("ComboInt", 2);
-        animator.SetBool("isLightAttack", true);
         yield return new WaitForSeconds(.01f);
         _lightAttack.SetActive(false);
-        animator.SetBool("isLightAttack", false);
         yield return new WaitForSeconds(.01f);
         _lightAttack.SetActive(true);
         animator.SetInteger("ComboInt", 3);
-        animator.SetBool("isLightAttack", true);
         yield return new WaitForSeconds(.01f);
         _lightAttack.SetActive(false);
-        animator.SetBool("isLightAttack", false);
         animator.SetInteger("ComboInt", 0);
+        animator.SetBool("isLightAttack", false);
         // endlag
         yield return new WaitForSeconds(.1f);
         // Returns player to speed

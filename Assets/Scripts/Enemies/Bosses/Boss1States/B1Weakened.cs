@@ -7,27 +7,30 @@ public class B1Weakened : State
   protected StateMachine _stateMachine; //instantiate the FSM 
   protected HealthController healthController;
   protected PlayerAwarenessController playerAwarenessController;
-
-  IEnumerator wait(){ //wait for a 3-5 seconds in idle before transitioning to the idle
-    yield return new WaitForSeconds(Random.Range(3f, 5f)); 
-  }
-
-  private void Awake(){
-    _stateMachine = GetComponent<StateMachine>(); 
-    healthController = GetComponent<HealthController>();
-    playerAwarenessController = GetComponent<PlayerAwarenessController>();
-
+  protected bool hasWaited;
+  protected Animator animator;
+  IEnumerator wait(){ 
+    yield return new WaitForSeconds(4);
+    hasWaited = true; 
   }
 
    public override void Enter(){
+    _stateMachine = GetComponent<StateMachine>(); 
+    healthController = GetComponent<HealthController>();
+    playerAwarenessController = GetComponent<PlayerAwarenessController>();
+    animator = GetComponent<Animator>();
+    animator.SetBool("IsWeakened", true);
     StartCoroutine(wait());
    }
 
    public override void Exit(){
-    
+    animator.SetBool("IsIdle", true);
+    animator.SetBool("IsWeakened", false);
    }
 
    public override void Tick(){
-     _stateMachine.ChangeState<B1Idle>();
+    if(hasWaited){
+        _stateMachine.ChangeState<B1Idle>();
+    }
    } 
 }

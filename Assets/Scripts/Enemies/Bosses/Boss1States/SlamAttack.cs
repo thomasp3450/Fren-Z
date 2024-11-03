@@ -8,6 +8,7 @@ private void OnTriggerEnter2D (Collider2D collision) {
 
     if (collision.GetComponent<PlayerController>()) {
         gameObject.SetActive(false);
+        collision.GetComponent<PlayerController>().ChangeFrenzyGauge(-8);
         collision.GetComponent<HealthController>().TakeDamage(1);
         collision.GetComponent<HealthController>().InitIFrames();
     }

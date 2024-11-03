@@ -4,36 +4,42 @@ using UnityEngine;
 
 public class B1Slam : State
 {
-      // The bullet object to be instantiated.
-    [SerializeField]    
-    private GameObject _slamPrefab;
+    // The bullet object to be instantiated.
+    [SerializeField] private GameObject _slamPrefab;
 
-    [SerializeField]
-    private Transform _EnemyOffset;  
-  protected StateMachine _stateMachine; //instantiate the FSM 
-  protected HealthController healthController;
-  protected PlayerAwarenessController playerAwarenessController;
+    [SerializeField] private Transform _EnemyOffset;  
+    protected Animator animator;
+    protected StateMachine _stateMachine; //instantiate the FSM
+    protected bool hasWaited; 
 
   IEnumerator slam(){
     GameObject slam = Instantiate(_slamPrefab, _EnemyOffset.position, transform.rotation); 
-    Destroy(slam, 1.4f); //slam effect lasts for 1.4 seconds before despawning 
+    Destroy(slam, 1); 
     yield return new WaitForSeconds(2); 
+    hasWaited = true;
+  }
+
+  IEnumerator wait(){ //wait for a 3 seconds in idle before transitioning to the attacks
+    yield return new WaitForSeconds(1); 
+    hasWaited = true;
   }
  
    public override void Enter(){
     _stateMachine = GetComponent<StateMachine>(); 
-    healthController = GetComponent<HealthController>();
-    playerAwarenessController = GetComponent<PlayerAwarenessController>();
-    
+    animator = GetComponent<Animator>();
+    animator.SetBool("IsSlamming", true);
+    StartCoroutine(wait());
    }
 
    public override void Exit(){
-   
+   animator.SetBool("IsWeakened", true);
+   animator.SetBool("IsSlamming", false);
    }
    
 
    public override void Tick(){
-    StartCoroutine(slam());
-    _stateMachine.ChangeState<B1Weakened>();
+    if(hasWaited){
+        _stateMachine.ChangeState<B1Weakened>();
+    }
    } 
 }

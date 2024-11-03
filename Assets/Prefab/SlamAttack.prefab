@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6563993475852711863}
   - component: {fileID: 348904956691485422}
-  - component: {fileID: 5179507280251181609}
   - component: {fileID: 7385139118875957669}
+  - component: {fileID: 3590274663293384201}
   m_Layer: 0
   m_Name: SlamAttack
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.94, y: 8.92, z: 0}
-  m_LocalScale: {x: 6.66, y: 6.66, z: 1.332}
+  m_LocalScale: {x: 7, y: 7, z: 1.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 0.7411765, g: 0.20392159, b: 0.23529413, a: 0.2627451}
   m_FlipX: 0
   m_FlipY: 0
@@ -83,11 +83,23 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!58 &5179507280251181609
-CircleCollider2D:
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 2
+  m_SpriteSortPoint: 1
+--- !u!114 &7385139118875957669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328933406701430212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c09185ff931ead34b9eaaaa1f78a702a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!60 &3590274663293384201
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -115,21 +127,30 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &7385139118875957669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5328933406701430212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c09185ff931ead34b9eaaaa1f78a702a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.19558012, y: 0.38224888}
+      - {x: 0.31667727, y: 0.6986784}
+      - {x: 0.22303171, y: 1.0584992}
+      - {x: -0.020081297, y: 1.0856872}
+      - {x: -0.19258423, y: 1.0384667}
+      - {x: -0.25904265, y: 0.7546413}
+      - {x: -0.19210836, y: 0.30639365}
+      - {x: -0.1676687, y: 0.26670766}
+      - {x: -0.08566215, y: 0.13633125}
+      - {x: 0.0704086, y: 0.11539914}
+      - {x: 0.13211586, y: 0.25442424}
+  m_UseDelaunayMesh: 0

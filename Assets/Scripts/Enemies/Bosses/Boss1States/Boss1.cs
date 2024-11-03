@@ -6,6 +6,7 @@ public class Boss1 : MonoBehaviour
 {
     public StateMachine stateMachine;
     //States from FSM 
+    //public DecideState decideState;
     public B1Idle IdleState; //state for when the boss is attacking
     public B1Slam SlamState; //if player is close, slam attack 
     public B1Volley VolleyState; //if player is far, choose between two volleys
