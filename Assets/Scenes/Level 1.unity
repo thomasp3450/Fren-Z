@@ -16774,7 +16774,39 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1434424625397975384, guid: 7419828339bcc73409cfeb2200a9280f, type: 3}
       propertyPath: _playerAwarenessDistance
-      value: 10
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139186711957509524, guid: 7419828339bcc73409cfeb2200a9280f, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139186711957509524, guid: 7419828339bcc73409cfeb2200a9280f, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139186711957509524, guid: 7419828339bcc73409cfeb2200a9280f, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2064563229}
+    - target: {fileID: 3139186711957509524, guid: 7419828339bcc73409cfeb2200a9280f, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139186711957509524, guid: 7419828339bcc73409cfeb2200a9280f, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139186711957509524, guid: 7419828339bcc73409cfeb2200a9280f, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139186711957509524, guid: 7419828339bcc73409cfeb2200a9280f, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139186711957509524, guid: 7419828339bcc73409cfeb2200a9280f, type: 3}
+      propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6224619052740373723, guid: 7419828339bcc73409cfeb2200a9280f, type: 3}
       propertyPath: m_Name
@@ -16810,11 +16842,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8811924952272710057, guid: 7419828339bcc73409cfeb2200a9280f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.03
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 8811924952272710057, guid: 7419828339bcc73409cfeb2200a9280f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.3
+      value: 25.56
       objectReference: {fileID: 0}
     - target: {fileID: 8811924952272710057, guid: 7419828339bcc73409cfeb2200a9280f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17100,6 +17132,11 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.5, y: 0.5}
   m_Direction: 0
+--- !u!1 &2064563229 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6224619052740373723, guid: 7419828339bcc73409cfeb2200a9280f, type: 3}
+  m_PrefabInstance: {fileID: 1905053611}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
