@@ -16729,6 +16729,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss1
       objectReference: {fileID: 0}
+    - target: {fileID: 7880995494447996012, guid: 7419828339bcc73409cfeb2200a9280f, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8091291110127347223, guid: 7419828339bcc73409cfeb2200a9280f, type: 3}
       propertyPath: _bulletSpeed
       value: 9
