@@ -9,7 +9,7 @@ public class HeavyAttack : MonoBehaviour
 
         if (collision.GetComponent<EnemyHitFlash>()) {
             // gameObject.SetActive(false);
-            collision.GetComponent<HealthController>().TakeDamage(15);
+            collision.GetComponent<HealthController>().TakeDamage(10);
             collision.GetComponent<HealthController>().InitIFrames();
         } else if (!collision.GetComponent<PlayerController>()) {
             // Debug.Log("Frenzy mode entered.");

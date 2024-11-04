@@ -10,7 +10,7 @@ public class CollectBloodBomb : MonoBehaviour {
 
         if (collision.GetComponent<PlayerController>() && _isUsed == false) {
             collision.GetComponent<PlayerController>()._amountOfBloodBombs++;
-            Debug.Log("Found blood bomb! Player has " + collision.GetComponent<PlayerController>()._amountOfSyringes + " blood bombs!");
+            Debug.Log("Found blood bomb! Player has " + collision.GetComponent<PlayerController>()._amountOfBloodBombs + " blood bombs!");
             gameObject.GetComponent<Collider2D>().isTrigger = false;
             _isUsed = true;
             gameObject.SetActive(false);

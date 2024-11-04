@@ -16449,7 +16449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf35256de0088b94781ef148b7b90ad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bloodBombPrefab: {fileID: 5610548125707235278, guid: b32c8f601f103ad458556ec2f33ac5a3, type: 3}
+  _bloodBombPrefab: {fileID: 1144879895475161758, guid: 4f696ae6a93a5d143ace79180e764a0a, type: 3}
   _throwingSpeed: 10
   _throwOffset: {fileID: 1522820035}
   _timeBetweenShots: 0.5

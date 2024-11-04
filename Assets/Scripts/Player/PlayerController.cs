@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour{
         if (collision.GetComponent<EnemyMovement>()) {
             if (_DashCounter > 0 && _isFrenzied) {
                 // The dash attack is activated when the player is in Frenzy state and dashing.
-                collision.GetComponent<HealthController>().TakeDamage((float)0.5);
+                collision.GetComponent<HealthController>().TakeDamage((float)3);
             }
         }
     }
