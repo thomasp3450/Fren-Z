@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour{
     private Vector2 _SmoothedMovementVelocity; //speed of damping
 
     public bool _isFrenzied;
+    public bool _gaugeInvincible = false;
     private float _FrenzyMeter;
     [SerializeField] private float _FrenzyMeterMax;
     public bool _isAttacking = false; // Will create a public function to check _isAttacking later and make _isattacking private again
@@ -80,13 +81,13 @@ public class PlayerController : MonoBehaviour{
         if (!_isFrenzied) {
             // if enemy touches you, take damage 
             if (collision.GetComponent<EnemyMovement>() && GetComponent<HealthController>()._isInvincible == false) {
-                Debug.Log("Player's HP was reduced.");
+                // Debug.Log("Player's HP was reduced.");
                 gameObject.GetComponent<HealthController>().TakeDamage(1);
             }
         } else if (collision.GetComponent<EnemyMovement>()) {
             // Takes a small fraction of the player's frenzy gauge
-            _FrenzyMeter -= 1;
-            Debug.Log("Player's frenzy gauge was reduced.");
+            if (!_gaugeInvincible) _FrenzyMeter -= 1;
+            // Debug.Log("Player's frenzy gauge was reduced.");
         }
         if (collision.GetComponent<EnemyMovement>()) {
             if (_DashCounter > 0 && _isFrenzied) {
@@ -163,7 +164,7 @@ public class PlayerController : MonoBehaviour{
     public void EnterFrenzyMode(){
         // To be called when the player is to enter frenzy mode.
         Debug.Log("Frenzy mode entered.");
-        if (_FrenzyMeter <= _FrenzyMeterMax/2 && _isFrenzied == false) _FrenzyMeter = _FrenzyMeterMax/2;
+        if (_isFrenzied == false) _FrenzyMeter = _FrenzyMeterMax/2;
         _isFrenzied = true;
         animator.SetBool("Frenzied", true);
         GetComponent<HealthController>()._isInvincible = true;
