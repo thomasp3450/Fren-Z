@@ -10,8 +10,12 @@ public class EnemyBullet : MonoBehaviour {
             // Bullet is destroyed.
             Destroy(gameObject, 0.01f);
 
-            // Enemy takes damage
-            collision.GetComponent<HealthController>().TakeDamage(1);
+            if (collision.GetComponent<PlayerController>()._isFrenzied) {
+                if (!collision.GetComponent<PlayerController>()._gaugeInvincible) collision.GetComponent<PlayerController>().ChangeFrenzyGauge(-2);
+            } else {
+                // Enemy takes damage
+                collision.GetComponent<HealthController>().TakeDamage(1);
+            }
 
             // Prevents repeated hits on the opponent per bullet
             // Invincibility ends when the bullet exits bounding box.

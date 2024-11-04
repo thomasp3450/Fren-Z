@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour{
             }
         } else if (collision.GetComponent<EnemyMovement>()) {
             // Takes a small fraction of the player's frenzy gauge
-            if (!_gaugeInvincible) _FrenzyMeter -= 1;
+            if (!_gaugeInvincible) _FrenzyMeter -= 2;
             // Debug.Log("Player's frenzy gauge was reduced.");
         }
         if (collision.GetComponent<EnemyMovement>()) {
