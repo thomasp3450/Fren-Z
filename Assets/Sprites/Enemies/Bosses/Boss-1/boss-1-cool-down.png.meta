@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 85b8dcd3cd49fa94a898e9ed6efd5b3e
+guid: 0ed7000b0185a564ca6c7200134dbda6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boss-1-gun-spread_0
+      name: boss-1-cool-down_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f042cbc5dd5b3244b6b1bda4527f6bc
-      internalID: -310791925
+      spriteID: 07614faf5a605424aa7a31a349a02516
+      internalID: -283231253
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss-1-gun-spread_1
+      name: boss-1-cool-down_1
       rect:
         serializedVersion: 2
         x: 200
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40352e81c224a5d4dbeea1d6be0d8688
-      internalID: -1940120406
+      spriteID: 6c9d0fb5b60224f4abd5ca03121a1bf4
+      internalID: 1043382270
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss-1-gun-spread_2
+      name: boss-1-cool-down_2
       rect:
         serializedVersion: 2
         x: 400
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9146b8ffd18bcb5409460c8d0e1b6137
-      internalID: 1400310952
+      spriteID: bb9473e94b237af49a10cb23819a5270
+      internalID: 56062134
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss-1-gun-spread_3
+      name: boss-1-cool-down_3
       rect:
         serializedVersion: 2
         x: 600
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5e9044eb2bffbd47a87b216a46a769e
-      internalID: 685580921
+      spriteID: e251b62bff4dd5b4187069de8dfe9ad9
+      internalID: 1552296284
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss-1-gun-spread_4
+      name: boss-1-cool-down_4
       rect:
         serializedVersion: 2
         x: 800
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c94a12778c488b4ea2ca0967b15b65f
-      internalID: 1279321128
+      spriteID: cccb1404086659445ad81de6cf5bc0f3
+      internalID: -1941899383
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boss-1-gun-spread_5
+      name: boss-1-cool-down_5
       rect:
         serializedVersion: 2
         x: 1000
@@ -229,113 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16500db445e1a234dbb0e27291e321b1
-      internalID: -760208671
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boss-1-gun-spread_6
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 0
-        width: 200
-        height: 400
-      alignment: 9
-      pivot: {x: 0.495, y: 0.14}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 58a5c8798f7c783439f9987def7efd16
-      internalID: 599352064
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boss-1-gun-spread_7
-      rect:
-        serializedVersion: 2
-        x: 1400
-        y: 0
-        width: 200
-        height: 400
-      alignment: 9
-      pivot: {x: 0.495, y: 0.14}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4631efdf19338994abba5e99e28a435e
-      internalID: 1209744657
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boss-1-gun-spread_8
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 0
-        width: 200
-        height: 400
-      alignment: 9
-      pivot: {x: 0.495, y: 0.14}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a37d1c3a5fca26f4abc4408e602b0ac2
-      internalID: 1399369323
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boss-1-gun-spread_9
-      rect:
-        serializedVersion: 2
-        x: 1800
-        y: 0
-        width: 200
-        height: 400
-      alignment: 9
-      pivot: {x: 0.495, y: 0.14}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 46153edb614b1db47a536410f8299b80
-      internalID: 567858582
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: boss-1-gun-spread_10
-      rect:
-        serializedVersion: 2
-        x: 2000
-        y: 0
-        width: 200
-        height: 400
-      alignment: 9
-      pivot: {x: 0.495, y: 0.14}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 670bbfa9432b7ee4581c32abbf783514
-      internalID: 535005024
+      spriteID: 4be9204b0194b974c9854d81309d700d
+      internalID: -373658661
       vertices: []
       indices: 
       edges: []
@@ -351,17 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      boss-1-gun-spread_0: -310791925
-      boss-1-gun-spread_1: -1940120406
-      boss-1-gun-spread_10: 535005024
-      boss-1-gun-spread_2: 1400310952
-      boss-1-gun-spread_3: 685580921
-      boss-1-gun-spread_4: 1279321128
-      boss-1-gun-spread_5: -760208671
-      boss-1-gun-spread_6: 599352064
-      boss-1-gun-spread_7: 1209744657
-      boss-1-gun-spread_8: 1399369323
-      boss-1-gun-spread_9: 567858582
+      boss-1-cool-down_0: -283231253
+      boss-1-cool-down_1: 1043382270
+      boss-1-cool-down_2: 56062134
+      boss-1-cool-down_3: 1552296284
+      boss-1-cool-down_4: -1941899383
+      boss-1-cool-down_5: -373658661
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
