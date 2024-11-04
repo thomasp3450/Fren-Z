@@ -123,6 +123,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &97236358
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3207033188330028333, guid: b32c8f601f103ad458556ec2f33ac5a3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.7485085
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207033188330028333, guid: b32c8f601f103ad458556ec2f33ac5a3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.858219
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207033188330028333, guid: b32c8f601f103ad458556ec2f33ac5a3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207033188330028333, guid: b32c8f601f103ad458556ec2f33ac5a3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207033188330028333, guid: b32c8f601f103ad458556ec2f33ac5a3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207033188330028333, guid: b32c8f601f103ad458556ec2f33ac5a3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207033188330028333, guid: b32c8f601f103ad458556ec2f33ac5a3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207033188330028333, guid: b32c8f601f103ad458556ec2f33ac5a3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207033188330028333, guid: b32c8f601f103ad458556ec2f33ac5a3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207033188330028333, guid: b32c8f601f103ad458556ec2f33ac5a3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610548125707235278, guid: b32c8f601f103ad458556ec2f33ac5a3, type: 3}
+      propertyPath: m_Name
+      value: BloodBomb
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b32c8f601f103ad458556ec2f33ac5a3, type: 3}
 --- !u!1001 &200795136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15839,6 +15896,71 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &1440391775
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -6392723074198782717, guid: 7d837be71156c91439a4e63a7be14d59, type: 3}
+      propertyPath: m_Color.g
+      value: 0.84622765
+      objectReference: {fileID: 0}
+    - target: {fileID: -6392723074198782717, guid: 7d837be71156c91439a4e63a7be14d59, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207033188330028333, guid: 7d837be71156c91439a4e63a7be14d59, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.803349
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207033188330028333, guid: 7d837be71156c91439a4e63a7be14d59, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.481127
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207033188330028333, guid: 7d837be71156c91439a4e63a7be14d59, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207033188330028333, guid: 7d837be71156c91439a4e63a7be14d59, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207033188330028333, guid: 7d837be71156c91439a4e63a7be14d59, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207033188330028333, guid: 7d837be71156c91439a4e63a7be14d59, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207033188330028333, guid: 7d837be71156c91439a4e63a7be14d59, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207033188330028333, guid: 7d837be71156c91439a4e63a7be14d59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207033188330028333, guid: 7d837be71156c91439a4e63a7be14d59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3207033188330028333, guid: 7d837be71156c91439a4e63a7be14d59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610548125707235278, guid: 7d837be71156c91439a4e63a7be14d59, type: 3}
+      propertyPath: m_Name
+      value: Syringe
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7d837be71156c91439a4e63a7be14d59, type: 3}
 --- !u!1 &1522820031
 GameObject:
   m_ObjectHideFlags: 0
@@ -15860,6 +15982,7 @@ GameObject:
   - component: {fileID: 1522820043}
   - component: {fileID: 1522820044}
   - component: {fileID: 1522820046}
+  - component: {fileID: 1522820047}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -15989,11 +16112,35 @@ MonoBehaviour:
     m_ActionId: 0442b070-3ea3-4ea7-a39b-c51fe13b0bd6
     m_ActionName: Gameplay/Fire[/Keyboard/e]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1522820046}
+        m_TargetAssemblyTypeName: PlayerThrowBloodBomb, Assembly-CSharp
+        m_MethodName: OnThrow
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: e9341196-82e5-40a6-820f-0ff71b72a798
     m_ActionName: Gameplay/Blood Bomb[/Keyboard/s]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1522820047}
+        m_TargetAssemblyTypeName: PlayerUseSyringe, Assembly-CSharp
+        m_MethodName: OnSyringe
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 143bfbd5-04ed-4c3c-b52d-c18e5e1400d6
     m_ActionName: Gameplay/Syringe[/Keyboard/c]
   m_NeverAutoSwitchControlSchemes: 0
@@ -16063,6 +16210,7 @@ MonoBehaviour:
   _RotationSpeed: 960
   _standardDamage: 0
   _amountOfBloodBombs: 0
+  _amountOfSyringes: 0
   _isFrenzied: 0
   _FrenzyMeterMax: 100
   _isAttacking: 0
@@ -16305,6 +16453,18 @@ MonoBehaviour:
   _throwingSpeed: 10
   _throwOffset: {fileID: 1522820035}
   _timeBetweenShots: 0.5
+--- !u!114 &1522820047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522820031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcd939a1972784243801800cb6cbe231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1597491025
 GameObject:
   m_ObjectHideFlags: 0
@@ -16901,3 +17061,5 @@ SceneRoots:
   - {fileID: 1228798443}
   - {fileID: 1284934662}
   - {fileID: 1905053611}
+  - {fileID: 97236358}
+  - {fileID: 1440391775}

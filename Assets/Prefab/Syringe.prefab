@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: -6392723074198782717}
   - component: {fileID: 7507240989722119259}
   - component: {fileID: -6938150968572581537}
-  - component: {fileID: 792187875401671161}
+  - component: {fileID: -6490464159669974218}
   m_Layer: 0
-  m_Name: BloodBomb
+  m_Name: Syringe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,7 +149,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &792187875401671161
+--- !u!114 &-6490464159669974218
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,6 +158,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5610548125707235278}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9134b979cf867b64486ca02302cfac80, type: 3}
+  m_Script: {fileID: 11500000, guid: e79ca4a2687e07646a7012ae8fd7a3bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

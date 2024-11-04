@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour{
     [SerializeField] float _DashCoolDown; // how long before you can dash again
     [SerializeField] float _RotationSpeed; //how quickly your character rotates to face your input direction
     [SerializeField] float _standardDamage;
-    [SerializeField] public int _amountOfBloodBombs;
+    [SerializeField] public int _amountOfBloodBombs = 0;
+    [SerializeField] public int _amountOfSyringes = 0;
     private float _power;
     private float _DashCounter; // for how long to dash
     private float _DashCoolDownCounter; // how long until you can dash again
@@ -64,7 +65,7 @@ public class PlayerController : MonoBehaviour{
     }
 
     public void onFrenzy(InputAction.CallbackContext context) {
-        Debug.Log("Frenzy value: " + _FrenzyMeter);
+        // Debug.Log("Frenzy value: " + _FrenzyMeter);
         if (_isFrenzied == true && _FrenzyMeter >= 100 ) {
             gameObject.GetComponent<HealthController>().AddHealth(1);
             ExitFrenzyMode();
@@ -162,10 +163,10 @@ public class PlayerController : MonoBehaviour{
     public void EnterFrenzyMode(){
         // To be called when the player is to enter frenzy mode.
         Debug.Log("Frenzy mode entered.");
+        if (_FrenzyMeter <= _FrenzyMeterMax/2 && _isFrenzied == false) _FrenzyMeter = _FrenzyMeterMax/2;
         _isFrenzied = true;
         animator.SetBool("Frenzied", true);
         GetComponent<HealthController>()._isInvincible = true;
-        _FrenzyMeter = _FrenzyMeterMax/2;
         // Debug.Log(_FrenzyMeter);
         _frenzyBar.SetActive(true);
         _frenzyBarBackground.SetActive(true);
