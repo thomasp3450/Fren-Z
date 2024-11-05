@@ -585,6 +585,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 637537662}
+  - {fileID: 649051980}
   - {fileID: 1374483941}
   - {fileID: 1991571000}
   - {fileID: 926171980}
@@ -1207,6 +1209,156 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.31, y: 0.31}
   m_Direction: 0
+--- !u!1 &637537661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 637537662}
+  - component: {fileID: 637537664}
+  - component: {fileID: 637537663}
+  m_Layer: 5
+  m_Name: Boss HP border
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &637537662
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637537661}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 208834376}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -350, y: 120}
+  m_SizeDelta: {x: 620, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &637537663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637537661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &637537664
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637537661}
+  m_CullTransparentMesh: 1
+--- !u!1 &649051979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 649051980}
+  - component: {fileID: 649051982}
+  - component: {fileID: 649051981}
+  m_Layer: 5
+  m_Name: Boss HP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &649051980
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649051979}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 208834376}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -350, y: 120}
+  m_SizeDelta: {x: 600, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &649051981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649051979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0.029678345, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: dbb3d226ab06eae48afa669eb3317deb, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &649051982
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649051979}
+  m_CullTransparentMesh: 1
 --- !u!1 &873792984
 GameObject:
   m_ObjectHideFlags: 0
@@ -1818,6 +1970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98d92bb0a0e02d44688f075106c1308c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isPermanantlyAware: 0
   _playerAwarenessDistance: 8
 --- !u!95 &1051906093
 Animator:
@@ -2695,6 +2848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98d92bb0a0e02d44688f075106c1308c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isPermanantlyAware: 0
   _playerAwarenessDistance: 8
 --- !u!50 &1284934665
 Rigidbody2D:
@@ -54561,6 +54715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98d92bb0a0e02d44688f075106c1308c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isPermanantlyAware: 0
   _playerAwarenessDistance: 8
 --- !u!95 &1633827148
 Animator:
@@ -55393,7 +55548,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6224619052740373723, guid: 7419828339bcc73409cfeb2200a9280f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2064563246}
   m_SourcePrefab: {fileID: 100100000, guid: 7419828339bcc73409cfeb2200a9280f, type: 3}
 --- !u!1 &1936077782
 GameObject:
@@ -55563,6 +55721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98d92bb0a0e02d44688f075106c1308c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isPermanantlyAware: 0
   _playerAwarenessDistance: 8
 --- !u!95 &1936077790
 Animator:
@@ -56124,6 +56283,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6224619052740373723, guid: 7419828339bcc73409cfeb2200a9280f, type: 3}
   m_PrefabInstance: {fileID: 1905053611}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2064563246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064563229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1fc6316d50b3c64193ce2c535bbc281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthBar: {fileID: 649051979}
+  _healthBackground: {fileID: 637537661}
 --- !u!1001 &553973553994860061
 PrefabInstance:
   m_ObjectHideFlags: 0
