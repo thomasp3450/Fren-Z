@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 3860568076509328486}
   - component: {fileID: 4554279213943906111}
   - component: {fileID: 7880995494447996012}
+  - component: {fileID: 2994861275464101608}
+  - component: {fileID: 7824143925909853448}
   m_Layer: 0
   m_Name: Boss1
   m_TagString: Untagged
@@ -39,7 +41,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0.87, y: 4.04, z: -0.21}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,10 +84,34 @@ MonoBehaviour:
       m_Calls: []
   Damaged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6224619052740373723}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   Died:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6224619052740373723}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _maximumHealth: 100
   _currentHealth: 100
   _isInvincible: 0
@@ -192,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98d92bb0a0e02d44688f075106c1308c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerAwarenessDistance: 5
+  _playerAwarenessDistance: 8
 --- !u!114 &2439917438236689630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +271,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 582729923470578621, guid: fc43105e649ed8246bdd78b9de55c63c, type: 3}
   _EnemyOffset: {fileID: 8811924952272710057}
+  _bulletSpeed: 9
+  _bulletAmount: 20
+  _timeBetweenShots: 0.12
 --- !u!114 &3860568076509328486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,6 +334,33 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5}
+  m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.7, y: 1}
   m_Direction: 1
+--- !u!114 &2994861275464101608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6224619052740373723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f20522ee22e0ddc4893fc70b5b0da635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flashLength: 1
+  _flashColor: {r: 0.9716981, g: 0.30709326, b: 0.30709326, a: 0}
+  _numberOfFlashes: 2
+--- !u!114 &7824143925909853448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6224619052740373723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de25ae2036255548b640a46fc83fb4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
