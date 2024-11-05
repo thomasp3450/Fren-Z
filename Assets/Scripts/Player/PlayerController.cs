@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour{
     private Rigidbody2D _Rigidbody;
     [SerializeField] public GameObject _frenzyBar;
     [SerializeField] public GameObject _frenzyBarBackground;
+    [SerializeField] public GameObject _UIAmountOfBloodBombs;
+    [SerializeField] public GameObject _UIAmountOfStimPacks;
 
     Animator animator;
 
@@ -100,6 +102,8 @@ public class PlayerController : MonoBehaviour{
 
     private void FixedUpdate() { //move and rotate with input
         SetPlayerVelocity();
+        _UIAmountOfBloodBombs.GetComponent<TMPro.TextMeshProUGUI>().text = "" + _amountOfBloodBombs + "";
+        _UIAmountOfStimPacks.GetComponent<TMPro.TextMeshProUGUI>().text = "" + _amountOfSyringes + "";
         if (!_isAttacking) RotateWithDirection();
         // Debug.Log("Active speed: " + _ActiveSpeed);
         
@@ -239,6 +243,9 @@ public class PlayerController : MonoBehaviour{
         yield return new WaitForSeconds(.2f);
         animator.SetInteger("ComboInt", 0);
         animator.SetBool("isLightAttack", false);
+        Destroy(lightAttack1, 0.1f);
+        Destroy(lightAttack2, 0.1f);
+        Destroy(lightAttack3, 0.1f);
         // endlag
         yield return new WaitForSeconds(.2f);
         // Returns player to speed

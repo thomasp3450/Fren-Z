@@ -480,7 +480,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.31, y: 0.31}
   m_Direction: 0
 --- !u!1 &208834371
 GameObject:
@@ -1205,7 +1205,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.31, y: 0.31}
   m_Direction: 0
 --- !u!1 &873792984
 GameObject:
@@ -1632,7 +1632,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.31, y: 0.31}
   m_Direction: 0
 --- !u!114 &980494409 stripped
 MonoBehaviour:
@@ -2176,7 +2176,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.31, y: 0.31}
   m_Direction: 0
 --- !u!114 &1244233825 stripped
 MonoBehaviour:
@@ -2367,7 +2367,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5000001, y: 0.5000001}
+  m_Size: {x: 0.31, y: 0.31}
   m_Direction: 0
 --- !u!1 &1277176912
 GameObject:
@@ -2979,7 +2979,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5000001, y: 0.5000001}
+  m_Size: {x: 0.31, y: 0.31}
   m_Direction: 0
 --- !u!1 &1374483940
 GameObject:
@@ -3222,7 +3222,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.31, y: 0.31}
   m_Direction: 0
 --- !u!1001 &1391601123
 PrefabInstance:
@@ -54060,6 +54060,8 @@ MonoBehaviour:
   _isAttacking: 0
   _frenzyBar: {fileID: 1991570999}
   _frenzyBarBackground: {fileID: 1374483940}
+  _UIAmountOfBloodBombs: {fileID: 873792984}
+  _UIAmountOfStimPacks: {fileID: 282801630}
   _lightAttack: {fileID: 6418040206497973099, guid: 316ba9889f7990442b4e1c85bd3fbb1d, type: 3}
   _heavyAttack: {fileID: 7662931250973109321, guid: f70dff8d5c981f24ba2dffd8f022def8, type: 3}
 --- !u!114 &1522820037
@@ -54243,8 +54245,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.03}
-  m_Size: {x: 0.19, y: 0.15}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.14, y: 0.1}
   m_Direction: 1
 --- !u!114 &1522820046
 MonoBehaviour:
@@ -54317,7 +54319,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.14, y: 0.105}
+  m_Size: {x: 0.11, y: 0.03}
   m_EdgeRadius: 0.2
 --- !u!1 &1597491025
 GameObject:
@@ -54773,7 +54775,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.31, y: 0.31}
   m_Direction: 0
 --- !u!114 &1647466440 stripped
 MonoBehaviour:
@@ -55932,7 +55934,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.31, y: 0.31}
   m_Direction: 0
 --- !u!114 &2018202720 stripped
 MonoBehaviour:
@@ -56115,7 +56117,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.31, y: 0.31}
   m_Direction: 0
 --- !u!1 &2064563229 stripped
 GameObject:
