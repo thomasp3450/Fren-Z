@@ -6,6 +6,8 @@ TagManager:
   tags:
   - PlayerHitbox
   - Walls
+  - Gate
+  - Key
   layers:
   - Default
   - TransparentFX
