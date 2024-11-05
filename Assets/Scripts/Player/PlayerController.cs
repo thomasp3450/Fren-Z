@@ -184,7 +184,7 @@ public class PlayerController : MonoBehaviour{
 
     public void ChangeFrenzyGauge(float increase){
         // Increases or decreases the frenzy gauge's value.
-        Debug.Log("Change in player's frenzy gauge. " + _FrenzyMeter + "/" + _FrenzyMeterMax);
+        // Debug.Log("Change in player's frenzy gauge. " + _FrenzyMeter + "/" + _FrenzyMeterMax);
         if (_isFrenzied == true) _FrenzyMeter += increase;
     }
 
@@ -193,7 +193,7 @@ public class PlayerController : MonoBehaviour{
         _power = _standardDamage;
     }
 
-    public IEnumerator ComboAttack() {
+    /* public IEnumerator ComboAttack() {
         // Coroutine for the multi-hitting combo attack.
         // Slows player
         _ActiveSpeed = 5;
@@ -201,22 +201,46 @@ public class PlayerController : MonoBehaviour{
         _lightAttack.SetActive(true);
         animator.SetInteger("ComboInt", 1);
         animator.SetBool("isLightAttack", true);
-        yield return new WaitForSeconds(.01f);
+        yield return new WaitForSeconds(.1f);
         _lightAttack.SetActive(false); 
-        yield return new WaitForSeconds(.01f);
+        yield return new WaitForSeconds(.1f);
         _lightAttack.SetActive(true);
         animator.SetInteger("ComboInt", 2);
-        yield return new WaitForSeconds(.01f);
+        yield return new WaitForSeconds(.1f);
         _lightAttack.SetActive(false);
-        yield return new WaitForSeconds(.01f);
+        yield return new WaitForSeconds(.1f);
         _lightAttack.SetActive(true);
         animator.SetInteger("ComboInt", 3);
-        yield return new WaitForSeconds(.01f);
+        yield return new WaitForSeconds(.1f);
         _lightAttack.SetActive(false);
         animator.SetInteger("ComboInt", 0);
         animator.SetBool("isLightAttack", false);
         // endlag
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.2f);
+        // Returns player to speed
+        _ActiveSpeed = _Speed;
+        _isAttacking = false;
+    } */
+
+    public IEnumerator ComboAttack() {
+        // Coroutine for the multi-hitting combo attack.
+        // Slows player
+        _ActiveSpeed = 5;
+        // The three hits
+        GameObject lightAttack1 = Instantiate(_lightAttack, gameObject.transform.position, transform.rotation);
+        animator.SetInteger("ComboInt", 1);
+        animator.SetBool("isLightAttack", true);
+        yield return new WaitForSeconds(.2f);
+        GameObject lightAttack2 = Instantiate(_lightAttack, gameObject.transform.position, transform.rotation);
+        animator.SetInteger("ComboInt", 2);
+        yield return new WaitForSeconds(.2f);
+        GameObject lightAttack3 = Instantiate(_lightAttack, gameObject.transform.position, transform.rotation);
+        animator.SetInteger("ComboInt", 3);
+        yield return new WaitForSeconds(.2f);
+        animator.SetInteger("ComboInt", 0);
+        animator.SetBool("isLightAttack", false);
+        // endlag
+        yield return new WaitForSeconds(.2f);
         // Returns player to speed
         _ActiveSpeed = _Speed;
         _isAttacking = false;
@@ -228,14 +252,14 @@ public class PlayerController : MonoBehaviour{
             // Prevents concurrent attack
             _isAttacking = true;
             // Instantiates hitbox prefab
-            GameObject lightAttack = Instantiate(_lightAttack, gameObject.transform.position, transform.rotation);
-            lightAttack.SetActive(true);
+            // GameObject lightAttack = Instantiate(_lightAttack, gameObject.transform.position, transform.rotation);
+            // lightAttack.SetActive(true);
             _lastLightAttackTime = Time.time;
-            Rigidbody2D rigidbody = lightAttack.GetComponent<Rigidbody2D>();
+            // Rigidbody2D rigidbody = lightAttack.GetComponent<Rigidbody2D>();
             // Starts the attack coroutine to carry out the attack's duration
             StartCoroutine(ComboAttack());
             // Destroys the instance.
-            Destroy(lightAttack, 1);
+            // Destroy(lightAttack, 1);
         }
     }
 
