@@ -19,7 +19,7 @@ public class B1Slam : State
     hasWaited = true;
   }
 
-  IEnumerator wait(){ //wait for a 3 seconds in idle before transitioning to the attacks
+  IEnumerator wait(){ 
     yield return new WaitForSeconds(2); 
     hasWaited = true;
   }
