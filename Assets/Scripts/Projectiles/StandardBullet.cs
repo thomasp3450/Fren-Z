@@ -19,6 +19,11 @@ public class StandardBullet : MonoBehaviour {
 
         }
 
+        if(collision.gameObject.tag == "Walls"){ //prevent bullet wall passthrough
+            Destroy(gameObject, 0.01f);
+        }
+
+
     }
 
     private void OnTriggerExit2D (Collider2D collision) {

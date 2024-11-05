@@ -22,6 +22,10 @@ public class EnemyBullet : MonoBehaviour {
             collision.GetComponent<HealthController>().InitIFrames();
 
         }
+        
+        if(collision.gameObject.tag == "Walls"){ //prevent bullet wall passthrough
+            Destroy(gameObject, 0.01f);
+        }
 
     }
 
