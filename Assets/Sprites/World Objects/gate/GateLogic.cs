@@ -13,6 +13,7 @@ public class GateLogic : MonoBehaviour
 
     public bool isColliderEnabled;
 
+
     IEnumerator wait(){ 
         yield return new WaitForSeconds(5); //stay open 5 seconds
     }
@@ -21,6 +22,7 @@ public class GateLogic : MonoBehaviour
     {   
         key = Key.gameObject.GetComponent<Keycard>();
         hasAccess = false;
+
         isColliderEnabled = true;
         animator = GetComponent<Animator>();
         
@@ -31,10 +33,10 @@ public class GateLogic : MonoBehaviour
             hasAccess = true;
         }
 
-        if(isColliderEnabled = false){
-            GetComponent<Collider2D>().enabled = false;
+        if(isColliderEnabled == false){
+            GetComponent<BoxCollider2D>().enabled = false;
         }else{
-            GetComponent<Collider2D>().enabled = true;
+            GetComponent<BoxCollider2D>().enabled = true;
         }
     }
 
@@ -42,10 +44,10 @@ public class GateLogic : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player"){ 
         
-            if(hasAccess){
-                isColliderEnabled = false;
+            if(hasAccess){ 
                 StartCoroutine(AllowAccess());
-                isColliderEnabled = true;
+                StartCoroutine(Close());
+                
             }else{
                 StartCoroutine(DenyAccess());
             }
@@ -53,9 +55,16 @@ public class GateLogic : MonoBehaviour
     }
 
     IEnumerator AllowAccess(){
+        isColliderEnabled = false;
         animator.Play("GateOpen");
         yield return new WaitForSeconds(5);
+    }
+
+    IEnumerator Close(){
+        yield return new WaitForSeconds(5);
         animator.Play("GateClosed");
+        isColliderEnabled = true;
+    
     }
 
      IEnumerator DenyAccess(){
