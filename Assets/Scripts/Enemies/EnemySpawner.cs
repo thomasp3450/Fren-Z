@@ -11,22 +11,25 @@ public class EnemySpawner : MonoBehaviour
     private HealthController healthController;
     private PlayerAwarenessController playerAwarenessController;
     private Vector3 TransformPosition;
+    float bossHealth;
     
     void Start()
     {
         healthController = BossAttached.GetComponent<HealthController>();
         playerAwarenessController = GetComponent<PlayerAwarenessController>();
-        StartCoroutine(SpawnEnemy());
         TransformPosition = transform.position;
+        InvokeRepeating("SpawnEnemy", 10f, 10f); 
+        bossHealth = getHealth();
     }
 
     void Update()
     {
-        float bossHealth = getHealth();
-        if(bossHealth >= 0 && playerAwarenessController.AwareOfPlayer){
+        bossHealth = getHealth();
+        if(bossHealth >= 0){
             isActive = true;
         }else{
             isActive = false;
+            //gameObject.SetActive(false);
         }
     }
 
@@ -35,10 +38,8 @@ public class EnemySpawner : MonoBehaviour
     }
    
 
-    IEnumerator SpawnEnemy(){
-        
-        while(isActive){
-            yield return new WaitForSeconds(6f); //wait 6 seconds before spawning new enemy
+    void SpawnEnemy(){
+       if(isActive){
             Instantiate(enemyType, TransformPosition, Quaternion.identity);
         }
 
