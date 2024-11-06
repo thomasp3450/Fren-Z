@@ -20,9 +20,14 @@ public class EnemyMovement : MonoBehaviour {
     float _rotationSpeed;
     [SerializeField]
     public bool _isRangedEnemy;
+    [SerializeField]
+    public float _FrenzyReplenishment;
 
 
     Animator animator;
+
+
+    GameObject player;
     
 
     private void Awake() {
@@ -31,6 +36,7 @@ public class EnemyMovement : MonoBehaviour {
         _camera = Camera.main;
         _targetDirection = Vector2.up;
         animator = GetComponent<Animator>();
+        if (player == null) player = GameObject.FindGameObjectWithTag("Player");
     }
     
     private void FixedUpdate() {
@@ -42,6 +48,10 @@ public class EnemyMovement : MonoBehaviour {
             SetVelocity(_speed);
         }
         
+    }
+
+    void OnDisable() {
+        if (player != null) player.GetComponent<PlayerController>().ChangeFrenzyGauge(_FrenzyReplenishment);
     }
 
     private void SetVelocity(float value) {
@@ -99,4 +109,8 @@ public class EnemyMovement : MonoBehaviour {
             _targetDirection = rotation * Vector2.up;
         }
     }
+
+
+
+
 }

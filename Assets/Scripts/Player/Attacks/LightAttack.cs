@@ -12,7 +12,7 @@ public class LightAttack : MonoBehaviour {
             
             isColliding = true;
             Debug.Log("Light attack landed. Enemy HP: " + collision.GetComponent<HealthController>().getHealth());
-            collision.GetComponent<HealthController>().TakeDamage(5);
+            collision.GetComponent<HealthController>().TakeDamage(3);
             collision.GetComponent<HealthController>().InitIFrames();
             gameObject.SetActive(false);
         }

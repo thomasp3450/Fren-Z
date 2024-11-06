@@ -383,7 +383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Died.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Damaged.m_PersistentCalls.m_Calls.Array.size
@@ -427,7 +427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -667,7 +667,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Died.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Damaged.m_PersistentCalls.m_Calls.Array.size
@@ -1176,6 +1176,7 @@ MonoBehaviour:
   _speed: 1
   _rotationSpeed: 720
   _isRangedEnemy: 1
+  _FrenzyReplenishment: 0
 --- !u!114 &350795875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1622,7 +1623,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Died.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Damaged.m_PersistentCalls.m_Calls.Array.size
@@ -2037,7 +2038,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Died.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Damaged.m_PersistentCalls.m_Calls.Array.size
@@ -2431,7 +2432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Died.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Damaged.m_PersistentCalls.m_Calls.Array.size
@@ -2791,7 +2792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Died.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Damaged.m_PersistentCalls.m_Calls.Array.size
@@ -3105,6 +3106,7 @@ MonoBehaviour:
   _speed: 1
   _rotationSpeed: 720
   _isRangedEnemy: 1
+  _FrenzyReplenishment: 0
 --- !u!114 &1051906092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3886,6 +3888,7 @@ MonoBehaviour:
   _speed: 1
   _rotationSpeed: 720
   _isRangedEnemy: 1
+  _FrenzyReplenishment: 0
 --- !u!114 &1284934664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4097,7 +4100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Died.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Damaged.m_PersistentCalls.m_Calls.Array.size
@@ -4141,7 +4144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -54604,7 +54607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Died.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Damaged.m_PersistentCalls.m_Calls.Array.size
@@ -55656,6 +55659,7 @@ MonoBehaviour:
   _speed: 1
   _rotationSpeed: 720
   _isRangedEnemy: 1
+  _FrenzyReplenishment: 0
 --- !u!114 &1633827147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56047,7 +56051,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Died.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Damaged.m_PersistentCalls.m_Calls.Array.size
@@ -56119,7 +56123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Died.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Damaged.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
@@ -56307,7 +56311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Died.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 157367342247498860, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
       propertyPath: Damaged.m_PersistentCalls.m_Calls.Array.size
@@ -56796,6 +56800,7 @@ MonoBehaviour:
   _speed: 1
   _rotationSpeed: 720
   _isRangedEnemy: 1
+  _FrenzyReplenishment: 0
 --- !u!114 &1936077789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57451,6 +57456,7 @@ MonoBehaviour:
   _speed: 1
   _rotationSpeed: 720
   _isRangedEnemy: 1
+  _FrenzyReplenishment: 0
 --- !u!114 &2134997217
 MonoBehaviour:
   m_ObjectHideFlags: 0
