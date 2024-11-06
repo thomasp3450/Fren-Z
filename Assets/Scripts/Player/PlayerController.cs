@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour{
         SetPlayerVelocity();
         _UIAmountOfBloodBombs.GetComponent<TMPro.TextMeshProUGUI>().text = "" + _amountOfBloodBombs + "";
         _UIAmountOfStimPacks.GetComponent<TMPro.TextMeshProUGUI>().text = "" + _amountOfSyringes + "";
-        if (!_isAttacking) RotateWithDirection();
+        RotateWithDirection();
         // Debug.Log("Active speed: " + _ActiveSpeed);
         
         if(_isFrenzied){
@@ -234,12 +234,15 @@ public class PlayerController : MonoBehaviour{
         GameObject lightAttack1 = Instantiate(_lightAttack, gameObject.transform.position, transform.rotation);
         animator.SetInteger("ComboInt", 1);
         animator.SetBool("isLightAttack", true);
+        lightAttack1.transform.rotation = transform.rotation;
         yield return new WaitForSeconds(.2f);
         GameObject lightAttack2 = Instantiate(_lightAttack, gameObject.transform.position, transform.rotation);
         animator.SetInteger("ComboInt", 2);
+        lightAttack2.transform.rotation = transform.rotation;
         yield return new WaitForSeconds(.2f);
         GameObject lightAttack3 = Instantiate(_lightAttack, gameObject.transform.position, transform.rotation);
         animator.SetInteger("ComboInt", 3);
+        lightAttack3.transform.rotation = transform.rotation;
         yield return new WaitForSeconds(.2f);
         animator.SetInteger("ComboInt", 0);
         animator.SetBool("isLightAttack", false);
@@ -247,7 +250,7 @@ public class PlayerController : MonoBehaviour{
         Destroy(lightAttack2, 0.1f);
         Destroy(lightAttack3, 0.1f);
         // endlag
-        yield return new WaitForSeconds(.2f);
+        // yield return new WaitForSeconds(.2f);
         // Returns player to speed
         _ActiveSpeed = _Speed;
         _isAttacking = false;
