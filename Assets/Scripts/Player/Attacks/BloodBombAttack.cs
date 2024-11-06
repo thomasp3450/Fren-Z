@@ -27,7 +27,7 @@ public class BloodBombAttack : MonoBehaviour {
         if (collision.GetComponent<EnemyMovement>()) {
             _hasDetonated = true;
             _collider.size = new Vector2(_explodedSize.x, _explodedSize.y);
-            collision.GetComponent<HealthController>().TakeDamage(5);
+            collision.GetComponent<HealthController>().TakeDamage(10);
             collision.GetComponent<HealthController>().InitIFrames();
         }
 
