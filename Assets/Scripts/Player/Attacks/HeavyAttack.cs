@@ -5,9 +5,9 @@ using UnityEngine;
 public class HeavyAttack : MonoBehaviour
 {
     private void OnTriggerEnter2D (Collider2D collision) {
-        Debug.Log("Heavy attack landed against " + collision.gameObject.name);
 
         if (collision.GetComponent<EnemyHitFlash>()) {
+            Debug.Log("Heavy attack landed against " + collision.gameObject.name);
             // gameObject.SetActive(false);
             collision.GetComponent<HealthController>().TakeDamage(10);
             collision.GetComponent<HealthController>().InitIFrames();

@@ -35,9 +35,10 @@ public class PlayerController : MonoBehaviour{
 
     Animator animator;
 
-    [SerializeField]
-    private GameObject _lightAttack;
+    [SerializeField] private GameObject _lightAttack;
     private float _lastLightAttackTime;
+    public int _comboLink = 0;
+
     [SerializeField]
     private GameObject _heavyAttack;
 
@@ -121,15 +122,21 @@ public class PlayerController : MonoBehaviour{
 
         }
 
+        // Resets combo if time has passed since last hit
+        if ((Time.time - _lastLightAttackTime) > 2) {
+            _comboLink = 0;
+        }
+
         if(_DashCoolDownCounter > 0){
              _DashCoolDownCounter -= Time.deltaTime;
         }
 
-        // If player fills the Frenzy gauge.
-        if (_isFrenzied && _FrenzyMeter >= _FrenzyMeterMax) { 
+        // Changes player out of frenzy mode after gauge is filled.
+        if (_isFrenzied && GetFrenzyMeter() >= GetFrenzyMeterMax()) { 
             gameObject.GetComponent<HealthController>().AddHealth(1);
             ExitFrenzyMode();
         }
+
         // Player depletes the Frenzy gauge and loses.
         if (_isFrenzied && _FrenzyMeter <= 0) {
             _FrenzyMeter = 0;
@@ -137,6 +144,14 @@ public class PlayerController : MonoBehaviour{
         }
 
         _frenzyBar.GetComponent<Image>().fillAmount = _FrenzyMeter / _FrenzyMeterMax;
+    }
+
+    public float GetFrenzyMeter(){
+        return _FrenzyMeter;
+    }
+
+    public float GetFrenzyMeterMax(){
+        return _FrenzyMeterMax;
     }
 
     private void SetPlayerVelocity(){ // creates smoother movement by transitioning vectors over 0.05 seconds
@@ -228,79 +243,104 @@ public class PlayerController : MonoBehaviour{
 
     public IEnumerator ComboAttack() {
         // Coroutine for the multi-hitting combo attack.
-        // Slows player
-        _ActiveSpeed = 5;
-        // The three hits
-        GameObject lightAttack1 = Instantiate(_lightAttack, gameObject.transform.position, transform.rotation);
-        animator.SetInteger("ComboInt", 1);
-        animator.SetBool("isLightAttack", true);
-        lightAttack1.transform.rotation = transform.rotation;
-        yield return new WaitForSeconds(.2f);
-        GameObject lightAttack2 = Instantiate(_lightAttack, gameObject.transform.position, transform.rotation);
-        animator.SetInteger("ComboInt", 2);
-        lightAttack2.transform.rotation = transform.rotation;
-        yield return new WaitForSeconds(.2f);
-        GameObject lightAttack3 = Instantiate(_lightAttack, gameObject.transform.position, transform.rotation);
-        animator.SetInteger("ComboInt", 3);
-        lightAttack3.transform.rotation = transform.rotation;
-        yield return new WaitForSeconds(.2f);
-        animator.SetInteger("ComboInt", 0);
-        animator.SetBool("isLightAttack", false);
-        Destroy(lightAttack1, 0.1f);
-        Destroy(lightAttack2, 0.1f);
-        Destroy(lightAttack3, 0.1f);
-        // endlag
-        // yield return new WaitForSeconds(.2f);
-        // Returns player to speed
-        _ActiveSpeed = _Speed;
-        _isAttacking = false;
+        if (!_isAttacking && _comboLink < 3) {
+
+            // Prevents concurrent attack
+            _isAttacking = true;
+            
+            // Slows player
+            _ActiveSpeed = 3;
+            _lastLightAttackTime = Time.time;
+
+            // Plays animation
+            _comboLink++;
+            animator.SetBool("isLightAttack", true);
+            animator.SetInteger("ComboInt", _comboLink);
+
+            yield return new WaitForSeconds((float)0.10);
+
+            _ActiveSpeed = 2;
+            
+            // Instantiates hitbox prefab
+            GameObject lightAttack1 = Instantiate(_lightAttack, gameObject.transform.position, transform.rotation);
+            lightAttack1.transform.rotation = transform.rotation;
+            yield return new WaitForSeconds((float)0.10);
+            
+            // Destroys the instance.
+            Destroy(lightAttack1, 0.1f);
+
+            // player returns to normal speed and can do next combo attack
+            yield return new WaitForSeconds((float)0.30);
+            animator.SetInteger("ComboInt", 0);
+            animator.SetBool("isLightAttack", false);
+            _ActiveSpeed = _Speed;
+            _isAttacking = false;
+            if (_comboLink >= 3) {
+                _comboLink = 0;
+            }
+        }
     }
     
     public void OnLightAttack() {
         // Initiates the combo attack.
         if (gameObject.GetComponent<PlayerController>()._isFrenzied && !_isAttacking) {
-            // Prevents concurrent attack
-            _isAttacking = true;
-            // Instantiates hitbox prefab
-            // GameObject lightAttack = Instantiate(_lightAttack, gameObject.transform.position, transform.rotation);
-            // lightAttack.SetActive(true);
-            _lastLightAttackTime = Time.time;
-            // Rigidbody2D rigidbody = lightAttack.GetComponent<Rigidbody2D>();
+
             // Starts the attack coroutine to carry out the attack's duration
             StartCoroutine(ComboAttack());
-            // Destroys the instance.
-            // Destroy(lightAttack, 1);
+
         }
+    }
+
+    IEnumerator DoSomething(float duration) {
+        // Debug.Log("Before");
+
+        // waits here
+        yield return new WaitForSeconds(duration);
+
+        // Debug.Log("After");
     }
 
     public IEnumerator HeavyAttack() {
         // Coroutine for the heavy attack.
         if (!_isAttacking) {
             // prevents player from attacking repeatedly.
+            _ActiveSpeed = 6;
             _isAttacking = true;
             animator.SetBool("isHeavyAttack", true);
-            // Activates the heavy attack's hitbox and keeps it up for 2 seconds, feel free to change
-            _heavyAttack.SetActive(true);
-            yield return new WaitForSeconds(.3f);
-            _heavyAttack.SetActive(false);
-            _ActiveSpeed = _Speed;
-            _isAttacking = false;
-            animator.SetBool("isHeavyAttack", false);
-        }
-    }
 
-    public void OnHeavyAttack() {
-        // Initiates the heavy attack.
-        if (gameObject.GetComponent<PlayerController>()._isFrenzied && !_isAttacking) {
+            // Delays
+            yield return new WaitForSeconds((float)0.30);
+            _ActiveSpeed = 3;
             // Instantiates hitbox prefab
             GameObject heavyAttack = Instantiate(_heavyAttack, gameObject.transform.position, transform.rotation);
             heavyAttack.SetActive(true);
             _lastLightAttackTime = Time.time;
             Rigidbody2D rigidbody = heavyAttack.GetComponent<Rigidbody2D>();
-            // Starts the attack coroutine to carry out the attack's duration
-            StartCoroutine(HeavyAttack());
+
+            // Activates the heavy attack's hitbox and keeps it up for 2 seconds, feel free to change
+            _heavyAttack.SetActive(true);
+            // yield return new WaitForSeconds(.1f);
+            _heavyAttack.SetActive(false);
+            
+            animator.SetBool("isHeavyAttack", false);
+
             // Destroys the instance.
             Destroy(heavyAttack, 1);
+
+            yield return new WaitForSeconds((float)0.30);
+            _ActiveSpeed = _Speed;
+            _isAttacking = false;
+        }
+    }
+
+    public void OnHeavyAttack() {
+
+        // Initiates the heavy attack.
+        if (gameObject.GetComponent<PlayerController>()._isFrenzied && !_isAttacking) {
+            
+            // Starts the attack coroutine to carry out the attack's duration
+            StartCoroutine(HeavyAttack());
+            
         }
     }
 }
