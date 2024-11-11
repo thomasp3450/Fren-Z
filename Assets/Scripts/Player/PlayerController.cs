@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour{
         // Debug.Log("Active speed: " + _ActiveSpeed);
         
         if(_isFrenzied){
-            _FrenzyMeter -= Time.deltaTime/2;
+            _FrenzyMeter -= Time.deltaTime;
         }
         if(_DashCounter > 0){ // dash cooldown counter calculation
             _DashCounter -= Time.deltaTime;
@@ -264,15 +264,17 @@ public class PlayerController : MonoBehaviour{
             // Instantiates hitbox prefab
             GameObject lightAttack1 = Instantiate(_lightAttack, gameObject.transform.position, transform.rotation);
             lightAttack1.transform.rotation = transform.rotation;
-            yield return new WaitForSeconds((float)0.10);
-            
+
             // Destroys the instance.
             Destroy(lightAttack1, 0.1f);
 
-            // player returns to normal speed and can do next combo attack
-            yield return new WaitForSeconds((float)0.30);
+            yield return new WaitForSeconds((float)0.40);
+
             animator.SetInteger("ComboInt", 0);
             animator.SetBool("isLightAttack", false);
+
+            // player returns to normal speed and can do next combo attack
+            yield return new WaitForSeconds((float)0.40);
             _ActiveSpeed = _Speed;
             _isAttacking = false;
             if (_comboLink >= 3) {
@@ -340,6 +342,7 @@ public class PlayerController : MonoBehaviour{
             
             // Starts the attack coroutine to carry out the attack's duration
             StartCoroutine(HeavyAttack());
+            _comboLink = 0;
             
         }
     }
