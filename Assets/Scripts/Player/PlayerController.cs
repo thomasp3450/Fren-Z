@@ -249,7 +249,7 @@ public class PlayerController : MonoBehaviour{
             _isAttacking = true;
             
             // Slows player
-            _ActiveSpeed = 3;
+            _ActiveSpeed = 6;
             _lastLightAttackTime = Time.time;
 
             // Plays animation
@@ -259,7 +259,7 @@ public class PlayerController : MonoBehaviour{
 
             yield return new WaitForSeconds((float)0.10);
 
-            _ActiveSpeed = 2;
+            _ActiveSpeed = 3;
             
             // Instantiates hitbox prefab
             GameObject lightAttack1 = Instantiate(_lightAttack, gameObject.transform.position, transform.rotation);
