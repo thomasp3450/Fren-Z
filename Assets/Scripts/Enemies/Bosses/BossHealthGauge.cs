@@ -13,7 +13,7 @@ public class BossHealthGauge : MonoBehaviour {
             _healthBackground.SetActive(true);
             _healthBar.GetComponent<Image>().fillAmount = gameObject.GetComponent<HealthController>().RemainingHealthPercentage;
         }
-        if (gameObject.GetComponent<HealthController>().getHealth() <= 15) {
+        if (gameObject.GetComponent<HealthController>().getHealth() <= 10) {
             _healthBackground.SetActive(false);
             _healthBar.SetActive(false);
         }

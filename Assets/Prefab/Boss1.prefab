@@ -112,8 +112,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _maximumHealth: 100
-  _currentHealth: 100
+  _maximumHealth: 500
+  _currentHealth: 500
   _isInvincible: 0
 --- !u!50 &6891858233950999994
 Rigidbody2D:
@@ -127,7 +127,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 100
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -300,8 +300,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _screenBorder: 0
   _speed: 0
-  _rotationSpeed: 40
+  _rotationSpeed: 65
   _isRangedEnemy: 0
+  _FrenzyReplenishment: 0
 --- !u!70 &7880995494447996012
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -335,7 +336,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.7, y: 1}
+  m_Size: {x: 1, y: 1}
   m_Direction: 1
 --- !u!114 &2994861275464101608
 MonoBehaviour:

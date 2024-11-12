@@ -409,8 +409,30 @@
                 },
                 {
                     "name": "",
-                    "id": "fad39af2-cb5c-4714-a406-de12c50a7951",
-                    "path": "",
+                    "id": "926d40a1-4aea-422e-990d-aaf89f21e7e9",
+                    "path": "<Mouse>/forwardButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeOutOfFrenzy",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c9b8927e-fa3f-42a1-a123-f9def6d54633",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeOutOfFrenzy",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "41d4c00d-fc44-4769-9ac2-674c313ae9da",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

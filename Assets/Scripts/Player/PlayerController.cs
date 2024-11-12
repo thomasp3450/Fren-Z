@@ -33,6 +33,9 @@ public class PlayerController : MonoBehaviour{
     [SerializeField] public GameObject _UIAmountOfBloodBombs;
     [SerializeField] public GameObject _UIAmountOfStimPacks;
 
+    [SerializeField] public float _transformCooldown;
+    public float _activeTransformCooldown = 0;
+
     Animator animator;
 
     [SerializeField] private GameObject _lightAttack;
@@ -70,12 +73,17 @@ public class PlayerController : MonoBehaviour{
 
     public void onFrenzy(InputAction.CallbackContext context) {
         // Debug.Log("Frenzy value: " + _FrenzyMeter);
-        if (_isFrenzied == true && _FrenzyMeter >= 100 ) {
+        /* if (_isFrenzied == true && _FrenzyMeter >= 100 ) {
             gameObject.GetComponent<HealthController>().AddHealth(1);
             ExitFrenzyMode();
         }
         else{
             EnterFrenzyMode();
+        } */
+
+        if (_isFrenzied == false && _activeTransformCooldown <= 0) {
+            EnterFrenzyMode();
+            _activeTransformCooldown += _transformCooldown;
         }
     }
 
@@ -106,6 +114,13 @@ public class PlayerController : MonoBehaviour{
         _UIAmountOfBloodBombs.GetComponent<TMPro.TextMeshProUGUI>().text = "" + _amountOfBloodBombs + "";
         _UIAmountOfStimPacks.GetComponent<TMPro.TextMeshProUGUI>().text = "" + _amountOfSyringes + "";
         RotateWithDirection();
+
+        // Prevents gauge overflow
+        if (GetFrenzyMeter() > GetFrenzyMeterMax()) _FrenzyMeter = _FrenzyMeterMax;
+
+        // Prevents accidental transformations between states
+        if (_activeTransformCooldown > 0) _activeTransformCooldown--;
+
         // Debug.Log("Active speed: " + _ActiveSpeed);
         
         if(_isFrenzied){
@@ -132,10 +147,10 @@ public class PlayerController : MonoBehaviour{
         }
 
         // Changes player out of frenzy mode after gauge is filled.
-        if (_isFrenzied && GetFrenzyMeter() >= GetFrenzyMeterMax()) { 
+        /* if (_isFrenzied && GetFrenzyMeter() >= GetFrenzyMeterMax()) { 
             gameObject.GetComponent<HealthController>().AddHealth(1);
             ExitFrenzyMode();
-        }
+        } */
 
         // Player depletes the Frenzy gauge and loses.
         if (_isFrenzied && _FrenzyMeter <= 0) {
@@ -212,35 +227,6 @@ public class PlayerController : MonoBehaviour{
         _power = _standardDamage;
     }
 
-    /* public IEnumerator ComboAttack() {
-        // Coroutine for the multi-hitting combo attack.
-        // Slows player
-        _ActiveSpeed = 5;
-        // The three hits
-        _lightAttack.SetActive(true);
-        animator.SetInteger("ComboInt", 1);
-        animator.SetBool("isLightAttack", true);
-        yield return new WaitForSeconds(.1f);
-        _lightAttack.SetActive(false); 
-        yield return new WaitForSeconds(.1f);
-        _lightAttack.SetActive(true);
-        animator.SetInteger("ComboInt", 2);
-        yield return new WaitForSeconds(.1f);
-        _lightAttack.SetActive(false);
-        yield return new WaitForSeconds(.1f);
-        _lightAttack.SetActive(true);
-        animator.SetInteger("ComboInt", 3);
-        yield return new WaitForSeconds(.1f);
-        _lightAttack.SetActive(false);
-        animator.SetInteger("ComboInt", 0);
-        animator.SetBool("isLightAttack", false);
-        // endlag
-        yield return new WaitForSeconds(.2f);
-        // Returns player to speed
-        _ActiveSpeed = _Speed;
-        _isAttacking = false;
-    } */
-
     public IEnumerator ComboAttack() {
         // Coroutine for the multi-hitting combo attack.
         if (!_isAttacking && _comboLink < 3) {
@@ -249,7 +235,7 @@ public class PlayerController : MonoBehaviour{
             _isAttacking = true;
             
             // Slows player
-            _ActiveSpeed = 6;
+            _ActiveSpeed = 2;
             _lastLightAttackTime = Time.time;
 
             // Plays animation
@@ -257,9 +243,9 @@ public class PlayerController : MonoBehaviour{
             animator.SetBool("isLightAttack", true);
             animator.SetInteger("ComboInt", _comboLink);
 
-            yield return new WaitForSeconds((float)0.10);
+            yield return new WaitForSeconds((float)(Time.deltaTime * 3));
 
-            _ActiveSpeed = 3;
+            _ActiveSpeed = 1;
             
             // Instantiates hitbox prefab
             GameObject lightAttack1 = Instantiate(_lightAttack, gameObject.transform.position, transform.rotation);
@@ -268,18 +254,20 @@ public class PlayerController : MonoBehaviour{
             // Destroys the instance.
             Destroy(lightAttack1, 0.1f);
 
-            yield return new WaitForSeconds((float)0.40);
+            yield return new WaitForSeconds((float)(Time.deltaTime * 2));
 
             animator.SetInteger("ComboInt", 0);
             animator.SetBool("isLightAttack", false);
-
-            // player returns to normal speed and can do next combo attack
-            yield return new WaitForSeconds((float)0.40);
-            _ActiveSpeed = _Speed;
-            _isAttacking = false;
             if (_comboLink >= 3) {
                 _comboLink = 0;
             }
+
+            // player returns to normal speed and can do next combo attack
+            yield return new WaitForSeconds((float)(Time.deltaTime * 2));
+            _isAttacking = false;
+
+            yield return new WaitForSeconds((float)0.30);
+            _ActiveSpeed = _Speed;
         }
     }
     
@@ -293,26 +281,17 @@ public class PlayerController : MonoBehaviour{
         }
     }
 
-    IEnumerator DoSomething(float duration) {
-        // Debug.Log("Before");
-
-        // waits here
-        yield return new WaitForSeconds(duration);
-
-        // Debug.Log("After");
-    }
-
     public IEnumerator HeavyAttack() {
         // Coroutine for the heavy attack.
         if (!_isAttacking) {
             // prevents player from attacking repeatedly.
-            _ActiveSpeed = 6;
+            _ActiveSpeed = 2;
             _isAttacking = true;
             animator.SetBool("isHeavyAttack", true);
 
             // Delays
             yield return new WaitForSeconds((float)0.30);
-            _ActiveSpeed = 3;
+            _ActiveSpeed = 1;
             // Instantiates hitbox prefab
             GameObject heavyAttack = Instantiate(_heavyAttack, gameObject.transform.position, transform.rotation);
             heavyAttack.SetActive(true);
@@ -330,8 +309,10 @@ public class PlayerController : MonoBehaviour{
             Destroy(heavyAttack, 1);
 
             yield return new WaitForSeconds((float)0.30);
-            _ActiveSpeed = _Speed;
             _isAttacking = false;
+
+            yield return new WaitForSeconds((float)0.50);
+            _ActiveSpeed = _Speed;
         }
     }
 

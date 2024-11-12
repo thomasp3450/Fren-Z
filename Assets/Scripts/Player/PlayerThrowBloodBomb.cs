@@ -32,7 +32,7 @@ public class PlayerThrowBloodBomb : MonoBehaviour {
         _lastFireTime = Time.time;
         Rigidbody2D rigidbody = bloodBomb.GetComponent<Rigidbody2D>();
         rigidbody.velocity = _throwingSpeed * transform.up;
-        Destroy(bloodBomb, 3);
+        Destroy(bloodBomb, 5);
     }
 
 
@@ -52,8 +52,8 @@ public class PlayerThrowBloodBomb : MonoBehaviour {
 
     public IEnumerator DetonateBloodBomb() {
         if (!gameObject.GetComponent<PlayerController>()._isAttacking) {
+            gameObject.GetComponent<PlayerController>()._comboLink = 0;
             gameObject.GetComponent<PlayerController>()._isAttacking = true;
-            // animator.SetBool("isThrowingBloodBomb", true);
             yield return new WaitForSeconds(2);
             _bloodBombPrefab.SetActive(true);
             yield return new WaitForSeconds(.5f);
