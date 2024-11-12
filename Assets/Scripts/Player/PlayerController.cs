@@ -236,6 +236,7 @@ public class PlayerController : MonoBehaviour{
             
             // Slows player
             _ActiveSpeed = 2;
+            _RotationSpeed = 960/4;
             _lastLightAttackTime = Time.time;
 
             // Plays animation
@@ -268,6 +269,7 @@ public class PlayerController : MonoBehaviour{
 
             yield return new WaitForSeconds((float)0.30);
             _ActiveSpeed = _Speed;
+            _RotationSpeed = 960;
         }
     }
     
@@ -286,6 +288,7 @@ public class PlayerController : MonoBehaviour{
         if (!_isAttacking) {
             // prevents player from attacking repeatedly.
             _ActiveSpeed = 2;
+            _RotationSpeed = 960/4;
             _isAttacking = true;
             animator.SetBool("isHeavyAttack", true);
 
@@ -313,6 +316,7 @@ public class PlayerController : MonoBehaviour{
 
             yield return new WaitForSeconds((float)0.50);
             _ActiveSpeed = _Speed;
+            _RotationSpeed = 960;
         }
     }
 

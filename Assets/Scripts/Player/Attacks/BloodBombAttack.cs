@@ -47,7 +47,12 @@ public class BloodBombAttack : MonoBehaviour {
             collision.GetComponent<HealthController>().InitIFrames();
         }
         if(collision.gameObject.tag == "Walls"){ //prevent bullet wall passthrough
-            Destroy(gameObject, 0.01f);
+            gameObject.GetComponent<Animator>().Play("isDetonating");
+            _hasDetonated = true;
+            Rigidbody2D rigidbody = gameObject.GetComponent<Rigidbody2D>();
+            rigidbody.velocity = new Vector2(0,0);
+            gameObject.transform.localScale = new Vector3((float)7.5, (float)7.5,0);
+            _collider.size = new Vector2((float)0.5, (float)0.5);
         }
 
     }
