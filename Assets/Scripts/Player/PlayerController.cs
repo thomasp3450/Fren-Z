@@ -124,6 +124,7 @@ public class PlayerController : MonoBehaviour{
 
         _comboAttackCooldownText.GetComponent<TMPro.TextMeshProUGUI>().text = "Light Attack Cooldown: " + _currentComboAttackCooldown + "";
         _dashAttackCooldownText.GetComponent<TMPro.TextMeshProUGUI>().text = "Dash Cooldown: " + _DashCoolDownCounter + "";
+        if (_DashCoolDownCounter < 0) _DashCoolDownCounter = 0;
 
         // Prevents accidental transformations between states
         if (_activeTransformCooldown > 0) _activeTransformCooldown--;
