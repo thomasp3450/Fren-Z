@@ -138,7 +138,7 @@ public class PlayerController : MonoBehaviour{
         }
 
         // Resets combo if time has passed since last hit
-        if ((Time.time - _lastLightAttackTime) > 2) {
+        if ((Time.time - _lastLightAttackTime) > 1) {
             _comboLink = 0;
         }
 
@@ -241,6 +241,9 @@ public class PlayerController : MonoBehaviour{
 
             // Plays animation
             _comboLink++;
+            if (_comboLink == 1) gameObject.GetComponent<Animator>().Play("player_frenzy_light_atk_1");
+            if (_comboLink == 2) gameObject.GetComponent<Animator>().Play("player_frenzy_light_atk_2");
+            if (_comboLink == 3) gameObject.GetComponent<Animator>().Play("player_frenzy_light_atk_3");
             animator.SetBool("isLightAttack", true);
             animator.SetInteger("ComboInt", _comboLink);
 
@@ -255,10 +258,11 @@ public class PlayerController : MonoBehaviour{
             // Destroys the instance.
             Destroy(lightAttack1, 0.1f);
 
-            yield return new WaitForSeconds((float)(Time.deltaTime * 2));
-
             animator.SetInteger("ComboInt", 0);
             animator.SetBool("isLightAttack", false);
+
+            yield return new WaitForSeconds((float)(Time.deltaTime * 2));
+
             if (_comboLink >= 3) {
                 _comboLink = 0;
             }
