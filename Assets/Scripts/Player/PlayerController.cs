@@ -32,8 +32,9 @@ public class PlayerController : MonoBehaviour{
     [SerializeField] public GameObject _frenzyBarBackground;
     [SerializeField] public GameObject _UIAmountOfBloodBombs;
     [SerializeField] public GameObject _UIAmountOfStimPacks;
-    [SerializeField] public GameObject _comboAttackCooldownText;
-    [SerializeField] public GameObject _dashAttackCooldownText;
+    GameObject lightAttack1;
+    // [SerializeField] public GameObject _comboAttackCooldownText;
+    // [SerializeField] public GameObject _dashAttackCooldownText;
 
     [SerializeField] public float _transformCooldown;
     public float _activeTransformCooldown = 0;
@@ -98,10 +99,12 @@ public class PlayerController : MonoBehaviour{
             if (collision.GetComponent<EnemyMovement>() && GetComponent<HealthController>()._isInvincible == false) {
                 // Debug.Log("Player's HP was reduced.");
                 gameObject.GetComponent<HealthController>().TakeDamage(1);
+                gameObject.GetComponent<SpriteFlash>().StartFlash(1, new Color((float)255,(float)0.0,(float)0.0), 1);
             }
         } else if (collision.GetComponent<EnemyMovement>()) {
             // Takes a small fraction of the player's frenzy gauge
             if (!_gaugeInvincible) _FrenzyMeter -= 2;
+            gameObject.GetComponent<SpriteFlash>().StartFlash(1, new Color((float)255,(float)0.0,(float)0.0), 1);
             // Debug.Log("Player's frenzy gauge was reduced.");
         }
         if (collision.GetComponent<EnemyMovement>()) {
@@ -122,8 +125,8 @@ public class PlayerController : MonoBehaviour{
         // Prevents gauge overflow
         if (GetFrenzyMeter() > GetFrenzyMeterMax()) _FrenzyMeter = _FrenzyMeterMax;
 
-        _comboAttackCooldownText.GetComponent<TMPro.TextMeshProUGUI>().text = "Light Attack Cooldown: " + _currentComboAttackCooldown + "";
-        _dashAttackCooldownText.GetComponent<TMPro.TextMeshProUGUI>().text = "Dash Cooldown: " + _DashCoolDownCounter + "";
+        // _comboAttackCooldownText.GetComponent<TMPro.TextMeshProUGUI>().text = "Light Attack Cooldown: " + _currentComboAttackCooldown + "";
+        // _dashAttackCooldownText.GetComponent<TMPro.TextMeshProUGUI>().text = "Dash Cooldown: " + _DashCoolDownCounter + "";
         if (_DashCoolDownCounter < 0) _DashCoolDownCounter = 0;
 
         // Prevents accidental transformations between states
@@ -133,6 +136,11 @@ public class PlayerController : MonoBehaviour{
         if (_currentComboAttackCooldown > 0) _currentComboAttackCooldown--;
 
         // Debug.Log("Active speed: " + _ActiveSpeed);
+
+        if (lightAttack1 != null) {
+            lightAttack1.transform.position = transform.position;
+            lightAttack1.transform.rotation = transform.rotation;
+        }
         
         if(_isFrenzied){
             _FrenzyMeter -= Time.deltaTime;
@@ -151,7 +159,7 @@ public class PlayerController : MonoBehaviour{
         // Resets combo if time has passed since last hit
         if (_comboLink > 0 && ((Time.time - _lastLightAttackTime) > 1)) {
             _comboLink = 0;
-            _currentComboAttackCooldown += _comboAttackCooldown;
+            _currentComboAttackCooldown += _comboAttackCooldown/2;
         }
 
         if(_DashCoolDownCounter > 0){
@@ -268,11 +276,12 @@ public class PlayerController : MonoBehaviour{
             _ActiveSpeed = 1;
             
             // Instantiates hitbox prefab
-            GameObject lightAttack1 = Instantiate(_lightAttack, gameObject.transform.position, transform.rotation);
+            lightAttack1 = Instantiate(_lightAttack, gameObject.transform.position, transform.rotation);
             lightAttack1.transform.rotation = transform.rotation;
+            lightAttack1.transform.position = transform.position;
 
             // Destroys the instance.
-            Destroy(lightAttack1, 0.1f);
+            Destroy(lightAttack1, .6f);
 
             animator.SetInteger("ComboInt", 0);
             animator.SetBool("isLightAttack", false);

@@ -3497,7 +3497,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1081663163
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3755,7 +3755,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Z/LS
+  m_text: C/LS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -55521,6 +55521,7 @@ GameObject:
   - component: {fileID: 1522820046}
   - component: {fileID: 1522820047}
   - component: {fileID: 1522820049}
+  - component: {fileID: 1522820050}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -55773,12 +55774,10 @@ MonoBehaviour:
   _frenzyBarBackground: {fileID: 1374483940}
   _UIAmountOfBloodBombs: {fileID: 873792984}
   _UIAmountOfStimPacks: {fileID: 282801630}
-  _comboAttackCooldownText: {fileID: 1616797296}
-  _dashAttackCooldownText: {fileID: 1081663162}
   _transformCooldown: 60
   _activeTransformCooldown: 0
   _lightAttack: {fileID: 6418040206497973099, guid: 316ba9889f7990442b4e1c85bd3fbb1d, type: 3}
-  _comboAttackCooldown: 60
+  _comboAttackCooldown: 30
   _currentComboAttackCooldown: 0
   _comboLink: 0
   _heavyAttack: {fileID: 7662931250973109321, guid: f70dff8d5c981f24ba2dffd8f022def8, type: 3}
@@ -56051,6 +56050,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fff8b3d6b7e35c4cb260a1764fe5d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1522820050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522820031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de25ae2036255548b640a46fc83fb4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1597491025
 GameObject:
   m_ObjectHideFlags: 0
@@ -56140,7 +56151,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1616797297
 RectTransform:
   m_ObjectHideFlags: 0
