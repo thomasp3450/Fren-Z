@@ -103,8 +103,10 @@ public class PlayerController : MonoBehaviour{
             }
         } else if (collision.GetComponent<EnemyMovement>()) {
             // Takes a small fraction of the player's frenzy gauge
-            if (!_gaugeInvincible) _FrenzyMeter -= 2;
-            gameObject.GetComponent<SpriteFlash>().StartFlash(1, new Color((float)255,(float)0.0,(float)0.0), 1);
+            if (!_gaugeInvincible) {
+                _FrenzyMeter -= 2;
+                gameObject.GetComponent<SpriteFlash>().StartFlash(1, new Color((float)255,(float)0.0,(float)0.0), 1);
+            }
             // Debug.Log("Player's frenzy gauge was reduced.");
         }
         if (collision.GetComponent<EnemyMovement>()) {
