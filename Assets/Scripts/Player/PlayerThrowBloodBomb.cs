@@ -43,6 +43,10 @@ public class PlayerThrowBloodBomb : MonoBehaviour {
             if (timeSinceLastFire >= _timeBetweenShots || _lastFireTime == 0) {
                 gameObject.GetComponent<PlayerController>()._amountOfBloodBombs--;
                 ThrowBloodBomb();  
+                if (gameObject.GetComponent<PlayerController>()._comboLink > 0) {
+                    gameObject.GetComponent<PlayerController>()._comboLink = 0;
+                    gameObject.GetComponent<PlayerController>()._currentComboAttackCooldown += gameObject.GetComponent<PlayerController>().GetComboAttackCooldown();
+                }
                 // animator.SetBool("isThrowingBloodBomb", true);
             }else{
                 // animator.SetBool("isThrowingBloodBomb", false);

@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour{
     [SerializeField] public GameObject _frenzyBarBackground;
     [SerializeField] public GameObject _UIAmountOfBloodBombs;
     [SerializeField] public GameObject _UIAmountOfStimPacks;
+    [SerializeField] public GameObject _comboAttackCooldownText;
+    [SerializeField] public GameObject _dashAttackCooldownText;
 
     [SerializeField] public float _transformCooldown;
     public float _activeTransformCooldown = 0;
@@ -39,6 +41,8 @@ public class PlayerController : MonoBehaviour{
     Animator animator;
 
     [SerializeField] private GameObject _lightAttack;
+    [SerializeField] float _comboAttackCooldown;
+    public float _currentComboAttackCooldown = 0;
     private float _lastLightAttackTime;
     public int _comboLink = 0;
 
@@ -118,8 +122,14 @@ public class PlayerController : MonoBehaviour{
         // Prevents gauge overflow
         if (GetFrenzyMeter() > GetFrenzyMeterMax()) _FrenzyMeter = _FrenzyMeterMax;
 
+        _comboAttackCooldownText.GetComponent<TMPro.TextMeshProUGUI>().text = "Light Attack Cooldown: " + _currentComboAttackCooldown + "";
+        _dashAttackCooldownText.GetComponent<TMPro.TextMeshProUGUI>().text = "Dash Cooldown: " + _DashCoolDownCounter + "";
+
         // Prevents accidental transformations between states
         if (_activeTransformCooldown > 0) _activeTransformCooldown--;
+
+        // Prevents spamming of light attack
+        if (_currentComboAttackCooldown > 0) _currentComboAttackCooldown--;
 
         // Debug.Log("Active speed: " + _ActiveSpeed);
         
@@ -138,8 +148,9 @@ public class PlayerController : MonoBehaviour{
         }
 
         // Resets combo if time has passed since last hit
-        if ((Time.time - _lastLightAttackTime) > 1) {
+        if (_comboLink > 0 && ((Time.time - _lastLightAttackTime) > 1)) {
             _comboLink = 0;
+            _currentComboAttackCooldown += _comboAttackCooldown;
         }
 
         if(_DashCoolDownCounter > 0){
@@ -167,6 +178,10 @@ public class PlayerController : MonoBehaviour{
 
     public float GetFrenzyMeterMax(){
         return _FrenzyMeterMax;
+    }
+
+    public float GetComboAttackCooldown(){
+        return _comboAttackCooldown;
     }
 
     private void SetPlayerVelocity(){ // creates smoother movement by transitioning vectors over 0.05 seconds
@@ -265,13 +280,13 @@ public class PlayerController : MonoBehaviour{
 
             if (_comboLink >= 3) {
                 _comboLink = 0;
+                _currentComboAttackCooldown += _comboAttackCooldown;
             }
 
             // player returns to normal speed and can do next combo attack
-            yield return new WaitForSeconds((float)(Time.deltaTime * 2));
-            _isAttacking = false;
+            yield return new WaitForSeconds((float)((Time.deltaTime * 4)+((Time.deltaTime) * _comboLink)));
 
-            yield return new WaitForSeconds((float)0.30);
+            _isAttacking = false;
             _ActiveSpeed = _Speed;
             _RotationSpeed = 960;
         }
@@ -279,7 +294,7 @@ public class PlayerController : MonoBehaviour{
     
     public void OnLightAttack() {
         // Initiates the combo attack.
-        if (gameObject.GetComponent<PlayerController>()._isFrenzied && !_isAttacking) {
+        if (gameObject.GetComponent<PlayerController>()._isFrenzied && !_isAttacking && _currentComboAttackCooldown <= 0) {
 
             // Starts the attack coroutine to carry out the attack's duration
             StartCoroutine(ComboAttack());
@@ -331,7 +346,11 @@ public class PlayerController : MonoBehaviour{
             
             // Starts the attack coroutine to carry out the attack's duration
             StartCoroutine(HeavyAttack());
-            _comboLink = 0;
+
+            if (_comboLink > 0) {
+                _comboLink = 0;
+                _currentComboAttackCooldown += _comboAttackCooldown;
+            }
             
         }
     }
