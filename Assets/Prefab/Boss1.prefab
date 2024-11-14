@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4965378647817081229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5606683325311056791}
+  m_Layer: 0
+  m_Name: ShotPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5606683325311056791
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4965378647817081229}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.45, y: 0.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8811924952272710057}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6224619052740373723
 GameObject:
   m_ObjectHideFlags: 0
@@ -24,6 +55,7 @@ GameObject:
   - component: {fileID: 7880995494447996012}
   - component: {fileID: 2994861275464101608}
   - component: {fileID: 7824143925909853448}
+  - component: {fileID: 5422641590796120408}
   m_Layer: 0
   m_Name: Boss1
   m_TagString: Untagged
@@ -43,7 +75,8 @@ Transform:
   m_LocalPosition: {x: 0.87, y: 4.04, z: -0.21}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 5606683325311056791}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!95 &3741294454758792430
@@ -271,6 +304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 582729923470578621, guid: fc43105e649ed8246bdd78b9de55c63c, type: 3}
   _EnemyOffset: {fileID: 8811924952272710057}
+  _BulletSpawnOffset: {fileID: 5606683325311056791}
   _bulletSpeed: 9
   _bulletAmount: 20
   _timeBetweenShots: 0.12
@@ -365,3 +399,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7de25ae2036255548b640a46fc83fb4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5422641590796120408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6224619052740373723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1fc6316d50b3c64193ce2c535bbc281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthBar: {fileID: 0}
+  _healthBackground: {fileID: 0}

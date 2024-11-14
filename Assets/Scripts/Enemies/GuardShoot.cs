@@ -13,9 +13,16 @@ public class GuardShoot : MonoBehaviour
     [SerializeField]
     private float _bulletSpeed;
 
-    // The positional offset of the gun
+    // The positional offset of the enemy
     [SerializeField]
     private Transform _EnemyOffset;
+
+    
+    // The positional offset of the Barrel
+    [SerializeField]
+    private Transform _BulletOffset;
+
+    
    
     // Frames between each shot.
     [SerializeField]
@@ -47,7 +54,7 @@ public class GuardShoot : MonoBehaviour
 
     private void FireBullet() {
        
-        GameObject bullet = Instantiate(_bulletPrefab, _EnemyOffset.position, transform.rotation);
+        GameObject bullet = Instantiate(_bulletPrefab, _BulletOffset.position, transform.rotation);
         _lastFireTime = Time.time;
         Rigidbody2D rigidbody = bullet.GetComponent<Rigidbody2D>();
         rigidbody.velocity = _bulletSpeed * transform.up;

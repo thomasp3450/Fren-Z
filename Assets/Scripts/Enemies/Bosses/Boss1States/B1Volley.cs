@@ -11,6 +11,8 @@ public class B1Volley : State
     [SerializeField]
     private Transform _EnemyOffset;  
 
+    [SerializeField]
+    private Transform _BulletSpawnOffset;
     // The velocity of which the bullet travels.
     [SerializeField]
     private float _bulletSpeed;
@@ -31,7 +33,7 @@ public class B1Volley : State
    
 
     private void FireBullet() {
-        GameObject bullet = Instantiate(_bulletPrefab, _EnemyOffset.position, transform.rotation);
+        GameObject bullet = Instantiate(_bulletPrefab, _BulletSpawnOffset.position, transform.rotation);
         _lastFireTime = Time.time;
         Rigidbody2D rigidbody = bullet.GetComponent<Rigidbody2D>();
         rigidbody.velocity = _bulletSpeed * transform.up;

@@ -46,7 +46,7 @@ public class GateLogic : MonoBehaviour
         
             if(hasAccess){ 
                 StartCoroutine(AllowAccess());
-                StartCoroutine(Close());
+                //StartCoroutine(Close());
                 
             }else{
                 StartCoroutine(DenyAccess());
