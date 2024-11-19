@@ -873,7 +873,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 826cc0059e93f354e96d7bb42af64ca9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c81b27509c3ff6541b2cc4cfc6a10f99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1139,7 +1139,7 @@ Animator:
   m_GameObject: {fileID: 503708361}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 11d08aa1eaf643d42a26c32e25e0a5e9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2493,7 +2493,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1465466954}
-  music: {fileID: 8300000, guid: 6c49add6697a6e0428ee1d59f00faae2, type: 3}
+  SFXSource: {fileID: 0}
+  musicTracks: []
+  SFXclips: []
 --- !u!1 &1604160776
 GameObject:
   m_ObjectHideFlags: 0
