@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class SyringeAoE : MonoBehaviour
 {
+    
+    [SerializeField] float projectilespeed;
+
+    private void Start(){
+       
+    }
+
+    private void Update(){
+
+    }
+
     private void OnTriggerEnter2D (Collider2D collision) {
 
     if (collision.GetComponent<PlayerController>()) {
@@ -22,7 +33,7 @@ public class SyringeAoE : MonoBehaviour
         }
     }
  }
-private void OnTriggerExit2D (Collider2D collision) {
+    private void OnTriggerExit2D (Collider2D collision) {
     if (collision.GetComponent<EnemyMovement>()) {
         collision.GetComponent<HealthController>().ExitIFrames();
     }

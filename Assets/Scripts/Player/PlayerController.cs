@@ -69,6 +69,7 @@ public class PlayerController : MonoBehaviour{
             _ActiveSpeed = _DashSpeed;
             _DashCounter = _DashLength;
             if (_isFrenzied) GetComponent<HealthController>().InitIFrames();
+            AudioManager.Instance.PlaySFX("LightAttack");
         } else if (GetComponent<HealthController>()._isInvincible) {
             GetComponent<HealthController>().ExitIFrames();
         }
@@ -227,6 +228,7 @@ public class PlayerController : MonoBehaviour{
         if (_isFrenzied == false) _FrenzyMeter = _FrenzyMeterMax/2;
         _isFrenzied = true;
         animator.SetBool("Frenzied", true);
+        AudioManager.Instance.PlaySFX("Frenzy");
         GetComponent<HealthController>()._isInvincible = true;
         // Debug.Log(_FrenzyMeter);
         _frenzyBar.SetActive(true);
@@ -237,6 +239,7 @@ public class PlayerController : MonoBehaviour{
         // To be called when the player is to exit frenzy mode.
         _isFrenzied = false;
         animator.SetBool("Frenzied", false);
+        AudioManager.Instance.PlaySFX("Frenzy");
         GetComponent<HealthController>()._isInvincible = false;
         _frenzyBar.SetActive(false);
         _frenzyBarBackground.SetActive(false);
@@ -267,9 +270,18 @@ public class PlayerController : MonoBehaviour{
 
             // Plays animation
             _comboLink++;
-            if (_comboLink == 1) gameObject.GetComponent<Animator>().Play("player_frenzy_light_atk_1");
-            if (_comboLink == 2) gameObject.GetComponent<Animator>().Play("player_frenzy_light_atk_2");
-            if (_comboLink == 3) gameObject.GetComponent<Animator>().Play("player_frenzy_light_atk_3");
+            if (_comboLink == 1){
+                gameObject.GetComponent<Animator>().Play("player_frenzy_light_atk_1");
+                AudioManager.Instance.PlaySFX("LightAttack");
+            } 
+            if (_comboLink == 2){
+                gameObject.GetComponent<Animator>().Play("player_frenzy_light_atk_2");
+                AudioManager.Instance.PlaySFX("LightAttack");
+            }
+            if (_comboLink == 3){
+                gameObject.GetComponent<Animator>().Play("player_frenzy_light_atk_3");
+                AudioManager.Instance.PlaySFX("LightAttackFinisher");
+            } 
             animator.SetBool("isLightAttack", true);
             animator.SetInteger("ComboInt", _comboLink);
 
@@ -322,6 +334,7 @@ public class PlayerController : MonoBehaviour{
             _RotationSpeed = 960/4;
             _isAttacking = true;
             animator.SetBool("isHeavyAttack", true);
+             AudioManager.Instance.PlaySFX("HeavyAttack");
 
             // Delays
             yield return new WaitForSeconds((float)0.30);

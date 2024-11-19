@@ -34,6 +34,8 @@ public class BloodBombAttack : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D (Collider2D collision) {
+       
+       AudioManager.Instance.PlaySFX("BloodBomb");
 
         if (collision.GetComponent<EnemyMovement>()) {
             gameObject.GetComponent<Animator>().Play("isDetonating");

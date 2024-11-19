@@ -299,6 +299,7 @@ MonoBehaviour:
   _bulletSpeed: 10
   _gunOffset: {fileID: 9072254754549129935}
   _timeBetweenShots: 0.5
+  shootAudio: {fileID: 8300000, guid: 2723f42d28b034541a256b896b642d76, type: 3}
 --- !u!114 &2183675562876853736
 MonoBehaviour:
   m_ObjectHideFlags: 0

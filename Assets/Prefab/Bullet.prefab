@@ -161,3 +161,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511ca045238f4e54683466b688d1eb2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactPrefab: {fileID: 6801977968373452984, guid: 4aa41b97d0d58fc4aa6f093954521d23, type: 3}
+  shotSound: {fileID: 8300000, guid: 2723f42d28b034541a256b896b642d76, type: 3}

@@ -23,5 +23,9 @@ public class B2ScalpelShot : State
         StartCoroutine(wait());
     }
     public override void Exit(){} 
-    public override void Tick(){}
+    public override void Tick(){
+        if(hasWaited){
+             _stateMachine.ChangeState<B2Weakened>();
+        }
+    }
 }

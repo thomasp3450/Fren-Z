@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class StandardBullet : MonoBehaviour {
 
-    private void OnTriggerEnter2D (Collider2D collision) {
+[SerializeField] GameObject impactPrefab;
 
+
+    private void Start(){
+       AudioManager.Instance.PlaySFX("Gunshot");
+    }
+    private void OnTriggerEnter2D (Collider2D collision) {
+        GameObject impact = Instantiate(impactPrefab, gameObject.transform.position, gameObject.transform.rotation);
+        Destroy(impact, 0.1f);
         if (collision.GetComponent<EnemyMovement>()) {
             // Bullet is destroyed.
             Destroy(gameObject, 0.01f);
@@ -20,7 +27,9 @@ public class StandardBullet : MonoBehaviour {
         }
 
         if(collision.gameObject.tag == "Walls"){ //prevent bullet wall passthrough
+            
             Destroy(gameObject, 0.01f);
+            
         }
 
 

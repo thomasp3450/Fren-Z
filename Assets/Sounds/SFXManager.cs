@@ -10,9 +10,7 @@ public class SFXManager : MonoBehaviour
     private AudioSource soundFXObject;
 
     private void awake(){
-        if(instance == null){
             instance = this;
-        }  
     }
 
     public void playSFX(AudioClip audioClip, Transform spawnTransform, float volume){        

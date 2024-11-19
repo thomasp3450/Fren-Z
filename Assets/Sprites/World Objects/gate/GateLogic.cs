@@ -57,6 +57,7 @@ public class GateLogic : MonoBehaviour
     IEnumerator AllowAccess(){
         isColliderEnabled = false;
         animator.Play("GateOpen");
+        AudioManager.Instance.PlaySFX("DoorWoosh");
         yield return new WaitForSeconds(5);
     }
 

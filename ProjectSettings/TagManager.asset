@@ -8,6 +8,7 @@ TagManager:
   - Walls
   - Gate
   - Key
+  - Boss
   layers:
   - Default
   - TransparentFX

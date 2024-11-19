@@ -3,8 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour {
+    [SerializeField] GameObject impactPrefab;
+
+    private void Start(){
+       AudioManager.Instance.PlaySFX("Gunshot");
+    }
+
 
     private void OnTriggerEnter2D (Collider2D collision) {
+
+        GameObject impact = Instantiate(impactPrefab, gameObject.transform.position, gameObject.transform.rotation);
+        Destroy(impact, 0.1f); //bullet impact sprite
 
         if (collision.GetComponent<PlayerController>()) {
             // Bullet is destroyed.
@@ -16,7 +25,7 @@ public class EnemyBullet : MonoBehaviour {
                     collision.GetComponent<SpriteFlash>().StartFlash(1, new Color((float)255,(float)0.0,(float)0.0), 1);
                 } 
             } else {
-                // Enemy takes damage
+                
                 if (collision.GetComponent<HealthController>()._isInvincible) {
                     collision.GetComponent<HealthController>().TakeDamage(1);
                     collision.GetComponent<SpriteFlash>().StartFlash(1, new Color((float)255,(float)0.0,(float)0.0), 1);

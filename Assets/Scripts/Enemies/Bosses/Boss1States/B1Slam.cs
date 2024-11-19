@@ -28,6 +28,7 @@ public class B1Slam : State
     _stateMachine = GetComponent<StateMachine>(); 
     animator = GetComponent<Animator>();
     animator.SetBool("IsSlamming", true);
+    AudioManager.Instance.PlaySFX("Boss1Slam");
     StartCoroutine(wait());
    }
 

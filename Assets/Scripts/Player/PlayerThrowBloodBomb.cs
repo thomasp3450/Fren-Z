@@ -60,6 +60,7 @@ public class PlayerThrowBloodBomb : MonoBehaviour {
             gameObject.GetComponent<PlayerController>()._isAttacking = true;
             yield return new WaitForSeconds(2);
             _bloodBombPrefab.SetActive(true);
+            
             yield return new WaitForSeconds(.5f);
             _bloodBombPrefab.SetActive(false);
             gameObject.GetComponent<PlayerController>()._ActiveSpeed = gameObject.GetComponent<PlayerController>()._Speed;

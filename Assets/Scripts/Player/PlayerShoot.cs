@@ -27,6 +27,8 @@ public class PlayerShoot : MonoBehaviour {
     
     Animator animator;
 
+   
+
 
     // Start is called before the first frame update
     void Start() {
@@ -56,6 +58,7 @@ public class PlayerShoot : MonoBehaviour {
             if (timeSinceLastFire >= _timeBetweenShots || _lastFireTime == 0) {
                 FireBullet();  
                 animator.SetBool("Shooting", true);
+                
             }else{
                 animator.SetBool("Shooting",false);
             }

@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 3335706242044380641}
   - component: {fileID: 5739209152339838099}
   - component: {fileID: 888784103003949309}
+  - component: {fileID: 4321297371674117669}
   m_Layer: 0
   m_Name: Grunt
   m_TagString: Untagged
@@ -195,18 +196,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: ChangeFrenzyGauge
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 15
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   _maximumHealth: 2
   _currentHealth: 2
   _isInvincible: 0
@@ -234,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f20522ee22e0ddc4893fc70b5b0da635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flashLength: 2
+  _flashLength: 0.27
   _flashColor: {r: 0.7075472, g: 0.06341223, b: 0.10576664, a: 0}
   _numberOfFlashes: 1
 --- !u!70 &3335706242044380641
@@ -327,4 +316,39 @@ CapsuleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.3, y: 0.3}
+  m_Direction: 0
+--- !u!70 &4321297371674117669
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6043323418008464058}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.31, y: 0.31}
   m_Direction: 0
