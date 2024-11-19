@@ -37,11 +37,7 @@ public class B2Idle : State
    public override void Tick(){
 
     if(hasWaited){
-        if(playerAwarenessController.AwareOfPlayer){
-            _stateMachine.ChangeState<B2Spin>();
-        } else{
-            _stateMachine.ChangeState<B2EnergyPistol>();
-        }   
+       _stateMachine.ChangeState<B2Dash>();
     } 
    }
 

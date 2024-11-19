@@ -33,6 +33,12 @@ public class PlayerAwarenessController : MonoBehaviour
         }
     }
 
+    public Vector2 getPlayerDistance(){
+        Vector2 enemyToPlayerVector = _player.position - transform.position;
+        DirectionToPlayer = enemyToPlayerVector.normalized;
+        return DirectionToPlayer;
+    }
+
     public void MakePermanantlyAware() {
         _isPermanantlyAware = true;
         AwareOfPlayer = true;

@@ -9,8 +9,9 @@ public class B2EnergyPistol : State
   protected PlayerAwarenessController playerAwarenessController;
   protected bool hasWaited;
   protected Animator animator;
+  [SerializeField] private Transform _BossOffset;
    IEnumerator wait(){ 
-      yield return new WaitForSeconds(4);
+      yield return new WaitForSeconds(2);
       hasWaited = true; 
    }
 
@@ -19,10 +20,14 @@ public class B2EnergyPistol : State
         healthController = GetComponent<HealthController>();
         playerAwarenessController = GetComponent<PlayerAwarenessController>();
         animator = GetComponent<Animator>();
-    
         StartCoroutine(wait());
+
     }
 
     public override void Exit(){} 
-    public override void Tick(){}
+    public override void Tick(){
+        if(hasWaited){
+            
+        }
+    }
 }

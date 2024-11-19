@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SyringeAoE : MonoBehaviour
-{
+{ //Prefab script for syringe AoE goop
     
     [SerializeField] float projectilespeed;
 

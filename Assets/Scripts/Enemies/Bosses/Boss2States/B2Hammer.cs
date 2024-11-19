@@ -9,6 +9,7 @@ public class B2Hammer : State
   protected PlayerAwarenessController playerAwarenessController;
   protected bool hasWaited;
   protected Animator animator;
+  [SerializeField] private Transform _BossOffset;
    IEnumerator wait(){ 
       yield return new WaitForSeconds(4);
       hasWaited = true; 
