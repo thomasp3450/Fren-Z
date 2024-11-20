@@ -8,8 +8,9 @@ public class B2Weakened : State {
   protected PlayerAwarenessController playerAwarenessController;
   protected bool hasWaited;
   protected Animator animator;
+  int currentPosition;
   IEnumerator wait(){ 
-    yield return new WaitForSeconds(3);
+    yield return new WaitForSeconds(2);
     hasWaited = true; 
   }
 
@@ -18,13 +19,11 @@ public class B2Weakened : State {
     healthController = GetComponent<HealthController>();
     playerAwarenessController = GetComponent<PlayerAwarenessController>();
     animator = GetComponent<Animator>();
-    animator.SetBool("IsWeakened", true);
+
     StartCoroutine(wait());
    }
 
    public override void Exit(){
-    animator.SetBool("IsIdle", true);
-    animator.SetBool("IsWeakened", false);
    }
 
    public override void Tick(){

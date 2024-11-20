@@ -8,7 +8,7 @@ public class B2Syringe : State
    protected B2Dash b2Dash;
   protected HealthController healthController;
   protected PlayerAwarenessController playerAwarenessController;
-  protected bool hasWaited;
+  protected bool hasWaited, hasShot, hasExploded;
   
   protected Animator animator;
   [SerializeField] Transform spawnPoint; //boss 
@@ -17,12 +17,10 @@ public class B2Syringe : State
   [SerializeField] Transform Target3; //dashpos3
 
   [SerializeField] GameObject projectilePrefab;
-  [SerializeField] private float ProjectileSpeed, projectileHeight;
-  [SerializeField] AnimationCurve trajectory;
-  [SerializeField] AnimationCurve trajectoryLinearCorrection;
-  [SerializeField] AnimationCurve ProjectileSpeedCurve;
+  [SerializeField] private float ProjectileSpeed;
 
- 
+  GameObject syringe1, syringe2;
+  int position;
 
 
    IEnumerator wait(){ 
@@ -34,40 +32,59 @@ public class B2Syringe : State
 
 
    IEnumerator SyringeShot(Transform t1, Transform t2){
-        yield return new WaitForSeconds(1);
-        SyringeAoE projectile1 = Instantiate(projectilePrefab, transform.position, Quaternion.identity).GetComponent<SyringeAoE>();
-        projectile1.InitializeProjectile(t1, ProjectileSpeed, projectileHeight);
-        projectile1.InitializeAnimationCurves(trajectory, trajectoryLinearCorrection, ProjectileSpeedCurve);
-        // SyringeAoE projectile2 = Instantiate(projectilePrefab, transform.position, Quaternion.identity).GetComponent<SyringeAoE>();
-        // projectile1.InitializeProjectile(t2, ProjectileSpeed, projectileHeight);
-        // projectile2.InitializeAnimationCurves(trajectory, trajectoryLinearCorrection, ProjectileSpeedCurve);
+        if(syringe1 != null && syringe2 != null && !hasExploded){
+            hasShot = true;
+            yield return new WaitForSeconds(2);
+            float step = ProjectileSpeed * Time.deltaTime;
+
+            syringe1.transform.position = Vector2.MoveTowards(syringe1.transform.position, t1.position, step);
+            syringe2.transform.position = Vector2.MoveTowards(syringe2.transform.position, t2.position, step);
+
+            if(syringe1.transform.position == t1.position){
+                syringe1.GetComponent<Boss2SyringeAttack>().Explode();
+                hasExploded = true;
+            }
+
+            if(syringe2.transform.position == t2.position){
+                syringe2.GetComponent<Boss2SyringeAttack>().Explode();
+                hasExploded = true;
+            }
+        }
+        
     }
+        
     
     public override void Enter(){
-       _stateMachine = GetComponent<B2FSM>(); 
+        _stateMachine = GetComponent<B2FSM>(); 
+        
         healthController = GetComponent<HealthController>();
         playerAwarenessController = GetComponent<PlayerAwarenessController>();
-        b2Dash = gameObject.GetComponent<B2Dash>(); 
         animator = GetComponent<Animator>();
-        int position = _stateMachine.GetPosition();
-        
-        if(position == 1){
-            StartCoroutine(SyringeShot(Target3, Target1));
-        }
-        if(position == 2){
-            StartCoroutine(SyringeShot(Target1, Target3));
-        }
-        if(position == 3){
-            StartCoroutine(SyringeShot(Target2, Target1));
-        }
-
-        StartCoroutine(wait());
+        position = _stateMachine.GetPosition();
+        hasWaited = false;
+        hasShot = false;
+        hasExploded = false;
+        syringe1 = Instantiate(projectilePrefab, transform.position, transform.rotation);
+        syringe2 = Instantiate(projectilePrefab, transform.position, transform.rotation);
     }
 
     public override void Exit(){
 
     } 
-    public override void Tick(){  
+    public override void Tick(){
+
+        if(syringe1 != null && syringe2 != null){
+            if(position == 1){
+                StartCoroutine(SyringeShot(Target3, Target2));
+            }
+            if(position == 2){
+                StartCoroutine(SyringeShot(Target1, Target3));
+            }
+            if(position == 3){
+                StartCoroutine(SyringeShot(Target2, Target1));
+            }
+        }
+        
         if(hasWaited){
              _stateMachine.ChangeState<B2Weakened>();
         }

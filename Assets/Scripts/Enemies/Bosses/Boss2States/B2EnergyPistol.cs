@@ -11,7 +11,7 @@ protected B2FSM _stateMachine; //instantiate the FSM
   protected Animator animator;
   [SerializeField] private Transform _BossOffset;
    IEnumerator wait(){ 
-      yield return new WaitForSeconds(2);
+      yield return new WaitForSeconds(1);
       hasWaited = true; 
    }
 
@@ -27,7 +27,7 @@ protected B2FSM _stateMachine; //instantiate the FSM
     public override void Exit(){} 
     public override void Tick(){
         if(hasWaited){
-            
+             _stateMachine.ChangeState<B2Weakened>();
         }
     }
 }

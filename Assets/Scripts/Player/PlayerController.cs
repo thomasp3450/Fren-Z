@@ -322,6 +322,7 @@ public class PlayerController : MonoBehaviour{
 
             // Starts the attack coroutine to carry out the attack's duration
             StartCoroutine(ComboAttack());
+            ScreenShake.Instance.ShakeCamera(2f, .1f);
 
         }
     }
@@ -368,7 +369,7 @@ public class PlayerController : MonoBehaviour{
 
         // Initiates the heavy attack.
         if (gameObject.GetComponent<PlayerController>()._isFrenzied && !_isAttacking) {
-            
+             ScreenShake.Instance.ShakeCamera(5f, .1f);
             // Starts the attack coroutine to carry out the attack's duration
             StartCoroutine(HeavyAttack());
 

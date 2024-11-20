@@ -9,15 +9,18 @@ public class B2ScalpelShot : State
   protected PlayerAwarenessController playerAwarenessController;
   protected bool hasWaited;
   protected Animator animator;
-  [SerializeField] private Transform _BossOffset;  
+  int currentPosition;
+  [SerializeField] private Transform _BossOffset; 
+  [SerializeField] private GameObject scalpelProjectile;
    IEnumerator wait(){ 
-      yield return new WaitForSeconds(4);
+      yield return new WaitForSeconds(1);
       hasWaited = true; 
    }
 
     public override void Enter(){
        _stateMachine = GetComponent<B2FSM>(); 
         healthController = GetComponent<HealthController>();
+        currentPosition = _stateMachine.GetPosition();
         playerAwarenessController = GetComponent<PlayerAwarenessController>();
         animator = GetComponent<Animator>();
     

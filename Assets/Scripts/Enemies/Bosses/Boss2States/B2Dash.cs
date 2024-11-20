@@ -15,27 +15,30 @@ public class B2Dash : State
     [SerializeField] public Transform pos1, pos2, pos3;
 
     protected bool madeDecision;
+
   int currentPosition;
+  int currentheldPosition;
  
    public override void Enter(){ 
       
       hasWaited = false;
       madeDecision = false;
       _stateMachine = GetComponent<B2FSM>(); 
-      currentPosition = _stateMachine.GetPosition();
+      currentheldPosition = _stateMachine.GetPosition();
+      currentPosition = currentheldPosition;
       playerAwarenessController = GetComponent<PlayerAwarenessController>();
       animator = GetComponent<Animator>();
       //pick destination
         
-        if(currentPosition == 1){
+        if(currentheldPosition == 1){
             Dashdecision(1);   
         }
         
-        else if(currentPosition == 2){
+        else if(currentheldPosition == 2){
             Dashdecision(2);
         }
         
-        else if(currentPosition == 3){
+        else if(currentheldPosition == 3){
             Dashdecision(3);
         }   
    }
@@ -51,8 +54,8 @@ public class B2Dash : State
     StartCoroutine(wait());
     if(hasWaited){
        Vector2 PlayerDistance = playerAwarenessController.getPlayerDistance();
-            if(PlayerDistance.magnitude > 5){
-                _stateMachine.ChangeState<B2EnergyPistol>();
+            if(PlayerDistance.magnitude > 20){
+                _stateMachine.ChangeState<B2Spin>();
             } else{
                 _stateMachine.ChangeState<B2Spin>();
             }
@@ -62,7 +65,7 @@ public class B2Dash : State
    }
 
     IEnumerator wait(){ 
-        yield return new WaitForSeconds(2); 
+         yield return new WaitForSeconds(2);
         hasWaited = true;
     }
 

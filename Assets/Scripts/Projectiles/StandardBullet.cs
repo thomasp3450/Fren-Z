@@ -9,6 +9,7 @@ public class StandardBullet : MonoBehaviour {
 
     private void Start(){
        AudioManager.Instance.PlaySFX("Gunshot");
+       ScreenShake.Instance.ShakeCamera(1f, .1f);
     }
     private void OnTriggerEnter2D (Collider2D collision) {
         GameObject impact = Instantiate(impactPrefab, gameObject.transform.position, gameObject.transform.rotation);

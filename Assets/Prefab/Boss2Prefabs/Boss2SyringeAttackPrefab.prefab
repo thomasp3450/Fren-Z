@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5772691306791717684}
   - component: {fileID: -3882283132221672120}
-  - component: {fileID: -1042045703013744867}
+  - component: {fileID: 6561023368690609066}
   - component: {fileID: -2303265267238069231}
   - component: {fileID: 6354748219624128760}
   - component: {fileID: 3510761382328060194}
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &-1042045703013744867
+--- !u!50 &6561023368690609066
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -102,7 +102,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b25cb59feb34b649a7df430df7ad64b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collider: {fileID: 0}
+  collider: {fileID: -2303265267238069231}
   _hasDetonated: 0
   _sizeDetMultipliedX: 0
   _sizeDetMultipliedY: 0

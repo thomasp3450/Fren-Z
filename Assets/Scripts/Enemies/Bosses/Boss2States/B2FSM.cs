@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class B2FSM : MonoBehaviour
 {
+  
   public State CurrentState => _currentState; 
   State _currentState; //stores current state
-  
   protected bool transition; //checking if changing states
-
+  public int currentPosition;
 
 
   private void Start(){
@@ -45,7 +45,7 @@ public class B2FSM : MonoBehaviour
     }
   }
 
-  public int currentPosition;
+ 
 
   public int GetPosition(){
      return currentPosition;

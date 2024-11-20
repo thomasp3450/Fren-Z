@@ -9,13 +9,15 @@ public class B2Spin : State
   protected PlayerAwarenessController playerAwarenessController;
   protected bool hasWaited;
   protected Animator animator;
+  int currentPosition;
    IEnumerator wait(){ 
-      yield return new WaitForSeconds(4);
+      yield return new WaitForSeconds(1);
       hasWaited = true; 
    }
 
     public override void Enter(){
         _stateMachine = GetComponent<B2FSM>(); 
+        currentPosition = _stateMachine.GetPosition();
         healthController = GetComponent<HealthController>();
         playerAwarenessController = GetComponent<PlayerAwarenessController>();
         animator = GetComponent<Animator>();

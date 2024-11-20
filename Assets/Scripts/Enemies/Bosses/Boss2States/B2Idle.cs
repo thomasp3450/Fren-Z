@@ -8,15 +8,17 @@ public class B2Idle : State
   protected Animator animator;
   protected PlayerAwarenessController playerAwarenessController;
   protected bool hasWaited;
+  int currentPosition;
   
   IEnumerator wait(){ 
-    yield return new WaitForSeconds(1); 
+    yield return new WaitForSeconds(2); 
     hasWaited = true;
   }
   
    public override void Enter(){ 
       hasWaited = false;
       _stateMachine = GetComponent<B2FSM>(); 
+      currentPosition = _stateMachine.GetPosition();
       playerAwarenessController = GetComponent<PlayerAwarenessController>();
       StartCoroutine(wait());
       animator = GetComponent<Animator>();
@@ -26,12 +28,7 @@ public class B2Idle : State
    
 
    public override void Exit(){
-    
-    if(playerAwarenessController.AwareOfPlayer){
-          
-        } else{
-          
-        }
+   
    }
 
    public override void Tick(){
