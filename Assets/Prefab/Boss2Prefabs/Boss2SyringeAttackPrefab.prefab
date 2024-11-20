@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5772691306791717684}
   - component: {fileID: -3882283132221672120}
-  - component: {fileID: -163125760005031851}
   - component: {fileID: -1042045703013744867}
   - component: {fileID: -2303265267238069231}
   - component: {fileID: 6354748219624128760}
+  - component: {fileID: 3510761382328060194}
   m_Layer: 0
   m_Name: Boss2SyringeAttackPrefab
   m_TagString: Untagged
@@ -88,22 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-163125760005031851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1144879895475161758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 443d5569d8249a349b7194d01cf17c84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _collider: {fileID: -2303265267238069231}
-  _hasDetonated: 0
-  _sizeDetMultipliedX: 1
-  _sizeDetMultipliedY: 1
 --- !u!50 &-1042045703013744867
 Rigidbody2D:
   serializedVersion: 4
@@ -187,3 +171,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3510761382328060194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144879895475161758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b25cb59feb34b649a7df430df7ad64b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collider: {fileID: 0}
+  _hasDetonated: 0
+  _sizeDetMultipliedX: 0
+  _sizeDetMultipliedY: 0
