@@ -4,27 +4,29 @@ using UnityEngine;
 
 public class B2Dash : State
 {
-      protected StateMachine _stateMachine; //instantiate the FSM 
+  protected B2FSM _stateMachine; //instantiate the FSM 
   protected Animator animator;
   protected PlayerAwarenessController playerAwarenessController;
   protected bool hasWaited;
-  protected int currentPosition;
+  
   public float bossSpeed;
     [SerializeField] private Transform _BossOffset; 
   
     [SerializeField] public Transform pos1, pos2, pos3;
-  
+
+    protected bool madeDecision;
+  int currentPosition;
  
    public override void Enter(){ 
-      currentPosition = 1;
+      
       hasWaited = false;
-      _stateMachine = GetComponent<StateMachine>(); 
+      madeDecision = false;
+      _stateMachine = GetComponent<B2FSM>(); 
+      currentPosition = _stateMachine.GetPosition();
       playerAwarenessController = GetComponent<PlayerAwarenessController>();
       animator = GetComponent<Animator>();
-      pos1 = this.gameObject.transform.GetChild(0);
-      pos2 = this.gameObject.transform.GetChild(1);
-      pos3 = this.gameObject.transform.GetChild(2);
       //pick destination
+        
         if(currentPosition == 1){
             Dashdecision(1);   
         }
@@ -35,32 +37,32 @@ public class B2Dash : State
         
         else if(currentPosition == 3){
             Dashdecision(3);
-        }
-      //dash to destination
-      StartCoroutine(Dash());
-      //decide distance in Tick and transition to attack
+        }   
    }
 
    
-
    public override void Exit(){
     
    }
 
    public override void Tick(){
+    if(madeDecision){
+    StartCoroutine(Dash());
+    StartCoroutine(wait());
     if(hasWaited){
- 
-    //    Vector2 PlayerDistance = playerAwarenessController.getPlayerDistance();
-    //         if(PlayerDistance.magnitude > 5){
-    //             _stateMachine.ChangeState<B2EnergyPistol>();
-    //         } else{
-    //             _stateMachine.ChangeState<B2Spin>();
-    //         }
+       Vector2 PlayerDistance = playerAwarenessController.getPlayerDistance();
+            if(PlayerDistance.magnitude > 5){
+                _stateMachine.ChangeState<B2EnergyPistol>();
+            } else{
+                _stateMachine.ChangeState<B2Spin>();
+            }
+    }     
+    
     } 
    }
 
-    IEnumerator wait(){ //wait for a 3 seconds in idle before transitioning to the attacks
-        yield return new WaitForSeconds(3); 
+    IEnumerator wait(){ 
+        yield return new WaitForSeconds(2); 
         hasWaited = true;
     }
 
@@ -85,35 +87,42 @@ public class B2Dash : State
     }
 
 
-  private int Dashdecision(int currentPos){
+  private int Dashdecision(int currentPos){ //make decision on where to jump to 
     int dashChooserNumberThing = Random.Range(1,3);
     
     if(currentPos == 1){
         if(dashChooserNumberThing == 1){
             currentPosition = 2;
+            madeDecision = true;
         }
         if(dashChooserNumberThing == 2){
             currentPosition = 3;
+            madeDecision = true;
         }
     }
     
     else if(currentPos == 2){
         if(dashChooserNumberThing == 1){
             currentPosition = 1;
+            madeDecision = true;
         }
         if(dashChooserNumberThing == 2){
             currentPosition = 3;
+            madeDecision = true;
         }
     }
     
     else if(currentPos == 3){
         if(dashChooserNumberThing == 1){
             currentPosition = 1;
+            madeDecision = true;
         }
         if(dashChooserNumberThing == 2){
             currentPosition = 2;
+            madeDecision = true;
         }
     }
+    _stateMachine.SetPosition(currentPosition);
     return currentPosition;   
   }
 

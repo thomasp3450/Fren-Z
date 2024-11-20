@@ -8,6 +8,7 @@ public class Boss2 : State
   protected B2FSM _stateMachine; //instantiate the FSM 
   protected HealthController healthController;
   protected PlayerAwarenessController playerAwarenessController;
+ 
 
   public override void Enter(){
     _stateMachine = GetComponent<B2FSM>(); 

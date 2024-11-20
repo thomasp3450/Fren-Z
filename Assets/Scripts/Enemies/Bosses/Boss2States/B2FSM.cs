@@ -9,8 +9,11 @@ public class B2FSM : MonoBehaviour
   
   protected bool transition; //checking if changing states
 
+
+
   private void Start(){
     ChangeState<Boss2>(); //starts on Decide state to initialize the boss
+    currentPosition = 1;
   }
 
   public void ChangeState<T>() where T : State{ //initiate change state to targetted state, called by states to transition
@@ -41,6 +44,17 @@ public class B2FSM : MonoBehaviour
         CurrentState.Tick();
     }
   }
+
+  public int currentPosition;
+
+  public int GetPosition(){
+     return currentPosition;
+  }
+
+  public void SetPosition(int pos){
+     currentPosition = pos;
+  }
+
 }
 
 

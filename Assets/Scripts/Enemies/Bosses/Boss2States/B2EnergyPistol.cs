@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class B2EnergyPistol : State
 {
-  protected StateMachine _stateMachine; //instantiate the FSM 
+protected B2FSM _stateMachine; //instantiate the FSM 
   protected HealthController healthController;
   protected PlayerAwarenessController playerAwarenessController;
   protected bool hasWaited;
@@ -16,7 +16,7 @@ public class B2EnergyPistol : State
    }
 
     public override void Enter(){
-        _stateMachine = GetComponent<StateMachine>(); 
+        _stateMachine = GetComponent<B2FSM>(); 
         healthController = GetComponent<HealthController>();
         playerAwarenessController = GetComponent<PlayerAwarenessController>();
         animator = GetComponent<Animator>();

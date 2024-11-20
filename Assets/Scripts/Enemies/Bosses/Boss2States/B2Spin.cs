@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class B2Spin : State
 {
-  protected StateMachine _stateMachine; //instantiate the FSM 
+   protected B2FSM _stateMachine; //instantiate the FSM 
   protected HealthController healthController;
   protected PlayerAwarenessController playerAwarenessController;
   protected bool hasWaited;
@@ -15,11 +15,10 @@ public class B2Spin : State
    }
 
     public override void Enter(){
-        _stateMachine = GetComponent<StateMachine>(); 
+        _stateMachine = GetComponent<B2FSM>(); 
         healthController = GetComponent<HealthController>();
         playerAwarenessController = GetComponent<PlayerAwarenessController>();
         animator = GetComponent<Animator>();
-    
         StartCoroutine(wait());
     }
 
@@ -29,7 +28,8 @@ public class B2Spin : State
 
    public override void Tick(){
     if(hasWaited){
-       int attackChooserNumberThing = Random.Range(1,4); //generates 1, 2, or 3 equally since it is (MinInclusive, MaxExclusive)
+       int attackChooserNumberThing = 1; //testing purposes
+       //int attackChooserNumberThing = Random.Range(1,4); //generates 1, 2, or 3 equally since it is (MinInclusive, MaxExclusive)
        if(attackChooserNumberThing == 1){
             _stateMachine.ChangeState<B2Syringe>();
        }
