@@ -4,25 +4,30 @@ using UnityEngine;
 
 public class B2EnergyPistol : State
 {
-  protected StateMachine _stateMachine; //instantiate the FSM 
+protected B2FSM _stateMachine; //instantiate the FSM 
   protected HealthController healthController;
   protected PlayerAwarenessController playerAwarenessController;
   protected bool hasWaited;
   protected Animator animator;
+  [SerializeField] private Transform _BossOffset;
    IEnumerator wait(){ 
-      yield return new WaitForSeconds(4);
+      yield return new WaitForSeconds(2);
       hasWaited = true; 
    }
 
     public override void Enter(){
-        _stateMachine = GetComponent<StateMachine>(); 
+        _stateMachine = GetComponent<B2FSM>(); 
         healthController = GetComponent<HealthController>();
         playerAwarenessController = GetComponent<PlayerAwarenessController>();
         animator = GetComponent<Animator>();
-    
         StartCoroutine(wait());
+
     }
 
     public override void Exit(){} 
-    public override void Tick(){}
+    public override void Tick(){
+        if(hasWaited){
+            
+        }
+    }
 }

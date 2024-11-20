@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class B2Idle : State
 {
-  protected StateMachine _stateMachine; //instantiate the FSM 
+   protected B2FSM _stateMachine; //instantiate the FSM 
   protected Animator animator;
   protected PlayerAwarenessController playerAwarenessController;
   protected bool hasWaited;
   
-  IEnumerator wait(){ //wait for a 3 seconds in idle before transitioning to the attacks
-    yield return new WaitForSeconds(3); 
+  IEnumerator wait(){ 
+    yield return new WaitForSeconds(1); 
     hasWaited = true;
   }
   
    public override void Enter(){ 
       hasWaited = false;
-      _stateMachine = GetComponent<StateMachine>(); 
+      _stateMachine = GetComponent<B2FSM>(); 
       playerAwarenessController = GetComponent<PlayerAwarenessController>();
       StartCoroutine(wait());
       animator = GetComponent<Animator>();
@@ -37,11 +37,7 @@ public class B2Idle : State
    public override void Tick(){
 
     if(hasWaited){
-        if(playerAwarenessController.AwareOfPlayer){
-            _stateMachine.ChangeState<B2Spin>();
-        } else{
-            _stateMachine.ChangeState<B2EnergyPistol>();
-        }   
+       _stateMachine.ChangeState<B2Dash>();
     } 
    }
 
