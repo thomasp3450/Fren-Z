@@ -100,13 +100,13 @@ public class PlayerController : MonoBehaviour{
             if (collision.GetComponent<EnemyMovement>() && GetComponent<HealthController>()._isInvincible == false) {
                 // Debug.Log("Player's HP was reduced.");
                 gameObject.GetComponent<HealthController>().TakeDamage(1);
-                gameObject.GetComponent<SpriteFlash>().StartFlash(1, new Color((float)255,(float)0.0,(float)0.0), 1);
+                gameObject.GetComponent<SpriteFlash>().StartFlash((float)0.24, new Color((float)255,(float)0.0,(float)0.0), 1);
             }
         } else if (collision.GetComponent<EnemyMovement>()) {
             // Takes a small fraction of the player's frenzy gauge
             if (!_gaugeInvincible) {
                 _FrenzyMeter -= 2;
-                gameObject.GetComponent<SpriteFlash>().StartFlash(1, new Color((float)255,(float)0.0,(float)0.0), 1);
+                gameObject.GetComponent<SpriteFlash>().StartFlash((float)0.24, new Color((float)255,(float)0.0,(float)0.0), 1);
             }
             // Debug.Log("Player's frenzy gauge was reduced.");
         }

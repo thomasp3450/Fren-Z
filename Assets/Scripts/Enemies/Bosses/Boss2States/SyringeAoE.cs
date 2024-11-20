@@ -21,12 +21,12 @@ public class SyringeAoE : MonoBehaviour
         gameObject.SetActive(false);
         if (collision.GetComponent<PlayerController>()._isFrenzied) {
             if (!collision.GetComponent<PlayerController>()._gaugeInvincible) {
-                collision.GetComponent<SpriteFlash>().StartFlash(1, new Color((float)255,(float)0.0,(float)0.0), 1);
+                collision.GetComponent<SpriteFlash>().StartFlash((float)0.24, new Color((float)255,(float)0.0,(float)0.0), 1);
                 collision.GetComponent<PlayerController>().ChangeFrenzyGauge(-5);
             }
         } else {
             if (collision.GetComponent<HealthController>()._isInvincible) {
-                collision.GetComponent<SpriteFlash>().StartFlash(1, new Color((float)255,(float)0.0,(float)0.0), 1);
+                collision.GetComponent<SpriteFlash>().StartFlash((float)0.24, new Color((float)255,(float)0.0,(float)0.0), 1);
                 collision.GetComponent<HealthController>().TakeDamage(1);
                 collision.GetComponent<HealthController>().InitIFrames();
             }

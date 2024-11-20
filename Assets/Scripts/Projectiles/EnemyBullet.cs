@@ -22,13 +22,13 @@ public class EnemyBullet : MonoBehaviour {
             if (collision.GetComponent<PlayerController>()._isFrenzied) {
                 if (!collision.GetComponent<PlayerController>()._gaugeInvincible) {
                     collision.GetComponent<PlayerController>().ChangeFrenzyGauge(-2);
-                    collision.GetComponent<SpriteFlash>().StartFlash(1, new Color((float)255,(float)0.0,(float)0.0), 1);
+                    collision.GetComponent<SpriteFlash>().StartFlash((float)0.24, new Color((float)255,(float)0.0,(float)0.0), 1);
                 } 
             } else {
                 
                 if (collision.GetComponent<HealthController>()._isInvincible) {
                     collision.GetComponent<HealthController>().TakeDamage(1);
-                    collision.GetComponent<SpriteFlash>().StartFlash(1, new Color((float)255,(float)0.0,(float)0.0), 1);
+                    collision.GetComponent<SpriteFlash>().StartFlash((float)0.24, new Color((float)255,(float)0.0,(float)0.0), 1);
                 }
             }
 
