@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98d92bb0a0e02d44688f075106c1308c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerAwarenessDistance: 10
+  _playerAwarenessDistance: 20
 --- !u!114 &8218358184505816733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,6 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db49a7d0e55fafc468795ccfba2e50ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentPosition: 0
 --- !u!114 &5762744554568570645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,8 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e647fc866d9d4b445a173073010a2f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentPosition: 0
-  bossSpeed: 10
+  bossSpeed: 25
   _BossOffset: {fileID: 1003477356176112310}
   pos1: {fileID: 0}
   pos2: {fileID: 0}
@@ -395,6 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _BossOffset: {fileID: 1003477356176112310}
+  scalpelProjectile: {fileID: 0}
 --- !u!114 &36295664932577965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,30 +408,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c1a77c4e2a2a2145a870d74ea0c898b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 0}
-  Target: {fileID: 0}
-  projectilePrefab: {fileID: 7628488831675851382, guid: 3a4c6ebcbe5976f45b7d8ce8cfa13d31, type: 3}
-  trajectory:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  spawnPoint: {fileID: 1003477356176112310}
+  Target1: {fileID: 0}
+  Target2: {fileID: 0}
+  Target3: {fileID: 0}
+  projectilePrefab: {fileID: 1144879895475161758, guid: 046c7bf30d4351c45a2b88250abf6978, type: 3}
+  ProjectileSpeed: 20
