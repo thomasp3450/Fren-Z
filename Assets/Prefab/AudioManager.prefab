@@ -179,15 +179,15 @@ MonoBehaviour:
   musicTracks:
   - name: Menu
     audio: {fileID: 8300000, guid: b1f3ba7d555f5ab47a05366be4e0f944, type: 3}
-  - name: Level1
+  - name: Level 1
     audio: {fileID: 8300000, guid: e1a990fc0c163794e954ce89ae05b3b4, type: 3}
   - name: Level1Boss
     audio: {fileID: 8300000, guid: 5280d26018a450a45bb9f7435a2df48c, type: 3}
-  - name: Level2
+  - name: Level 2
     audio: {fileID: 8300000, guid: 6c49add6697a6e0428ee1d59f00faae2, type: 3}
   - name: Level2Boss
     audio: {fileID: 8300000, guid: c3ffcd978b3dafe409026f794264af85, type: 3}
-  - name: Level3
+  - name: Level 3
     audio: {fileID: 8300000, guid: b285f838bda04c84c84027842bdbe244, type: 3}
   - name: Level3Boss
     audio: {fileID: 8300000, guid: cdb88d3b080b8394caa3274d0aa85a5e, type: 3}

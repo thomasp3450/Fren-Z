@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -20,7 +21,8 @@ public class AudioManager : MonoBehaviour
    }
 
    private void Start(){
-      PlayMusic("Level1");
+      string currentSceneName = SceneManager.GetActiveScene().name;
+      PlayMusic(currentSceneName);
    }
 
    public void PlayMusic(string name){

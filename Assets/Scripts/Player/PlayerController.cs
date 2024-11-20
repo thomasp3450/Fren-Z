@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class PlayerController : MonoBehaviour{
     [SerializeField] public float _Speed; //how fast you go normally
@@ -50,11 +51,15 @@ public class PlayerController : MonoBehaviour{
     [SerializeField]
     private GameObject _heavyAttack;
 
+    private CinemachineImpulseSource impulseSource;
+
+
     private void Awake() {
         _Rigidbody =  GetComponent<Rigidbody2D>();
         _ActiveSpeed = _Speed;
         _FrenzyMeter = 50;
         _power = _standardDamage;
+        impulseSource = GetComponent<CinemachineImpulseSource>();
         animator = GetComponent<Animator>();
         animator.SetBool("Frenzied", false);
     }
@@ -322,7 +327,7 @@ public class PlayerController : MonoBehaviour{
 
             // Starts the attack coroutine to carry out the attack's duration
             StartCoroutine(ComboAttack());
-            ScreenShake.Instance.ShakeCamera(2f, .1f);
+            ScreenShake.Instance.ShakeCamera(impulseSource, .5f);
 
         }
     }
@@ -369,7 +374,7 @@ public class PlayerController : MonoBehaviour{
 
         // Initiates the heavy attack.
         if (gameObject.GetComponent<PlayerController>()._isFrenzied && !_isAttacking) {
-             ScreenShake.Instance.ShakeCamera(5f, .1f);
+             ScreenShake.Instance.ShakeCamera(impulseSource, 1f);
             // Starts the attack coroutine to carry out the attack's duration
             StartCoroutine(HeavyAttack());
 

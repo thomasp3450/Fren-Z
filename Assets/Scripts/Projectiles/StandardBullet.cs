@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class StandardBullet : MonoBehaviour {
 
 [SerializeField] GameObject impactPrefab;
-
+ private CinemachineImpulseSource impulseSource;
 
     private void Start(){
        AudioManager.Instance.PlaySFX("Gunshot");
-       ScreenShake.Instance.ShakeCamera(1f, .1f);
+       impulseSource = GetComponent<CinemachineImpulseSource>();
+       ScreenShake.Instance.ShakeCamera(impulseSource, .1f);
+
     }
     private void OnTriggerEnter2D (Collider2D collision) {
         GameObject impact = Instantiate(impactPrefab, gameObject.transform.position, gameObject.transform.rotation);

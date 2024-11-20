@@ -7,22 +7,19 @@ public class ScreenShake : MonoBehaviour
 {   
     public static ScreenShake Instance { get; private set;}
     private CinemachineVirtualCamera cinemachineVirtualCamera;
+    private CinemachineImpulseSource impulseSource;
     private float shakeTimer;
     private float shakeTimerTotal;
     private float startingIntensity;
-    void Awake()
+    private void Start()
     {
         
         Instance = this;
         cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
     }
 
-    public void ShakeCamera(float intensity, float duration){
-        CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-        cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = intensity;
-        startingIntensity = intensity;
-        shakeTimerTotal = duration;
-        shakeTimer = duration;
+    public void ShakeCamera(CinemachineImpulseSource impulseSource, float intensity){
+        impulseSource.GenerateImpulseWithForce(intensity);
     }
 
     // Update is called once per frame

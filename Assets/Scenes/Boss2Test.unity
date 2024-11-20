@@ -1047,146 +1047,6 @@ PrefabInstance:
       propertyPath: Target3
       value: 
       objectReference: {fileID: 1288855407}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: spawnPoint
-      value: 
-      objectReference: {fileID: 580124122}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: ProjectileSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: projectileHeight
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: projectilePrefab
-      value: 
-      objectReference: {fileID: 1144879895475161758, guid: 046c7bf30d4351c45a2b88250abf6978, type: 3}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: trajectory.m_Curve.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: trajectory.m_Curve.Array.data[1].time
-      value: 0.50991005
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: trajectory.m_Curve.Array.data[2].time
-      value: 0.96484375
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: trajectory.m_Curve.Array.data[1].value
-      value: 0.56394655
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: trajectory.m_Curve.Array.data[2].value
-      value: 0.002357483
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: ProjectileSpeedCurve.m_Curve.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: trajectory.m_Curve.Array.data[1].inSlope
-      value: -0.0818767
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: trajectory.m_Curve.Array.data[1].inWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: trajectory.m_Curve.Array.data[1].outSlope
-      value: -0.0818767
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: trajectory.m_Curve.Array.data[1].outWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: trajectoryLinearCorrection.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: ProjectileSpeedCurve.m_Curve.Array.data[0].time
-      value: 0.0021972656
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: ProjectileSpeedCurve.m_Curve.Array.data[1].time
-      value: 0.14809284
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: ProjectileSpeedCurve.m_Curve.Array.data[2].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: ProjectileSpeedCurve.m_Curve.Array.data[0].value
-      value: 0.99765015
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: ProjectileSpeedCurve.m_Curve.Array.data[1].value
-      value: 0.7735779
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: ProjectileSpeedCurve.m_Curve.Array.data[2].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: ProjectileSpeedCurve.m_Curve.Array.data[1].inSlope
-      value: -1.2829891
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: ProjectileSpeedCurve.m_Curve.Array.data[2].inSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: ProjectileSpeedCurve.m_Curve.Array.data[1].inWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: ProjectileSpeedCurve.m_Curve.Array.data[1].outSlope
-      value: -1.2829891
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: ProjectileSpeedCurve.m_Curve.Array.data[2].outSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: ProjectileSpeedCurve.m_Curve.Array.data[1].outWeight
-      value: 0.08414929
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: trajectoryLinearCorrection.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: trajectoryLinearCorrection.m_Curve.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: trajectoryLinearCorrection.m_Curve.Array.data[0].inSlope
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: trajectoryLinearCorrection.m_Curve.Array.data[1].inSlope
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: trajectoryLinearCorrection.m_Curve.Array.data[0].outSlope
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: trajectoryLinearCorrection.m_Curve.Array.data[1].outSlope
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: trajectoryLinearCorrection.m_Curve.Array.data[0].tangentMode
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 36295664932577965, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: trajectoryLinearCorrection.m_Curve.Array.data[1].tangentMode
-      value: 34
-      objectReference: {fileID: 0}
     - target: {fileID: 1003477356176112310, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 90
@@ -1227,18 +1087,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3908215521429809613, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5416565257308154446, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5696756543930387015, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: _playerAwarenessDistance
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 6282938724951445080, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
       propertyPath: pos1
       value: 
@@ -1251,10 +1099,6 @@ PrefabInstance:
       propertyPath: pos3
       value: 
       objectReference: {fileID: 1288855407}
-    - target: {fileID: 6282938724951445080, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-      propertyPath: bossSpeed
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 6933006741404003827, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
       propertyPath: m_Name
       value: Boss2
@@ -1264,11 +1108,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
---- !u!4 &580124122 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1003477356176112310, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
-  m_PrefabInstance: {fileID: 580124121}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &615694088
 GameObject:
   m_ObjectHideFlags: 0
