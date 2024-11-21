@@ -1087,6 +1087,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1667863554055226928, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
+      propertyPath: Target1
+      value: 
+      objectReference: {fileID: 615694089}
+    - target: {fileID: 1667863554055226928, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
+      propertyPath: Target2
+      value: 
+      objectReference: {fileID: 1382663049}
+    - target: {fileID: 1667863554055226928, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
+      propertyPath: Target3
+      value: 
+      objectReference: {fileID: 1288855407}
+    - target: {fileID: 4621003727638731792, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 88.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621003727638731792, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 79.52
+      objectReference: {fileID: 0}
     - target: {fileID: 6282938724951445080, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
       propertyPath: pos1
       value: 
@@ -1102,6 +1122,10 @@ PrefabInstance:
     - target: {fileID: 6933006741404003827, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
       propertyPath: m_Name
       value: Boss2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229455698135480839, guid: cd19ca98074904242a1e979970a1a6ec, type: 3}
+      propertyPath: _speed
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

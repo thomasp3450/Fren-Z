@@ -29,10 +29,10 @@ public class SceneController : MonoBehaviour
     }
 
     IEnumerator LoadLevel(){
-        transitionAnimation.SetTrigger("Start");
-        SceneManager.LoadSceneAsync(scene.buildIndex + 1);
+        //transitionAnimation.SetTrigger("Start");
         yield return new WaitForSeconds(2);
-        transitionAnimation.SetTrigger("End");
+        SceneManager.LoadSceneAsync(scene.buildIndex + 1);
+        //transitionAnimation.SetTrigger("End");
     }
 
 
