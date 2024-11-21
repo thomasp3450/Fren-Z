@@ -14,17 +14,15 @@ public class AudioManager : MonoBehaviour
    private void Awake(){
       if(Instance == null){
          Instance = this;
-         DontDestroyOnLoad(gameObject);
+         //DontDestroyOnLoad(gameObject);
       }else{
          Destroy(gameObject);
       }
-   }
-
-   private void Start(){
       string currentSceneName = SceneManager.GetActiveScene().name;
       PlayMusic(currentSceneName);
    }
 
+   
    public void PlayMusic(string name){
       Sound s = Array.Find(musicTracks, x => x.name == name); 
       
