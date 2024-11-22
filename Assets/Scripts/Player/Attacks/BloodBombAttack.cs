@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class BloodBombAttack : MonoBehaviour {
     [SerializeField] CapsuleCollider2D _collider;
@@ -11,9 +12,11 @@ public class BloodBombAttack : MonoBehaviour {
     [SerializeField] float _sizeDetMultipliedY; // The vertical size of the hitbox when detonated.
     Vector2 _explodedSize;
     Animator animator;
+    private CinemachineImpulseSource impulseSource;
 
     void Awake() {
         animator = GetComponent<Animator>();
+        impulseSource = GetComponent<CinemachineImpulseSource>();
         _sizeDetMultipliedX = _collider.size.x * 3;
         _sizeDetMultipliedY = _collider.size.y * 3;
         _explodedSize = new Vector2(_sizeDetMultipliedX, _sizeDetMultipliedY);
