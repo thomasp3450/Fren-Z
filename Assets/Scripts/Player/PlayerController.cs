@@ -357,12 +357,13 @@ public class PlayerController : MonoBehaviour{
             
             animator.SetBool("isHeavyAttack", false);
 
+            AudioManager.Instance.PlaySFX("HeavyAttack");
+            ScreenShake.Instance.ShakeCamera(impulseSource, .3f);
+
             // Destroys the instance.
             Destroy(heavyAttack, 1);
 
             yield return new WaitForSeconds((float)0.30);
-            AudioManager.Instance.PlaySFX("HeavyAttack");
-            ScreenShake.Instance.ShakeCamera(impulseSource, .3f);
             _isAttacking = false;
 
             yield return new WaitForSeconds((float)0.50);

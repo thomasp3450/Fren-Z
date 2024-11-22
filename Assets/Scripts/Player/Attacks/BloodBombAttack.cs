@@ -53,11 +53,11 @@ public class BloodBombAttack : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D (Collider2D collision) {
-       
-        ScreenShake.Instance.ShakeCamera(impulseSource, .3f);
-        AudioManager.Instance.PlaySFX("BloodBomb");
 
         if (collision.GetComponent<EnemyMovement>()) { // Condition where the bomb collides with an enemy and will detonate
+
+            ScreenShake.Instance.ShakeCamera(impulseSource, .3f);
+            AudioManager.Instance.PlaySFX("BloodBomb");
 
             // Plays the detonating bomb animation
             gameObject.GetComponent<Animator>().Play("isDetonating");
@@ -83,6 +83,9 @@ public class BloodBombAttack : MonoBehaviour {
             collision.GetComponent<HealthController>().InitIFrames();
         }
         if(collision.gameObject.tag == "Walls"){ //prevent bullet wall passthrough
+
+            ScreenShake.Instance.ShakeCamera(impulseSource, .3f);
+            AudioManager.Instance.PlaySFX("BloodBomb");
 
             // Bomb explodes when colliding with wall. Same stuff
             gameObject.GetComponent<Animator>().Play("isDetonating");
