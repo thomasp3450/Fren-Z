@@ -105,13 +105,13 @@ public class PlayerController : MonoBehaviour{
             if (collision.GetComponent<EnemyMovement>() && GetComponent<HealthController>()._isInvincible == false) {
                 // Debug.Log("Player's HP was reduced.");
                 gameObject.GetComponent<HealthController>().TakeDamage(1);
-                gameObject.GetComponent<SpriteFlash>().StartFlash((float)0.24, new Color((float)255,(float)0.0,(float)0.0), 1);
+                gameObject.GetComponent<SpriteFlash>().StartFlash((float)0.12, new Color((float)255,(float)0.0,(float)0.0), 1);
             }
         } else if (collision.GetComponent<EnemyMovement>()) {
             // Takes a small fraction of the player's frenzy gauge
             if (!_gaugeInvincible) {
-                _FrenzyMeter -= 2;
-                gameObject.GetComponent<SpriteFlash>().StartFlash((float)0.24, new Color((float)255,(float)0.0,(float)0.0), 1);
+                _FrenzyMeter -= (float)0.80;
+                gameObject.GetComponent<SpriteFlash>().StartFlash((float)0.12, new Color((float)255,(float)0.0,(float)0.0), 1);
             }
             // Debug.Log("Player's frenzy gauge was reduced.");
         }
@@ -151,7 +151,7 @@ public class PlayerController : MonoBehaviour{
         }
         
         if(_isFrenzied){
-            _FrenzyMeter -= Time.deltaTime;
+            _FrenzyMeter -= (float)(Time.deltaTime * 1.5);
         }
         if(_DashCounter > 0){ // dash cooldown counter calculation
             _DashCounter -= Time.deltaTime;
@@ -308,6 +308,7 @@ public class PlayerController : MonoBehaviour{
             yield return new WaitForSeconds((float)(Time.deltaTime * 2));
 
             if (_comboLink >= 3) {
+                // ScreenShake.Instance.ShakeCamera(impulseSource, .2f);
                 _comboLink = 0;
                 _currentComboAttackCooldown += _comboAttackCooldown;
             }
@@ -327,7 +328,6 @@ public class PlayerController : MonoBehaviour{
 
             // Starts the attack coroutine to carry out the attack's duration
             StartCoroutine(ComboAttack());
-            ScreenShake.Instance.ShakeCamera(impulseSource, .5f);
 
         }
     }
@@ -340,7 +340,6 @@ public class PlayerController : MonoBehaviour{
             _RotationSpeed = 960/4;
             _isAttacking = true;
             animator.SetBool("isHeavyAttack", true);
-             AudioManager.Instance.PlaySFX("HeavyAttack");
 
             // Delays
             yield return new WaitForSeconds((float)0.30);
@@ -358,6 +357,9 @@ public class PlayerController : MonoBehaviour{
             
             animator.SetBool("isHeavyAttack", false);
 
+            AudioManager.Instance.PlaySFX("HeavyAttack");
+            ScreenShake.Instance.ShakeCamera(impulseSource, .3f);
+
             // Destroys the instance.
             Destroy(heavyAttack, 1);
 
@@ -374,7 +376,7 @@ public class PlayerController : MonoBehaviour{
 
         // Initiates the heavy attack.
         if (gameObject.GetComponent<PlayerController>()._isFrenzied && !_isAttacking) {
-             ScreenShake.Instance.ShakeCamera(impulseSource, 1f);
+            
             // Starts the attack coroutine to carry out the attack's duration
             StartCoroutine(HeavyAttack());
 

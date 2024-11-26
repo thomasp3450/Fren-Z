@@ -30,15 +30,15 @@ public class B2Dash : State
       animator = GetComponent<Animator>();
       //pick destination
         
-        if(currentheldPosition == 1){
+        if(currentPosition == 1){
             Dashdecision(1);   
         }
         
-        else if(currentheldPosition == 2){
+        else if(currentPosition == 2){
             Dashdecision(2);
         }
         
-        else if(currentheldPosition == 3){
+        else if(currentPosition == 3){
             Dashdecision(3);
         }   
    }

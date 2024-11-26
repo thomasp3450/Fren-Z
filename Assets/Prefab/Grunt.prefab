@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _screenBorder: 0
-  _speed: 1
+  _speed: 2
   _rotationSpeed: 720
   _isRangedEnemy: 0
   _FrenzyReplenishment: 10
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f20522ee22e0ddc4893fc70b5b0da635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flashLength: 0.27
+  _flashLength: 0.12
   _flashColor: {r: 0.7075472, g: 0.06341223, b: 0.10576664, a: 1}
   _numberOfFlashes: 1
 --- !u!70 &3335706242044380641
