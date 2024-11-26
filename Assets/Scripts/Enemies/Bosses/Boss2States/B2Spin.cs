@@ -8,8 +8,11 @@ public class B2Spin : State
   protected HealthController healthController;
   protected PlayerAwarenessController playerAwarenessController;
   protected bool hasWaited;
+  public Vector2 distanceToPlayer;
   protected Animator animator;
   int currentPosition;
+  public float meleeRange;
+  public bool inMeleeRange;
    IEnumerator wait(){ 
       yield return new WaitForSeconds(1);
       hasWaited = true; 
@@ -21,7 +24,9 @@ public class B2Spin : State
         healthController = GetComponent<HealthController>();
         playerAwarenessController = GetComponent<PlayerAwarenessController>();
         animator = GetComponent<Animator>();
+        
         StartCoroutine(wait());
+        
     }
 
    public override void Exit(){
@@ -29,9 +34,17 @@ public class B2Spin : State
    }
 
    public override void Tick(){
-    if(hasWaited){
-       int attackChooserNumberThing = 1; //testing purposes
-       //int attackChooserNumberThing = Random.Range(1,4); //generates 1, 2, or 3 equally since it is (MinInclusive, MaxExclusive)
+      Transform playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+      var distanceToPlayer = playerPos.position - transform.position;
+      
+      if(distanceToPlayer.magnitude <= meleeRange){
+         inMeleeRange = true;
+      }else{
+         inMeleeRange = false;
+      }
+
+    if(hasWaited && !inMeleeRange){
+      int attackChooserNumberThing = chooseState();
        if(attackChooserNumberThing == 1){
             _stateMachine.ChangeState<B2Syringe>();
        }
@@ -39,9 +52,21 @@ public class B2Spin : State
             _stateMachine.ChangeState<B2ScalpelShot>(); 
        }
        if(attackChooserNumberThing == 3){
-            _stateMachine.ChangeState<B2Hammer>();
+            _stateMachine.ChangeState<B2EnergyPistol>();
        }
+    } else if (hasWaited && inMeleeRange){
+            _stateMachine.ChangeState<B2Hammer>();
     }
    } 
+
+   private int chooseState(){
+      // int attackChooserNumberThing = 1; //testing purposes
+      // int attackChooserNumberThing = 2; //testing purposes
+      // int attackChooserNumberThing = 3; //testing purposes
+      int attackChooserNumberThing = Random.Range(1,4);
+      animator.Play("boss2-spin", 0, 0);
+      animator.Play("boss-2-spin-return", 0, 0); //generates 1, 2, or 3 equally since it is (MinInclusive, MaxExclusive)
+      return attackChooserNumberThing;
+      }
 
 }

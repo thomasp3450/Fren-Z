@@ -6,7 +6,7 @@ public class B2FSM : MonoBehaviour
 {
   
   public State CurrentState => _currentState; 
-  State _currentState; //stores current state
+  public State _currentState; //stores current state
   protected bool transition; //checking if changing states
   public int currentPosition;
 
@@ -45,7 +45,9 @@ public class B2FSM : MonoBehaviour
     }
   }
 
- 
+ public State GetState(){
+  return CurrentState;
+ }
 
   public int GetPosition(){
      return currentPosition;

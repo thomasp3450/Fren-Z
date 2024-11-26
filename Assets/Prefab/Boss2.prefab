@@ -1,5 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &549586486369741317
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5812202566952807237}
+  m_Layer: 0
+  m_Name: SpinArmBarrel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5812202566952807237
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549586486369741317}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.332, y: 0.159, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4621003727638731792}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2377711831194653159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8448487808538445791}
+  m_Layer: 0
+  m_Name: PistolBarrel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8448487808538445791
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2377711831194653159}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.266, y: 0.249, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4621003727638731792}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2929361584362253002
 GameObject:
   m_ObjectHideFlags: 0
@@ -26,8 +88,10 @@ GameObject:
   - component: {fileID: 9006279650918878810}
   - component: {fileID: 8429413221795752648}
   - component: {fileID: 1667863554055226928}
+  - component: {fileID: 2151862168987929847}
   - component: {fileID: 9171836456352744994}
   - component: {fileID: 2482408217936257703}
+  - component: {fileID: 2822555260680738567}
   m_Layer: 0
   m_Name: Boss2
   m_TagString: Untagged
@@ -47,7 +111,9 @@ Transform:
   m_LocalPosition: {x: 90.08, y: 79.58, z: 4.458559}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 8448487808538445791}
+  - {fileID: 5812202566952807237}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3092244667278046089
@@ -135,7 +201,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 500
+  m_Mass: 50000
   m_LinearDrag: 1.05
   m_AngularDrag: 2.6
   m_GravityScale: 0
@@ -218,8 +284,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _maximumHealth: 400
-  _currentHealth: 400
+  _maximumHealth: 300
+  _currentHealth: 300
   _isInvincible: 0
 --- !u!114 &370314550128852480
 MonoBehaviour:
@@ -233,7 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98d92bb0a0e02d44688f075106c1308c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerAwarenessDistance: 10
+  _playerAwarenessDistance: 20
 --- !u!114 &1796413977795403757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,9 +338,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _screenBorder: 0
   _speed: 0
-  _rotationSpeed: 0
+  _rotationSpeed: 900
   _isRangedEnemy: 0
-  _FrenzyReplenishment: 0
+  _FrenzyReplenishment: 100
 --- !u!114 &9124576253885131365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,7 +380,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba4d5a929f9b02f4781576b8ea3d3d7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bulletPrefab: {fileID: 3121085843014301334, guid: 5148aa163e9faf54fb51f011e670d104, type: 3}
   _BossOffset: {fileID: 4621003727638731792}
+  _BulletSpawnOffset: {fileID: 8448487808538445791}
+  _bulletSpeed: 10
+  _bulletAmount: 5
+  _timeBetweenShots: 0.5
 --- !u!114 &6652122728586276698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,7 +398,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 005663cf25b46c04b9feee18a818f2ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _BossOffset: {fileID: 4621003727638731792}
+  _BossOffset: {fileID: 5812202566952807237}
+  SlamPrefab: {fileID: 8053175488046903877, guid: 84b22a4024f4af14ebdeebe0923d0080, type: 3}
 --- !u!114 &7468093206598142671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,8 +424,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bfe25cf3608d35439bd4392dc2894c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _BossOffset: {fileID: 4621003727638731792}
-  scalpelProjectile: {fileID: 0}
+  _BossOffset: {fileID: 5812202566952807237}
+  scalpelProjectile: {fileID: 3741687877018782924, guid: d1654a1e5e6ff6e4bb199a9b28f4fc96, type: 3}
+  scalpelTarget: {fileID: 0}
+  ProjectileSpeed: 15
 --- !u!114 &8429413221795752648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,6 +440,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4df3a06297580f4997663533744e1f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceToPlayer: {x: 0, y: 0}
+  meleeRange: 5
+  inMeleeRange: 0
 --- !u!114 &1667863554055226928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,12 +455,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c1a77c4e2a2a2145a870d74ea0c898b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 4621003727638731792}
+  spawnPoint: {fileID: 5812202566952807237}
   Target1: {fileID: 0}
   Target2: {fileID: 0}
   Target3: {fileID: 0}
   projectilePrefab: {fileID: 1144879895475161758, guid: 046c7bf30d4351c45a2b88250abf6978, type: 3}
   ProjectileSpeed: 30
+--- !u!114 &2151862168987929847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2929361584362253002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e647fc866d9d4b445a173073010a2f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossSpeed: 30
+  _BossOffset: {fileID: 4621003727638731792}
+  pos1: {fileID: 0}
+  pos2: {fileID: 0}
+  pos3: {fileID: 0}
 --- !u!114 &9171836456352744994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,3 +502,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cafcae8a167fc5047922a4509e2d2f33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2822555260680738567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2929361584362253002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db49a7d0e55fafc468795ccfba2e50ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentState: {fileID: 0}
+  currentPosition: 0

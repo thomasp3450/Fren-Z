@@ -11,9 +11,13 @@ public class B2Hammer : State
   protected Animator animator;
   int currentPosition;
   [SerializeField] private Transform _BossOffset;
-   IEnumerator wait(){ 
-      yield return new WaitForSeconds(.11f);
-      hasWaited = true; 
+  [SerializeField] public GameObject SlamPrefab;
+
+   IEnumerator HammerSmash(){
+        GameObject slam = Instantiate(SlamPrefab, _BossOffset.position, transform.rotation); 
+        Destroy(slam, 1); 
+        yield return new WaitForSeconds(2); 
+        hasWaited = true;
    }
 
     public override void Enter(){
@@ -21,8 +25,7 @@ public class B2Hammer : State
         healthController = GetComponent<HealthController>();
         playerAwarenessController = GetComponent<PlayerAwarenessController>();
         animator = GetComponent<Animator>();
-    
-        StartCoroutine(wait());
+        animator.Play("boss-2-hammer", 0, 0);
     }
 
     public override void Exit(){} 

@@ -69,11 +69,14 @@ public class B2Dash : State
         hasWaited = true;
     }
 
+
+
     IEnumerator Dash(){
         float step = bossSpeed * Time.deltaTime;
         if(currentPosition == 1){
             yield return new WaitForSeconds(1);
             transform.position = Vector2.MoveTowards(transform.position, pos1.transform.position, step);
+            
         }
         
         else if(currentPosition == 2){

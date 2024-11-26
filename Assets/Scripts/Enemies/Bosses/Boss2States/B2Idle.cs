@@ -22,7 +22,7 @@ public class B2Idle : State
       playerAwarenessController = GetComponent<PlayerAwarenessController>();
       StartCoroutine(wait());
       animator = GetComponent<Animator>();
-      
+      animator.Play("Boss2Idle", 0, 0);
    }
 
    
