@@ -32,6 +32,7 @@ protected B2FSM _stateMachine; //instantiate the FSM
         _lastFireTime = Time.time;
         Rigidbody2D rigidbody = bullet.GetComponent<Rigidbody2D>();
         rigidbody.velocity = _bulletSpeed * transform.up;
+        
         Destroy(bullet, 1.5f); //destroy bullet after 1 second of shooting them    
     }   
 
@@ -40,6 +41,7 @@ protected B2FSM _stateMachine; //instantiate the FSM
         if (timeSinceLastFire >= _timeBetweenShots || _lastFireTime == 0) {
             for(int i = 0; i < _bulletAmount; i++){
             FireBullet();
+            AudioManager.Instance.PlaySFX("EnergyShot");
             yield return new WaitForSeconds(_timeBetweenShots);      
             }
         } 

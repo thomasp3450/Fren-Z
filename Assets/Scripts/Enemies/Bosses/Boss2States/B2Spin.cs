@@ -63,9 +63,9 @@ public class B2Spin : State
       // int attackChooserNumberThing = 1; //testing purposes
       // int attackChooserNumberThing = 2; //testing purposes
       // int attackChooserNumberThing = 3; //testing purposes
-      int attackChooserNumberThing = Random.Range(1,4);
+      int attackChooserNumberThing = Random.Range(1,4);//generates 1, 2, or 3 equally since it is (MinInclusive, MaxExclusive)
       animator.Play("boss2-spin", 0, 0);
-      animator.Play("boss-2-spin-return", 0, 0); //generates 1, 2, or 3 equally since it is (MinInclusive, MaxExclusive)
+      AudioManager.Instance.PlaySFX("Boss2Spin");
       return attackChooserNumberThing;
       }
 

@@ -11,7 +11,7 @@ public class StandardBullet : MonoBehaviour {
     private void Start(){
        AudioManager.Instance.PlaySFX("Gunshot");
        impulseSource = GetComponent<CinemachineImpulseSource>();
-       ScreenShake.Instance.ShakeCamera(impulseSource, .1f);
+       ScreenShake.Instance.ShakeCamera(impulseSource, .04f);
 
     }
     private void OnTriggerEnter2D (Collider2D collision) {

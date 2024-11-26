@@ -6,7 +6,7 @@ public class EnemyBullet : MonoBehaviour {
     [SerializeField] GameObject impactPrefab;
 
     private void Start(){
-       AudioManager.Instance.PlaySFX("Gunshot");
+       
     }
 
 

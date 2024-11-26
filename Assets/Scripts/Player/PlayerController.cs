@@ -358,7 +358,7 @@ public class PlayerController : MonoBehaviour{
             animator.SetBool("isHeavyAttack", false);
 
             AudioManager.Instance.PlaySFX("HeavyAttack");
-            ScreenShake.Instance.ShakeCamera(impulseSource, .3f);
+            ScreenShake.Instance.ShakeCamera(impulseSource, .1f);
 
             // Destroys the instance.
             Destroy(heavyAttack, 1);

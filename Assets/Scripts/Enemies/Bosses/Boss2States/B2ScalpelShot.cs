@@ -17,21 +17,12 @@ public class B2ScalpelShot : State
   private GameObject scalpel;
    
 
-   IEnumerator wait(){ 
-      yield return new WaitForSeconds(1);
-      if(hasShot){
-        hasWaited = true; 
-      }
-      
-   }
-
     IEnumerator ScalpelShot(){
-        if(scalpel != null && !hasShot){
+        if(!hasShot){
             hasShot = true;
             scalpel = Instantiate(scalpelProjectile, _BossOffset.position, transform.rotation); 
             Rigidbody2D s1RigidBody = scalpel.GetComponent<Rigidbody2D>();
             s1RigidBody.velocity = ProjectileSpeed * transform.up;
-            hasShot = true;
             yield return new WaitForSeconds(2);
         }
         
@@ -48,13 +39,12 @@ public class B2ScalpelShot : State
         hasWaited = false;
         animator.Play("boss-2-scalpel", 0, 0);
         StartCoroutine(ScalpelShot());
-        StartCoroutine(wait());
     }
 
     public override void Exit(){} 
     public override void Tick(){
-        if(hasWaited){
-             _stateMachine.ChangeState<B2Weakened>();
+        if(hasShot){
+              _stateMachine.ChangeState<B2Weakened>();
         }
     }
 }

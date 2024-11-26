@@ -55,6 +55,7 @@ public class GuardShoot : MonoBehaviour
     private void FireBullet() {
        
         GameObject bullet = Instantiate(_bulletPrefab, _BulletOffset.position, transform.rotation);
+        AudioManager.Instance.PlaySFX("Gunshot");
         _lastFireTime = Time.time;
         Rigidbody2D rigidbody = bullet.GetComponent<Rigidbody2D>();
         rigidbody.velocity = _bulletSpeed * transform.up;

@@ -26,6 +26,7 @@ public class B2Hammer : State
         playerAwarenessController = GetComponent<PlayerAwarenessController>();
         animator = GetComponent<Animator>();
         animator.Play("boss-2-hammer", 0, 0);
+        AudioManager.Instance.PlaySFX("Boss1Slam");
     }
 
     public override void Exit(){} 
