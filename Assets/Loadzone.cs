@@ -5,12 +5,19 @@ using UnityEngine;
 public class Loadzone : MonoBehaviour
 {   
     private BoxCollider2D collider2D;
+    [SerializeField] Animator transitionAnimation;
     private void Awake(){
         collider2D = GetComponent<BoxCollider2D>();
     }
+
+    IEnumerator LoadNextLevel(){
+        transitionAnimation.Play("FadeIn");
+        yield return new WaitForSeconds(1);
+        SceneController.Instance.NextLevel();
+    }
    private void OnTriggerEnter2D(Collider2D collision){
     if(collision.CompareTag("Player")){
-        SceneController.Instance.NextLevel();
+        StartCoroutine(LoadNextLevel());
     }
    }
 }

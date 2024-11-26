@@ -25,15 +25,12 @@ public class SceneController : MonoBehaviour
      }
 
     public void NextLevel(){
-        StartCoroutine(LoadLevel());
-    }
-
-    IEnumerator LoadLevel(){
-        //transitionAnimation.SetTrigger("Start");
-        yield return new WaitForSeconds(2);
+        
         SceneManager.LoadSceneAsync(scene.buildIndex + 1);
-        //transitionAnimation.SetTrigger("End");
+        transitionAnimation.Play("FadeOut");
+       
     }
 
+    
 
 }
