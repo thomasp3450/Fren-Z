@@ -8,7 +8,7 @@ public class FrenzyTransform : MonoBehaviour {
 
     public void OnChangeFrenziedState (InputAction.CallbackContext context) {
         // If player fills the Frenzy gauge.
-        if (gameObject.GetComponent<PlayerController>()._activeTransformCooldown <= 0 && gameObject.GetComponent<PlayerController>()._isFrenzied && gameObject.GetComponent<PlayerController>().GetFrenzyMeter() >= (float)(gameObject.GetComponent<PlayerController>().GetFrenzyMeterMax() - 5)) { 
+        if (gameObject.GetComponent<PlayerController>()._activeTransformCooldown <= 0 && gameObject.GetComponent<PlayerController>()._isFrenzied && gameObject.GetComponent<PlayerController>().GetFrenzyMeter() >= (float)(gameObject.GetComponent<PlayerController>().GetFrenzyMeterMax() - 33)) { 
             gameObject.GetComponent<HealthController>().AddHealth(1);
             gameObject.GetComponent<PlayerController>().ExitFrenzyMode();
             gameObject.GetComponent<PlayerController>()._activeTransformCooldown += gameObject.GetComponent<PlayerController>()._transformCooldown;
