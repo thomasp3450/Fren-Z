@@ -220,7 +220,7 @@ MonoBehaviour:
   _speed: 1
   _rotationSpeed: 720
   _isRangedEnemy: 1
-  _FrenzyReplenishment: 40
+  _FrenzyReplenishment: 20
 --- !u!114 &2370639246610859846
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ public class StandardBullet : MonoBehaviour {
 
         }
 
-        if(collision.gameObject.tag == "Walls"){ //prevent bullet wall passthrough
+        if(collision.gameObject.tag == "Walls" || collision.gameObject.tag == "Gate"){ //prevent bullet wall passthrough
             
             Destroy(gameObject, 0.01f);
             

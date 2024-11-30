@@ -151,7 +151,7 @@ public class PlayerController : MonoBehaviour{
         }
         
         if(_isFrenzied){
-            _FrenzyMeter -= (float)(Time.deltaTime * 1.5);
+            _FrenzyMeter -= (float)(Time.deltaTime * 2);
         }
         if(_DashCounter > 0){ // dash cooldown counter calculation
             _DashCounter -= Time.deltaTime;
