@@ -21,7 +21,7 @@ public class EnemyBullet : MonoBehaviour {
 
             if (collision.GetComponent<PlayerController>()._isFrenzied) {
                 if (!collision.GetComponent<PlayerController>()._gaugeInvincible) {
-                    collision.GetComponent<PlayerController>().ChangeFrenzyGauge(-1);
+                    collision.GetComponent<PlayerController>().ChangeFrenzyGauge(-2);
                     collision.GetComponent<SpriteFlash>().StartFlash((float)0.12, new Color((float)255,(float)0.0,(float)0.0), 1);
                 } 
             } else {
@@ -38,7 +38,7 @@ public class EnemyBullet : MonoBehaviour {
 
         }
         
-        if(collision.gameObject.tag == "Walls"){ //prevent bullet wall passthrough
+        if(collision.gameObject.tag == "Walls" || collision.gameObject.tag == "Gate"){ //prevent bullet wall passthrough
             Destroy(gameObject, 0.01f);
         }
 

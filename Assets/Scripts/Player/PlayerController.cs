@@ -310,7 +310,7 @@ public class PlayerController : MonoBehaviour{
             if (_comboLink >= 3) {
                 // ScreenShake.Instance.ShakeCamera(impulseSource, .2f);
                 _comboLink = 0;
-                _currentComboAttackCooldown += _comboAttackCooldown;
+                _currentComboAttackCooldown += (float)(_comboAttackCooldown * 1.2);
             }
 
             // player returns to normal speed and can do next combo attack

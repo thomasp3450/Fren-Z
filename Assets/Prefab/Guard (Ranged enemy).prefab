@@ -140,8 +140,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _maximumHealth: 10
-  _currentHealth: 10
+  _maximumHealth: 15
+  _currentHealth: 15
   _isInvincible: 0
 --- !u!50 &2866358005577200907
 Rigidbody2D:
