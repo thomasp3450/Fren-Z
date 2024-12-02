@@ -50,14 +50,23 @@ public class B3SmallGun : State
     }
 
    public override void Exit(){
-   
+
    }
+
+     public override void Tick(){
+        if(hasWaited){
+             _stateMachine.ChangeState<B3Weakened>();
+        }
+    }
+
 
    IEnumerator fireVolley(){
         float timeSinceLastFire = Time.time - _lastFireTime;
         if (timeSinceLastFire >= _timeBetweenShots || _lastFireTime == 0) {
             for(int i = 0; i < _bulletAmount; i++){
             FireBullet();
+            animator.Play("SmallGun");
+            AudioManager.Instance.PlaySFX("Gunshot");
             yield return new WaitForSeconds(_timeBetweenShots);      
             }
         } 

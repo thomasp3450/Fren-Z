@@ -25,7 +25,7 @@ public class B3Idle : State
       playerAwarenessController = GetComponent<PlayerAwarenessController>();
       StartCoroutine(wait());
       animator = GetComponent<Animator>();
-      animator.Play("Idle", 0, 0);
+      
    }
 
    
@@ -36,14 +36,15 @@ public class B3Idle : State
 
    public override void Tick(){
     Transform playerPos = GameObject.FindGameObjectWithTag("Player").transform;
-    var distanceToPlayer = playerPos.position - transform.position;
+    distanceToPlayer = playerPos.position - transform.position;
      
      if(distanceToPlayer.magnitude <= meleeRange){
          inMeleeRange = true;
       }else{
          inMeleeRange = false;
       }
- int attackChooserNumberThing = chooseState();
+     
+     int attackChooserNumberThing = chooseState();
 
    if(hasWaited && !inMeleeRange){
      
@@ -67,7 +68,7 @@ public class B3Idle : State
     private int chooseState(){
       // int attackChooserNumberThing = 1; //testing purposes
       // int attackChooserNumberThing = 2; //testing purposes
-      int attackChooserNumberThing = Random.Range(1,3);//generates 1, 2, or 3 equally since it is (MinInclusive, MaxExclusive)
+      int attackChooserNumberThing = Random.Range(1,3);//generates 1, 2 equally since it is (MinInclusive, MaxExclusive)
       return attackChooserNumberThing;
     }
 

@@ -42,6 +42,7 @@ public class B3EnergyGun : State
             for(int i = 0; i < _bulletAmount; i++){
             FireBullet();
             AudioManager.Instance.PlaySFX("EnergyShot");
+            animator.Play("BigGun");
             yield return new WaitForSeconds(_timeBetweenShots);      
             }
         } 
@@ -63,7 +64,7 @@ public class B3EnergyGun : State
     public override void Exit(){} 
     public override void Tick(){
         if(hasWaited){
-             _stateMachine.ChangeState<B2Weakened>();
+             _stateMachine.ChangeState<B3Weakened>();
         }
     }
 

@@ -85,9 +85,14 @@ GameObject:
   - component: {fileID: 22680747631342748}
   - component: {fileID: 381085504560543015}
   - component: {fileID: 6095045480022869768}
+  - component: {fileID: 5912730995559399358}
+  - component: {fileID: 7251872757336407678}
+  - component: {fileID: 4293028990222603184}
+  - component: {fileID: 8890587571360843351}
+  - component: {fileID: 2509924534860659881}
   m_Layer: 0
   m_Name: Boss3
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,7 +156,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ea9b58f5b6850254984d9e520d598f53, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -231,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98d92bb0a0e02d44688f075106c1308c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerAwarenessDistance: 0
+  _playerAwarenessDistance: 15
 --- !u!114 &3707466583323062796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,9 +257,21 @@ MonoBehaviour:
       m_Calls: []
   Died:
     m_PersistentCalls:
-      m_Calls: []
-  _maximumHealth: 0
-  _currentHealth: 0
+      m_Calls:
+      - m_Target: {fileID: 3486015149677873504}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _maximumHealth: 750
+  _currentHealth: 750
   _isInvincible: 0
 --- !u!114 &6957594558254730200
 MonoBehaviour:
@@ -298,10 +315,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 3121085843014301334, guid: 5148aa163e9faf54fb51f011e670d104, type: 3}
   _BossOffset: {fileID: 1972933511233608935}
-  _BulletSpawnOffset: {fileID: 0}
+  _BulletSpawnOffset: {fileID: 1222977804741097624}
   _bulletSpeed: 4
-  _bulletAmount: 0
-  _timeBetweenShots: 0
+  _bulletAmount: 1
+  _timeBetweenShots: 1
 --- !u!114 &4755645471153686429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,7 +332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceToPlayer: {x: 0, y: 0}
-  meleeRange: 0
+  meleeRange: 6
   inMeleeRange: 0
 --- !u!114 &7562194359726415724
 MonoBehaviour:
@@ -347,6 +364,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 138111ad0b2858a40ba5aa603fb18811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _BossOffset: {fileID: 690293542372311171}
+  SlamPrefab: {fileID: 3352094475897042038, guid: 0a98b2e84d6977f4aab63f773dbe5b3e, type: 3}
 --- !u!114 &22680747631342748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,6 +378,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bfe26fcd88ac254daf3c4ebaf1af663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _BossOffset: {fileID: 5666178319795651430}
+  TendrilPrefab: {fileID: 934969139370270956, guid: 71933c958c89e0a4e9e957283f0b0b31, type: 3}
 --- !u!114 &381085504560543015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,6 +392,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23708c6a5acfe244a923e4b6fe2a9321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _BossOffset: {fileID: 1972933511233608935}
+  pos1: {fileID: 0}
+  pos2: {fileID: 0}
+  pos3: {fileID: 0}
+  bossSpeed: 3
 --- !u!114 &6095045480022869768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,6 +407,109 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb5cdd58f1ca1874984a845300d44e31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &5912730995559399358
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3486015149677873504}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1000000
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!70 &7251872757336407678
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3486015149677873504}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0033096664, y: -0.008276583}
+  m_Size: {x: 0.5165807, y: 0.42056102}
+  m_Direction: 1
+--- !u!114 &4293028990222603184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3486015149677873504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f651c163d02553429d8940f1ef40c0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _screenBorder: 0
+  _speed: 0
+  _rotationSpeed: 450
+  _isRangedEnemy: 0
+  _FrenzyReplenishment: 100
+--- !u!114 &8890587571360843351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3486015149677873504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1292b800e6f2b16468bf4e353f91779b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2509924534860659881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3486015149677873504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0220ec5e6d4b3b2459dba5ce9a0ec1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3502795242365901835

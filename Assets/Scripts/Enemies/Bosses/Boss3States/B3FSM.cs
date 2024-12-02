@@ -11,7 +11,7 @@ public class B3FSM : MonoBehaviour
 
 
   private void Start(){
-    ChangeState<B3Idle>(); //starts on Decide state to initialize the boss
+    ChangeState<Boss3>(); //starts on Decide state to initialize the boss
     currentPosition = 1;
   }
 
