@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class B3EnergyGun : State
 {
-    protected B3FSM _stateMachine; //instantiate the FSM 
+  protected B3FSM _stateMachine; //instantiate the FSM 
   protected HealthController healthController;
   protected PlayerAwarenessController playerAwarenessController;
   protected bool hasWaited;

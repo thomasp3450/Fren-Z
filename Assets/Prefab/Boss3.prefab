@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 1550619862296427543}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.222, y: -0.112, z: 0}
+  m_LocalPosition: {x: -0.196, y: -0.069, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -316,9 +316,9 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 3121085843014301334, guid: 5148aa163e9faf54fb51f011e670d104, type: 3}
   _BossOffset: {fileID: 1972933511233608935}
   _BulletSpawnOffset: {fileID: 1222977804741097624}
-  _bulletSpeed: 4
-  _bulletAmount: 1
-  _timeBetweenShots: 1
+  _bulletSpeed: 6
+  _bulletAmount: 3
+  _timeBetweenShots: 0.8
 --- !u!114 &4755645471153686429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 582729923470578621, guid: fc43105e649ed8246bdd78b9de55c63c, type: 3}
-  _EnemyOffset: {fileID: 1972933511233608935}
+  _BossOffset: {fileID: 0}
   _BulletSpawnOffset: {fileID: 3907027112874388935}
   _bulletSpeed: 8
   _bulletAmount: 3
@@ -396,7 +396,7 @@ MonoBehaviour:
   pos1: {fileID: 0}
   pos2: {fileID: 0}
   pos3: {fileID: 0}
-  bossSpeed: 3
+  bossSpeed: 5
 --- !u!114 &6095045480022869768
 MonoBehaviour:
   m_ObjectHideFlags: 0
