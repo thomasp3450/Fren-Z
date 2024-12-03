@@ -3772,6 +3772,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc0bfe0fd282ff94eb5c2c26cb6ab452, type: 3}
+--- !u!1 &1232256251 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7749938911540629223, guid: cc0bfe0fd282ff94eb5c2c26cb6ab452, type: 3}
+  m_PrefabInstance: {fileID: 1232256250}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1242455752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85919,11 +85924,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4473425351528610537, guid: cc0bfe0fd282ff94eb5c2c26cb6ab452, type: 3}
   m_PrefabInstance: {fileID: 1461257681}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1461257683 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7749938911540629223, guid: cc0bfe0fd282ff94eb5c2c26cb6ab452, type: 3}
-  m_PrefabInstance: {fileID: 1461257681}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1474426125
 GameObject:
   m_ObjectHideFlags: 0
@@ -86108,6 +86108,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51676ec0d275ae54fa0d014650b38b61, type: 3}
+--- !u!1 &1490501005 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 906337516916186756, guid: 51676ec0d275ae54fa0d014650b38b61, type: 3}
+  m_PrefabInstance: {fileID: 1490501004}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1522820031 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5742868673084949857, guid: f1090c328bfa9564c9d19af7a5f80b28, type: 3}
@@ -88125,11 +88130,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6386338264593995071, guid: 51676ec0d275ae54fa0d014650b38b61, type: 3}
   m_PrefabInstance: {fileID: 1873744157}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1873744159 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 906337516916186756, guid: 51676ec0d275ae54fa0d014650b38b61, type: 3}
-  m_PrefabInstance: {fileID: 1873744157}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1914192035 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6043323418008464058, guid: ec35267fa28e86449ac40b4a9a45c3a4, type: 3}
@@ -88693,7 +88693,7 @@ PrefabInstance:
     - target: {fileID: 6173055956226298035, guid: f1090c328bfa9564c9d19af7a5f80b28, type: 3}
       propertyPath: _UIAmountOfStimPacks
       value: 
-      objectReference: {fileID: 1873744159}
+      objectReference: {fileID: 1490501005}
     - target: {fileID: 6173055956226298035, guid: f1090c328bfa9564c9d19af7a5f80b28, type: 3}
       propertyPath: _frenzyBarBackground
       value: 
@@ -88701,7 +88701,7 @@ PrefabInstance:
     - target: {fileID: 6173055956226298035, guid: f1090c328bfa9564c9d19af7a5f80b28, type: 3}
       propertyPath: _UIAmountOfBloodBombs
       value: 
-      objectReference: {fileID: 1461257683}
+      objectReference: {fileID: 1232256251}
     - target: {fileID: 7502868834884713696, guid: f1090c328bfa9564c9d19af7a5f80b28, type: 3}
       propertyPath: shootAudio
       value: 
