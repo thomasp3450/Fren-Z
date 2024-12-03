@@ -24,6 +24,11 @@ public class SceneController : MonoBehaviour
         Debug.Log("Active Scene name is: " + scene.name + "\nActive Scene index: " + scene.buildIndex);
      }
 
+    public void BackToMenu(){
+        SceneManager.LoadSceneAsync(0);
+        transitionAnimation.Play("FadeOut");
+    }
+
     public void NextLevel(){
         
         SceneManager.LoadSceneAsync(scene.buildIndex + 1);
