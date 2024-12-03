@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using System;
 
 public class SpriteFlash : MonoBehaviour
 {
@@ -14,7 +15,11 @@ public class SpriteFlash : MonoBehaviour
 
     public void StartFlash(float flashDuration, Color flashColor, int numberOfFlashes)
     {
-        StartCoroutine(FlashCoroutine(flashDuration, flashColor, numberOfFlashes));
+        
+        try {
+            StartCoroutine(FlashCoroutine(flashDuration, flashColor, numberOfFlashes));
+        } catch (Exception e) {
+        }
     }
 
     public IEnumerator FlashCoroutine(float flashDuration, Color flashColor, int numberOfFlashes)

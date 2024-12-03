@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class BloodSplatter : MonoBehaviour {
     [SerializeField] public GameObject bloodObject;
@@ -15,7 +16,10 @@ public class BloodSplatter : MonoBehaviour {
     }
 
     public void OnExplode() {
-        StartCoroutine(Bleeding());
+        try {
+            StartCoroutine(Bleeding());
+        } catch (Exception e) {
+        }
         bloodObject.SetActive(true);
     }
 }
