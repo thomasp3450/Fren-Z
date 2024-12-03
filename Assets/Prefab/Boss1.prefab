@@ -336,7 +336,7 @@ MonoBehaviour:
   _speed: 0
   _rotationSpeed: 65
   _isRangedEnemy: 0
-  _FrenzyReplenishment: 0
+  _FrenzyReplenishment: 100
 --- !u!70 &7880995494447996012
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

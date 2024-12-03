@@ -92,9 +92,10 @@ GameObject:
   - component: {fileID: 9171836456352744994}
   - component: {fileID: 2482408217936257703}
   - component: {fileID: 2822555260680738567}
+  - component: {fileID: 4933556374470309734}
   m_Layer: 0
   m_Name: Boss2
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -284,8 +285,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _maximumHealth: 300
-  _currentHealth: 300
+  _maximumHealth: 250
+  _currentHealth: 250
   _isInvincible: 0
 --- !u!114 &370314550128852480
 MonoBehaviour:
@@ -426,7 +427,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _BossOffset: {fileID: 5812202566952807237}
   scalpelProjectile: {fileID: 3741687877018782924, guid: d1654a1e5e6ff6e4bb199a9b28f4fc96, type: 3}
-  scalpelTarget: {fileID: 0}
   ProjectileSpeed: 15
 --- !u!114 &8429413221795752648
 MonoBehaviour:
@@ -516,3 +516,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentState: {fileID: 0}
   currentPosition: 0
+--- !u!114 &4933556374470309734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2929361584362253002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1fc6316d50b3c64193ce2c535bbc281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthBar: {fileID: 0}
+  _healthBackground: {fileID: 0}

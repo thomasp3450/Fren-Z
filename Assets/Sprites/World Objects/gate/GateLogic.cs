@@ -6,7 +6,9 @@ public class GateLogic : MonoBehaviour
 {
    
     [SerializeField] public GameObject Key;
+    
     Keycard key;
+    BossKey bossKey;
     private Animator animator;
 
     public bool hasAccess;
@@ -20,7 +22,13 @@ public class GateLogic : MonoBehaviour
     
     void Start()
     {   
-        key = Key.gameObject.GetComponent<Keycard>();
+        if(Key.gameObject.GetComponent<Keycard>() != null){
+            key = Key.gameObject.GetComponent<Keycard>();
+        }
+        if(Key.gameObject.GetComponent<BossKey>() != null){
+            bossKey = Key.gameObject.GetComponent<BossKey>();
+        }
+        
         hasAccess = false;
 
         isColliderEnabled = true;
@@ -29,11 +37,18 @@ public class GateLogic : MonoBehaviour
     }
 
     void Update(){
-        if(key.isCollected()){
-            hasAccess = true;
+        if(Key.gameObject.GetComponent<Keycard>() != null){
+            if(key.isCollected()){
+                hasAccess = true;
+            }
+        }
+        if(Key.gameObject.GetComponent<BossKey>() != null){
+             if(bossKey.isCollected()){
+                hasAccess = true;
+            }
         }
 
-        if(isColliderEnabled == false){
+        if (isColliderEnabled == false){
             GetComponent<BoxCollider2D>().enabled = false;
         }else{
             GetComponent<BoxCollider2D>().enabled = true;

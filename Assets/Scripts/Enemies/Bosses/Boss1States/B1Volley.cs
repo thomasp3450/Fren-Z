@@ -66,6 +66,7 @@ public class B1Volley : State
         if (timeSinceLastFire >= _timeBetweenShots || _lastFireTime == 0) {
             for(int i = 0; i < _bulletAmount; i++){
             FireBullet();
+            AudioManager.Instance.PlaySFX("Gunshot");
             yield return new WaitForSeconds(_timeBetweenShots);      
             }
         } 
