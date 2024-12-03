@@ -9,6 +9,10 @@ public class PlayerPause : MonoBehaviour {
     private float _pauseCooldown = 0;
     private float _activePauseCooldown = 0;
 
+    void Start() {
+        if (_pauseMenu == null) _pauseMenu = GameObject.Find("PauseMenu2");
+    }
+
     private void FixedUpdate() {
         if (_activePauseCooldown > 1) _activePauseCooldown--;
         Debug.Log(_activePauseCooldown);

@@ -93,6 +93,8 @@ GameObject:
   - component: {fileID: 2482408217936257703}
   - component: {fileID: 2822555260680738567}
   - component: {fileID: 4933556374470309734}
+  - component: {fileID: 7365017834263235240}
+  - component: {fileID: 8201540049259065166}
   m_Layer: 0
   m_Name: Boss2
   m_TagString: Boss
@@ -530,3 +532,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthBar: {fileID: 0}
   _healthBackground: {fileID: 0}
+--- !u!114 &7365017834263235240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2929361584362253002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de25ae2036255548b640a46fc83fb4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8201540049259065166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2929361584362253002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f20522ee22e0ddc4893fc70b5b0da635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flashLength: 0.12
+  _flashColor: {r: 0.6509434, g: 0, b: 0, a: 0}
+  _numberOfFlashes: 1

@@ -53,7 +53,8 @@ public class PlayerShoot : MonoBehaviour {
 
     public void OnFire(InputAction.CallbackContext context) {
         // Debug.Log(gameObject.GetComponent<PlayerController>()._isFrenzied);
-        if (!gameObject.GetComponent<PlayerController>()._isFrenzied) {
+        if (!gameObject.GetComponent<PlayerPause>()._pauseMenu.activeSelf && 
+        !gameObject.GetComponent<PlayerGameOver>()._gameoverMenu.activeSelf && !gameObject.GetComponent<PlayerController>()._isFrenzied) {
             float timeSinceLastFire = Time.time - _lastFireTime;
             if (timeSinceLastFire >= _timeBetweenShots || _lastFireTime == 0) {
                 FireBullet();  

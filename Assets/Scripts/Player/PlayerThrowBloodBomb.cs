@@ -38,7 +38,8 @@ public class PlayerThrowBloodBomb : MonoBehaviour {
 
 
     public void OnThrow(InputAction.CallbackContext context) {
-        if (!gameObject.GetComponent<PlayerPause>()._pauseMenu.activeSelf && gameObject.GetComponent<PlayerController>()._amountOfBloodBombs > 0) {
+        if (!gameObject.GetComponent<PlayerPause>()._pauseMenu.activeSelf && 
+        !gameObject.GetComponent<PlayerGameOver>()._gameoverMenu.activeSelf && gameObject.GetComponent<PlayerController>()._amountOfBloodBombs > 0) {
             float timeSinceLastFire = Time.time - _lastFireTime;
             if (timeSinceLastFire >= _timeBetweenShots || _lastFireTime == 0) {
                 gameObject.GetComponent<PlayerController>()._amountOfBloodBombs--;

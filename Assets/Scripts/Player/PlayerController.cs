@@ -73,6 +73,8 @@ public class PlayerController : MonoBehaviour{
     }
 
     void Start() {
+        // gameObject.GetComponent<PlayerPause>()._pauseMenu.SetActive(false);
+        // gameObject.GetComponent<PlayerGameOver>()._gameoverMenu.SetActive(false);
         try {
             LoadData();
             // _amountOfBloodBombs = progressData.bloodBombs;
@@ -208,7 +210,7 @@ public class PlayerController : MonoBehaviour{
             if (SceneManager.GetActiveScene().name == "Level 2" || SceneManager.GetActiveScene().name == "Level2Boss") progressData.SetProgressData(2, _amountOfBloodBombs, _amountOfSyringes);
             if (SceneManager.GetActiveScene().name == "Level 3" || SceneManager.GetActiveScene().name == "Level3Boss") progressData.SetProgressData(3, _amountOfBloodBombs, _amountOfSyringes);
             SaveData();
-            SceneManager.LoadSceneAsync("GameOverMenu");
+            gameObject.GetComponent<PlayerGameOver>()._gameoverMenu.SetActive(true);
         }
 
         _frenzyBar.GetComponent<Image>().fillAmount = _FrenzyMeter / _FrenzyMeterMax;
@@ -349,7 +351,7 @@ public class PlayerController : MonoBehaviour{
     
     public void OnLightAttack() {
         // Initiates the combo attack.
-        if (!gameObject.GetComponent<PlayerPause>()._pauseMenu.activeSelf && gameObject.GetComponent<PlayerController>()._isFrenzied && !_isAttacking && _currentComboAttackCooldown <= 0) {
+        if (!gameObject.GetComponent<PlayerPause>()._pauseMenu.activeSelf && !gameObject.GetComponent<PlayerGameOver>()._gameoverMenu.activeSelf && gameObject.GetComponent<PlayerController>()._isFrenzied && !_isAttacking && _currentComboAttackCooldown <= 0) {
 
             // Starts the attack coroutine to carry out the attack's duration
             StartCoroutine(ComboAttack());
@@ -400,7 +402,7 @@ public class PlayerController : MonoBehaviour{
     public void OnHeavyAttack() {
 
         // Initiates the heavy attack.
-        if (!gameObject.GetComponent<PlayerPause>()._pauseMenu.activeSelf && gameObject.GetComponent<PlayerController>()._isFrenzied && !_isAttacking) {
+        if (!gameObject.GetComponent<PlayerPause>()._pauseMenu.activeSelf && !gameObject.GetComponent<PlayerGameOver>()._gameoverMenu.activeSelf && gameObject.GetComponent<PlayerController>()._isFrenzied && !_isAttacking) {
             
             // Starts the attack coroutine to carry out the attack's duration
             StartCoroutine(HeavyAttack());
