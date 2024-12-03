@@ -26,7 +26,7 @@ public class EnemyBullet : MonoBehaviour {
                 } 
             } else {
                 
-                if (collision.GetComponent<HealthController>()._isInvincible) {
+                if (!collision.GetComponent<HealthController>()._isInvincible) {
                     collision.GetComponent<HealthController>().TakeDamage(1);
                     collision.GetComponent<SpriteFlash>().StartFlash((float)0.12, new Color((float)255,(float)0.0,(float)0.0), 1);
                 }
