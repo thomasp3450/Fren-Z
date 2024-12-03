@@ -25,7 +25,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 3221268754872409296}
-    m_Duration: 7.35
+    m_Duration: 7.65
     m_TimeScale: 1
     m_ParentTrack: {fileID: -1290712092724692540}
     m_EaseInDuration: 0
@@ -2747,6 +2747,114 @@ MonoBehaviour:
       m_localTime: 7.333333333333333
       m_marker: {fileID: 0}
       m_userNote: 
+    - m_serializedBoolProperties:
+      - m_propertyID: 0
+        m_propertyValue: 1
+      m_localTime: 7.35
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties:
+      - m_propertyID: 0
+        m_propertyValue: 1
+      m_localTime: 7.366666666666666
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties:
+      - m_propertyID: 0
+        m_propertyValue: 1
+      m_localTime: 7.383333333333333
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties:
+      - m_propertyID: 0
+        m_propertyValue: 1
+      m_localTime: 7.3999999999999995
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties:
+      - m_propertyID: 0
+        m_propertyValue: 1
+      m_localTime: 7.416666666666667
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties:
+      - m_propertyID: 0
+        m_propertyValue: 1
+      m_localTime: 7.433333333333334
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties:
+      - m_propertyID: 0
+        m_propertyValue: 1
+      m_localTime: 7.45
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties:
+      - m_propertyID: 0
+        m_propertyValue: 1
+      m_localTime: 7.466666666666667
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties:
+      - m_propertyID: 0
+        m_propertyValue: 1
+      m_localTime: 7.483333333333333
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties:
+      - m_propertyID: 0
+        m_propertyValue: 1
+      m_localTime: 7.5
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties:
+      - m_propertyID: 0
+        m_propertyValue: 1
+      m_localTime: 7.516666666666667
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties:
+      - m_propertyID: 0
+        m_propertyValue: 1
+      m_localTime: 7.533333333333333
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties:
+      - m_propertyID: 0
+        m_propertyValue: 1
+      m_localTime: 7.55
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties:
+      - m_propertyID: 0
+        m_propertyValue: 1
+      m_localTime: 7.566666666666666
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties:
+      - m_propertyID: 0
+        m_propertyValue: 1
+      m_localTime: 7.583333333333333
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties:
+      - m_propertyID: 0
+        m_propertyValue: 1
+      m_localTime: 7.6
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties:
+      - m_propertyID: 0
+        m_propertyValue: 1
+      m_localTime: 7.616666666666666
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties:
+      - m_propertyID: 0
+        m_propertyValue: 1
+      m_localTime: 7.633333333333333
+      m_marker: {fileID: 0}
+      m_userNote: 
     m_frameMarkersRequested: 0
     m_playableFrameClipDataVersion: 1
     m_sisClipDataVersion: 1
@@ -2956,7 +3064,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 7.35
+    m_Start: 7.65
     m_ClipIn: 0
     m_Asset: {fileID: 9080819692101804608}
     m_Duration: 5

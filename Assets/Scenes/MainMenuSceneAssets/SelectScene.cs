@@ -12,6 +12,10 @@ public class SelectScene : MonoBehaviour {
     void Start() {
         progressData = ProgressData.Instance;
     }
+
+    public void startIntro(){
+        SceneManager.LoadSceneAsync("Intro");
+    }
  
     public void startLevel1() {
         SceneManager.LoadSceneAsync("Level 1");

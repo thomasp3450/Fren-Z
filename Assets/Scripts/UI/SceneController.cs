@@ -30,9 +30,9 @@ public class SceneController : MonoBehaviour
     }
 
     public void NextLevel(){
-        
         SceneManager.LoadSceneAsync(scene.buildIndex + 1);
         transitionAnimation.Play("FadeOut");
+        scene = SceneManager.GetActiveScene();
        
     }
 
