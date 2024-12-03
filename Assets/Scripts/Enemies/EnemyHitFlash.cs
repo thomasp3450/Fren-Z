@@ -22,4 +22,9 @@ public class EnemyHitFlash : MonoBehaviour
     {
         _spriteFlash.StartFlash(_flashLength, _flashColor, _numberOfFlashes);
     }
+
+    public void DeathFlash()
+    {
+        _spriteFlash.StartFlash((float)(_flashLength * 3), _flashColor, _numberOfFlashes);
+    }
 }
