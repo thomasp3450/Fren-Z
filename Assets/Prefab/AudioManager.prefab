@@ -220,6 +220,8 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: fc65cc6f2eb76764eafd9b3f4b4cf2e4, type: 3}
   - name: BloodBomb
     audio: {fileID: 8300000, guid: 2d85acc45d8e0704da1b112f39d039c7, type: 3}
+  pitchMin: 0.9
+  pitchMax: 1.1
 --- !u!1 &5631326641671627509
 GameObject:
   m_ObjectHideFlags: 0

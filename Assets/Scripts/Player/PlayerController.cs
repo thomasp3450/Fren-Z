@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour{
     }
 
     private void Awake() {
+        
         _Rigidbody =  GetComponent<Rigidbody2D>();
         _ActiveSpeed = _Speed;
         _FrenzyMeter = 50;
@@ -144,6 +145,7 @@ public class PlayerController : MonoBehaviour{
 
 
     private void FixedUpdate() { //move and rotate with input
+        
         SetPlayerVelocity();
         _UIAmountOfBloodBombs.GetComponent<TMPro.TextMeshProUGUI>().text = "" + _amountOfBloodBombs + "";
         _UIAmountOfStimPacks.GetComponent<TMPro.TextMeshProUGUI>().text = "" + _amountOfSyringes + "";

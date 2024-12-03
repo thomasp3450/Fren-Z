@@ -3363,11 +3363,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4567515531631790755, guid: c28e69f521d2cac41bd784f02aaefa3d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 29.2
+      value: 29.4
       objectReference: {fileID: 0}
     - target: {fileID: 4567515531631790755, guid: c28e69f521d2cac41bd784f02aaefa3d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 26.07
+      value: 25.1
       objectReference: {fileID: 0}
     - target: {fileID: 4567515531631790755, guid: c28e69f521d2cac41bd784f02aaefa3d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -85790,6 +85790,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1424148497820995101, guid: a6303d815c471964f8fa39f006bc8356, type: 3}
+      propertyPath: pitchMax
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1424148497820995101, guid: a6303d815c471964f8fa39f006bc8356, type: 3}
+      propertyPath: pitchMin
+      value: 0.95
+      objectReference: {fileID: 0}
     - target: {fileID: 4561176332965440915, guid: a6303d815c471964f8fa39f006bc8356, type: 3}
       propertyPath: m_Name
       value: 'AudioManager '

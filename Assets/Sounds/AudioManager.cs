@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
    public static AudioManager Instance;
    public AudioSource musicSource, SFXSource;
    public Sound[] musicTracks, SFXclips;
+   public float pitchMin, pitchMax;
 
    private void Awake(){
       if(Instance == null){
@@ -42,6 +43,7 @@ public class AudioManager : MonoBehaviour
          Debug.Log("no sound");
       }
       else{
+         SFXSource.pitch = UnityEngine.Random.Range(pitchMin, pitchMax);
          SFXSource.PlayOneShot(s.audio);
       }
 
