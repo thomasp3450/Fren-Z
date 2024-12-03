@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using System.IO;
+using UnityEngine.SceneManagement;
 using Cinemachine;
 
 public class PlayerController : MonoBehaviour{
+
+    private ProgressData progressData; // User data to persist despite changing scenes
+    [SerializeField] public float _CurrentLevel;
     [SerializeField] public float _Speed; //how fast you go normally
     public float _ActiveSpeed; //how fast you are currently going
     [SerializeField] float _DashSpeed; //how fast you dash
@@ -62,6 +67,10 @@ public class PlayerController : MonoBehaviour{
         impulseSource = GetComponent<CinemachineImpulseSource>();
         animator = GetComponent<Animator>();
         animator.SetBool("Frenzied", false);
+    }
+
+    void Start() {
+        progressData = ProgressData.Instance;
     }
 
     public void onMovement(InputAction.CallbackContext context){
@@ -183,7 +192,13 @@ public class PlayerController : MonoBehaviour{
         // Player depletes the Frenzy gauge and loses.
         if (_isFrenzied && _FrenzyMeter <= 0) {
             _FrenzyMeter = 0;
-            gameObject.SetActive(false);
+            if (SceneManager.GetActiveScene().name == "Level 1" || SceneManager.GetActiveScene().name == "Level1Boss") {
+                progressData.SetProgressData(1);
+            }
+            if (SceneManager.GetActiveScene().name == "Level 2" || SceneManager.GetActiveScene().name == "Level2Boss") progressData.SetProgressData(2);
+            if (SceneManager.GetActiveScene().name == "Level 3" || SceneManager.GetActiveScene().name == "Level3Boss") progressData.SetProgressData(3);
+            SaveData();
+            SceneManager.LoadSceneAsync("GameOverMenu");
         }
 
         _frenzyBar.GetComponent<Image>().fillAmount = _FrenzyMeter / _FrenzyMeterMax;
@@ -386,5 +401,25 @@ public class PlayerController : MonoBehaviour{
             }
             
         }
+    }
+
+    public void SaveData() {
+        string json = JsonUtility.ToJson(progressData);
+        Debug.Log(json);
+
+        using(StreamWriter writer = new StreamWriter(Application.dataPath + Path.AltDirectorySeparatorChar + "SaveData.json")) {
+            writer.Write(json);
+        }
+    }
+
+    public void LoadData() {
+
+        string json = string.Empty;
+
+        using (StreamReader reader = new StreamReader(Application.dataPath + Path.AltDirectorySeparatorChar + "SaveData.json")) {
+            json = reader.ReadToEnd();
+        }
+        ProgressData data = JsonUtility.FromJson<ProgressData>(json);
+        progressData.SetProgressData(data.level);
     }
 }
