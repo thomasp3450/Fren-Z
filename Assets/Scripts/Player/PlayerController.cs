@@ -10,7 +10,6 @@ using Cinemachine;
 public class PlayerController : MonoBehaviour{
 
     private ProgressData progressData; // User data to persist despite changing scenes
-    [SerializeField] public float _CurrentLevel;
     [SerializeField] public float _Speed; //how fast you go normally
     public float _ActiveSpeed; //how fast you are currently going
     [SerializeField] float _DashSpeed; //how fast you dash
