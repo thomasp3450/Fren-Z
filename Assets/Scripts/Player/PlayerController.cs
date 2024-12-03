@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using System;
 using System.IO;
 using UnityEngine.SceneManagement;
 using Cinemachine;
 
 public class PlayerController : MonoBehaviour{
 
-    private ProgressData progressData; // User data to persist despite changing scenes
+    public ProgressData progressData; // User data to persist despite changing scenes
     [SerializeField] public float _Speed; //how fast you go normally
     public float _ActiveSpeed; //how fast you are currently going
     [SerializeField] float _DashSpeed; //how fast you dash
@@ -57,6 +58,9 @@ public class PlayerController : MonoBehaviour{
 
     private CinemachineImpulseSource impulseSource;
 
+    public int GetCurrentLevel() { // Gets the user's level
+        return progressData.level;
+    }
 
     private void Awake() {
         _Rigidbody =  GetComponent<Rigidbody2D>();
@@ -69,7 +73,14 @@ public class PlayerController : MonoBehaviour{
     }
 
     void Start() {
-        progressData = ProgressData.Instance;
+        try {
+            LoadData();
+            // _amountOfBloodBombs = progressData.bloodBombs;
+            // amountOfSyringes = progressData.syringes;
+        } catch (Exception e) {
+            print("error");
+            progressData = ProgressData.Instance;
+        } 
     }
 
     public void onMovement(InputAction.CallbackContext context){
@@ -192,10 +203,10 @@ public class PlayerController : MonoBehaviour{
         if (_isFrenzied && _FrenzyMeter <= 0) {
             _FrenzyMeter = 0;
             if (SceneManager.GetActiveScene().name == "Level 1" || SceneManager.GetActiveScene().name == "Level1Boss") {
-                progressData.SetProgressData(1);
+                progressData.SetProgressData(1, _amountOfBloodBombs, _amountOfSyringes);
             }
-            if (SceneManager.GetActiveScene().name == "Level 2" || SceneManager.GetActiveScene().name == "Level2Boss") progressData.SetProgressData(2);
-            if (SceneManager.GetActiveScene().name == "Level 3" || SceneManager.GetActiveScene().name == "Level3Boss") progressData.SetProgressData(3);
+            if (SceneManager.GetActiveScene().name == "Level 2" || SceneManager.GetActiveScene().name == "Level2Boss") progressData.SetProgressData(2, _amountOfBloodBombs, _amountOfSyringes);
+            if (SceneManager.GetActiveScene().name == "Level 3" || SceneManager.GetActiveScene().name == "Level3Boss") progressData.SetProgressData(3, _amountOfBloodBombs, _amountOfSyringes);
             SaveData();
             SceneManager.LoadSceneAsync("GameOverMenu");
         }
@@ -419,6 +430,6 @@ public class PlayerController : MonoBehaviour{
             json = reader.ReadToEnd();
         }
         ProgressData data = JsonUtility.FromJson<ProgressData>(json);
-        progressData.SetProgressData(data.level);
+        progressData.SetProgressData(data.level, data.bloodBombs, data.syringes);
     }
 }

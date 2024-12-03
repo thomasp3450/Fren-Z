@@ -25,6 +25,11 @@ public class SelectScene : MonoBehaviour {
         SceneManager.LoadSceneAsync("MainMenu");
     }
 
+    public void resetProgress() {
+        progressData.SetProgressData(1, 0, 0);
+        SaveData();
+    }
+
     public void enterLevel() {
         if (progressData.level == 1) SceneManager.LoadSceneAsync("Level 1");
         if (progressData.level == 2) SceneManager.LoadSceneAsync("Level 2");
@@ -48,6 +53,6 @@ public class SelectScene : MonoBehaviour {
             json = reader.ReadToEnd();
         }
         ProgressData data = JsonUtility.FromJson<ProgressData>(json);
-        progressData.SetProgressData(data.level);
+        progressData.SetProgressData(data.level, data.bloodBombs, data.syringes);
     }
 }

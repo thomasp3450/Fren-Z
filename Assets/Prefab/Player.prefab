@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 1891318425560243383}
   - component: {fileID: 2321914501143942395}
   - component: {fileID: -5110382289731543615}
+  - component: {fileID: 6266708031035446508}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -243,6 +244,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 378266c1-e0ff-4d55-8336-3a4f4a66ba45
     m_ActionName: Gameplay/ChangeOutOfFrenzy
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6266708031035446508}
+        m_TargetAssemblyTypeName: PlayerPause, Assembly-CSharp
+        m_MethodName: OnPausing
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 265dbb80-7eca-402d-ac9c-3e14a68d00e4
+    m_ActionName: Gameplay/Start[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -618,3 +635,16 @@ MonoBehaviour:
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
   m_DefaultVelocity: {x: 0, y: -1, z: 0}
+--- !u!114 &6266708031035446508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5742868673084949857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce5eea2b5ad99474abefce7e495c4290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pauseMenu: {fileID: 0}
