@@ -1,36 +1,29 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class SaveData {
+public class ProgressData {
 
-    // Adapted from: https://github.com/UnityTechnologies/UniteNow20-Persistent-Data
-    // https://unity.com/blog/games/persistent-data-how-to-save-your-game-states-and-settings
-    
-    [System.Serializable]
-    public struct PlayerData {
-        public string uuid;
-        public int health;
-        public int syringes;
-        public int bloodBombs;
-    }
-    
-    public int m_Score;
-    // Will save data for the enemies that are alive.
-    // public List<EnemyData> m_EnemyData = new List<EnemyData>();
-    
-    public PlayerData playerData;
-    
-    public string ToJson() {
-        return JsonUtility.ToJson(this);
+    public int level;
+
+    public delegate void OnProgressDataChange (int level);
+    public static event OnProgressDataChange OnDataChange;
+    private static ProgressData _instance = null;
+    public static ProgressData Instance {
+        get {
+            if (_instance == null) {
+                _instance = new ProgressData(1);
+            }
+            return _instance;
+        }
     }
 
-    public void LoadFromJson(string a_Json) {
-        JsonUtility.FromJsonOverwrite(a_Json, this);
+    private ProgressData(int level) {
+        this.level = level;
     }
-}
 
-public interface ISaveable {
-    void PopulateSaveData(SaveData a_SaveData);
-    void LoadFromSaveData(SaveData a_SaveData);
+    public void SetProgressData(int level) {
+        this.level = level;
+        OnDataChange?.Invoke(level);
+    }
 }
