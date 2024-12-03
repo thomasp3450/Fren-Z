@@ -349,7 +349,7 @@ public class PlayerController : MonoBehaviour{
     
     public void OnLightAttack() {
         // Initiates the combo attack.
-        if (gameObject.GetComponent<PlayerController>()._isFrenzied && !_isAttacking && _currentComboAttackCooldown <= 0) {
+        if (!gameObject.GetComponent<PlayerPause>()._pauseMenu.activeSelf && gameObject.GetComponent<PlayerController>()._isFrenzied && !_isAttacking && _currentComboAttackCooldown <= 0) {
 
             // Starts the attack coroutine to carry out the attack's duration
             StartCoroutine(ComboAttack());
@@ -400,7 +400,7 @@ public class PlayerController : MonoBehaviour{
     public void OnHeavyAttack() {
 
         // Initiates the heavy attack.
-        if (gameObject.GetComponent<PlayerController>()._isFrenzied && !_isAttacking) {
+        if (!gameObject.GetComponent<PlayerPause>()._pauseMenu.activeSelf && gameObject.GetComponent<PlayerController>()._isFrenzied && !_isAttacking) {
             
             // Starts the attack coroutine to carry out the attack's duration
             StartCoroutine(HeavyAttack());
