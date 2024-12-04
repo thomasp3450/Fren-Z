@@ -910,6 +910,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss1
       objectReference: {fileID: 0}
+    - target: {fileID: 6891858233950999994, guid: 7419828339bcc73409cfeb2200a9280f, type: 3}
+      propertyPath: m_Mass
+      value: 1000000
+      objectReference: {fileID: 0}
     - target: {fileID: 8811924952272710057, guid: 7419828339bcc73409cfeb2200a9280f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 44.28
