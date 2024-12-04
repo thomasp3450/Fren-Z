@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour{
             EnterFrenzyMode();
         } */
 
-        if (_isFrenzied == false && _activeTransformCooldown <= 0) {
+        if (!gameObject.GetComponent<PlayerPause>()._pauseMenu.activeSelf && !gameObject.GetComponent<PlayerGameOver>()._gameoverMenu.activeSelf && _isFrenzied == false && _activeTransformCooldown <= 0) {
             EnterFrenzyMode();
             _activeTransformCooldown += _transformCooldown;
         }
