@@ -37,13 +37,7 @@ public class SceneController : MonoBehaviour
     }
 
     public void NextLevel(){
-        if (SceneManager.GetActiveScene().name == "Level 1") {
-            player.GetComponent<PlayerController>().progressData.SetProgressData(1, player.GetComponent<PlayerController>()._amountOfBloodBombs, player.GetComponent<PlayerController>()._amountOfSyringes);
-        }
-        if (SceneManager.GetActiveScene().name == "Level 2") player.GetComponent<PlayerController>().progressData.SetProgressData(2, player.GetComponent<PlayerController>()._amountOfBloodBombs, player.GetComponent<PlayerController>()._amountOfSyringes);
-        if (SceneManager.GetActiveScene().name == "Level 3") player.GetComponent<PlayerController>().progressData.SetProgressData(3, player.GetComponent<PlayerController>()._amountOfBloodBombs, player.GetComponent<PlayerController>()._amountOfSyringes);
         SceneManager.LoadSceneAsync(scene.buildIndex + 1);
-        transitionAnimation.Play("FadeOut");
         scene = SceneManager.GetActiveScene();
     }
 
