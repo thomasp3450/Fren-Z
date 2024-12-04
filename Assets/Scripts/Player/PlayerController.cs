@@ -132,23 +132,7 @@ public class PlayerController : MonoBehaviour{
         if (collision.GetComponent<EnemyMovement>()) {
             if (_DashCounter > 0 && _isFrenzied) {
                 // The dash attack is activated when the player is in Frenzy state and dashing.
-                collision.GetComponent<HealthController>().TakeDamage((float)1);
-            }
-        }
-    }
-
-    private void OnTriggerStay2D (Collider2D collision) { 
-        if (collision.GetComponent<EnemyMovement>()) {
-            // Takes a small fraction of the player's frenzy gauge
-            if (!_gaugeInvincible) {
-                _FrenzyMeter -= (float)0.005;
-                gameObject.GetComponent<SpriteFlash>().StartFlash((float)0.12, new Color((float)255,(float)0.0,(float)0.0), 1);
-            }
-        }
-        if (collision.GetComponent<EnemyMovement>()) {
-            if (_DashCounter > 0 && _isFrenzied) {
-                // The dash attack is activated when the player is in Frenzy state and dashing.
-                collision.GetComponent<HealthController>().TakeDamage((float)0.005);
+                collision.GetComponent<HealthController>().TakeDamage((float)3);
             }
         }
     }

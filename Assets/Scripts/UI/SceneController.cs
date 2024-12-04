@@ -40,12 +40,11 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadSceneAsync(scene.buildIndex + 1);
         transitionAnimation.Play("FadeOut");
         scene = SceneManager.GetActiveScene();
-        if (SceneManager.GetActiveScene().name == "Level 1" || SceneManager.GetActiveScene().name == "Level1Boss") {
-            player.GetComponent<PlayerController>().progressData.SetProgressData(1, 0, 0);
+        if (SceneManager.GetActiveScene().name == "Level 1") {
+            player.GetComponent<PlayerController>().progressData.SetProgressData(1, player.GetComponent<PlayerController>()._amountOfBloodBombs, player.GetComponent<PlayerController>()._amountOfSyringes);
         }
-        if (SceneManager.GetActiveScene().name == "Level 2" || SceneManager.GetActiveScene().name == "Level2Boss") player.GetComponent<PlayerController>().progressData.SetProgressData(2, 0, 0);
-        if (SceneManager.GetActiveScene().name == "Level 3" || SceneManager.GetActiveScene().name == "Level3Boss") player.GetComponent<PlayerController>().progressData.SetProgressData(3, 0, 0);
-        player.GetComponent<PlayerController>().SaveData();
+        if (SceneManager.GetActiveScene().name == "Level 2") player.GetComponent<PlayerController>().progressData.SetProgressData(2, player.GetComponent<PlayerController>()._amountOfBloodBombs, player.GetComponent<PlayerController>()._amountOfSyringes);
+        if (SceneManager.GetActiveScene().name == "Level 3") player.GetComponent<PlayerController>().progressData.SetProgressData(3, player.GetComponent<PlayerController>()._amountOfBloodBombs, player.GetComponent<PlayerController>()._amountOfSyringes);
     }
 
     

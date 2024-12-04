@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class PlayerThrowBloodBomb : MonoBehaviour {
     [SerializeField]
     private GameObject _bloodBombPrefab;
@@ -16,6 +17,8 @@ public class PlayerThrowBloodBomb : MonoBehaviour {
 
     [SerializeField]
     private float _timeBetweenShots;
+
+    public ProgressData progressData;
     
     private float _lastFireTime;
     
@@ -25,6 +28,7 @@ public class PlayerThrowBloodBomb : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
       animator = GetComponent<Animator>();
+      progressData = ProgressData.Instance;
     }   
 
     private void ThrowBloodBomb() {
@@ -43,6 +47,8 @@ public class PlayerThrowBloodBomb : MonoBehaviour {
             float timeSinceLastFire = Time.time - _lastFireTime;
             if (timeSinceLastFire >= _timeBetweenShots || _lastFireTime == 0) {
                 gameObject.GetComponent<PlayerController>()._amountOfBloodBombs--;
+                gameObject.GetComponent<PlayerController>().progressData.SetProgressData(gameObject.GetComponent<PlayerController>().GetCurrentLevel(), gameObject.GetComponent<PlayerController>()._amountOfBloodBombs, gameObject.GetComponent<PlayerController>()._amountOfSyringes);
+                gameObject.GetComponent<PlayerController>().SaveData();
                 ThrowBloodBomb();  
                 if (gameObject.GetComponent<PlayerController>()._comboLink > 0) {
                     gameObject.GetComponent<PlayerController>()._comboLink = 0;
