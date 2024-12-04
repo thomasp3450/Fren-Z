@@ -256,7 +256,19 @@ MonoBehaviour:
       m_Calls: []
   Damaged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8021043665531323650}
+        m_TargetAssemblyTypeName: EnemyHitFlash, Assembly-CSharp
+        m_MethodName: StartFlash
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   Died:
     m_PersistentCalls:
       m_Calls:
@@ -539,7 +551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _flashLength: 0.12
-  _flashColor: {r: 0.7169812, g: 0, b: 0, a: 0}
+  _flashColor: {r: 0.7169812, g: 0, b: 0, a: 1}
   _numberOfFlashes: 1
 --- !u!1 &3502795242365901835
 GameObject:
