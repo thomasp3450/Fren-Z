@@ -39,7 +39,7 @@ public class EliteShoot : MonoBehaviour
         } else if (_awareOfPlayerController.AwareOfPlayer && inMeleeRange){
             
             if (timeSinceLastFire >= _timeBetweenShots || _lastFireTime == 0) {
-                MeleeAttack();
+                animator.Play("Shove");
             }
            
         }
@@ -57,11 +57,13 @@ public class EliteShoot : MonoBehaviour
         
     }
 
-    private void MeleeAttack(){
+
+
+    IEnumerator MeleeAttack(){
         GameObject shove = Instantiate(_meleePrefab, transform.position, transform.rotation);
-        AudioManager.Instance.PlaySFX("LightAttack");
-        animator.Play("Shove");
         Destroy(shove, 0.4f); 
+        AudioManager.Instance.PlaySFX("LightAttack");
+        yield return new WaitForSeconds(1);        
     }
 
 }

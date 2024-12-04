@@ -15,6 +15,10 @@ public class GateLogic : MonoBehaviour
 
     public bool isColliderEnabled;
 
+    public bool isColliderActive(){
+        return isColliderEnabled;
+    }
+
 
     IEnumerator wait(){ 
         yield return new WaitForSeconds(5); //stay open 5 seconds
@@ -61,7 +65,7 @@ public class GateLogic : MonoBehaviour
         
             if(hasAccess){ 
                 StartCoroutine(AllowAccess());
-                //StartCoroutine(Close());
+                
                 
             }else{
                 StartCoroutine(DenyAccess());
@@ -70,19 +74,14 @@ public class GateLogic : MonoBehaviour
     }
 
     IEnumerator AllowAccess(){
-        isColliderEnabled = false;
+        
         animator.Play("GateOpen");
         AudioManager.Instance.PlaySFX("DoorWoosh");
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(1);
+        isColliderEnabled = false;
     }
 
-    IEnumerator Close(){
-        yield return new WaitForSeconds(5);
-        animator.Play("GateClosed");
-        isColliderEnabled = true;
-    
-    }
-
+   
      IEnumerator DenyAccess(){
         animator.Play("GateDeny");
         yield return new WaitForSeconds(2);

@@ -30,14 +30,18 @@ public class StandardBullet : MonoBehaviour {
 
         }
 
-        if(collision.gameObject.tag == "Walls" || collision.gameObject.tag == "Gate"){ //prevent bullet wall passthrough
-            
-            Destroy(gameObject, 0.01f);
-            
+        if(collision.gameObject.tag == "Walls"){ //prevent bullet wall passthrough 
+            Destroy(gameObject, 0.01f);  
+        }
+        if(collision.gameObject.tag == "Gate"){
+            if(collision.GetComponent<GateLogic>().isColliderActive()){
+                Destroy(gameObject, 0.01f);  
+            }
         }
 
 
     }
+
 
     private void OnTriggerExit2D (Collider2D collision) {
 
