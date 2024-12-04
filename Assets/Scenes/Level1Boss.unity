@@ -898,18 +898,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3139186711957509524, guid: 7419828339bcc73409cfeb2200a9280f, type: 3}
-      propertyPath: _currentHealth
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 3139186711957509524, guid: 7419828339bcc73409cfeb2200a9280f, type: 3}
-      propertyPath: _maximumHealth
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 4265836170792931234, guid: 7419828339bcc73409cfeb2200a9280f, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5422641590796120408, guid: 7419828339bcc73409cfeb2200a9280f, type: 3}
       propertyPath: _healthBar
       value: 
