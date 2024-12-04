@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c579aa4480ce64daff0ad6a9312d97, type: 3}
   m_Name: StreamingImageSequencePlayableAsset
   m_EditorClassIdentifier: 
-  m_folder: Assets/Story_frames/Ending
+  m_folder: Assets/StreamingAssets/story_s5_f
   m_imageFiles:
   - m_name: story_s5_f1.png
     m_size: 344679
@@ -28,10 +28,10 @@ MonoBehaviour:
     m_size: 20044
   m_timelineBGColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_version: 3
-  m_time: 0.9599999189376831
+  m_time: 0
   m_textureFilterMode: 1
   Folder: 
-  m_timelineDefaultAsset: {fileID: 102900000, guid: 6341a7fee0d481242b048258a5507db9, type: 3}
+  m_timelineDefaultAsset: {fileID: 0}
 --- !u!114 &-1138992129187848790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -358,7 +358,7 @@ MonoBehaviour:
     m_ExposedParameterNames: []
     m_AnimationCurves: {fileID: 8213051565306440354}
     m_Recordable: 0
-    m_PostExtrapolationMode: 0
+    m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: Infinity
     m_PreExtrapolationTime: 0

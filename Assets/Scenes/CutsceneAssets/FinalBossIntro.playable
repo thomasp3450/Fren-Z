@@ -6254,7 +6254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c579aa4480ce64daff0ad6a9312d97, type: 3}
   m_Name: StreamingImageSequencePlayableAsset
   m_EditorClassIdentifier: 
-  m_folder: Assets/Story_frames/FinalBossIntro
+  m_folder: Assets/StreamingAssets/story_s4_f
   m_imageFiles:
   - m_name: story_s4_f1.png
     m_size: 197749
@@ -6264,10 +6264,10 @@ MonoBehaviour:
     m_size: 366856
   m_timelineBGColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_version: 3
-  m_time: 0.24590837955474854
+  m_time: 0.5725150108337402
   m_textureFilterMode: 1
   Folder: 
-  m_timelineDefaultAsset: {fileID: 102900000, guid: a24f09eacc72b9c46b05278de8dc31db, type: 3}
+  m_timelineDefaultAsset: {fileID: 0}
 --- !u!74 &-1291851272360361812
 AnimationClip:
   m_ObjectHideFlags: 0

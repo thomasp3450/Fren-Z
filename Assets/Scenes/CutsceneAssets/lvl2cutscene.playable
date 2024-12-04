@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c579aa4480ce64daff0ad6a9312d97, type: 3}
   m_Name: StreamingImageSequencePlayableAsset
   m_EditorClassIdentifier: 
-  m_folder: Assets/Story_frames/Boss2
+  m_folder: Assets/StreamingAssets/story_s3_f
   m_imageFiles:
   - m_name: story_s3_f1.png
     m_size: 280563
@@ -163,10 +163,10 @@ MonoBehaviour:
     m_size: 318778
   m_timelineBGColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_version: 3
-  m_time: 0.49541670083999634
+  m_time: 0
   m_textureFilterMode: 1
   Folder: 
-  m_timelineDefaultAsset: {fileID: 102900000, guid: 559ae561889fcf548b0ddba197ed8be4, type: 3}
+  m_timelineDefaultAsset: {fileID: 0}
 --- !u!114 &4205048542900737887
 MonoBehaviour:
   m_ObjectHideFlags: 1

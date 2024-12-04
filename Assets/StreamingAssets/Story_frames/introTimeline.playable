@@ -8215,6 +8215,6 @@ MonoBehaviour:
   m_timelineBGColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_version: 3
   m_time: 0
-  m_textureFilterMode: 1
+  m_textureFilterMode: 0
   Folder: 
   m_timelineDefaultAsset: {fileID: 102900000, guid: 903eb71b03f21cd44bfe4c38391c3062, type: 3}
