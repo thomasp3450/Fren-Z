@@ -74,12 +74,12 @@ public class BloodBombAttack : MonoBehaviour {
             _collider.size = new Vector2((float)0.5, (float)0.5);
 
             // The damage itself
-            collision.GetComponent<HealthController>().TakeDamage(10);
+            collision.GetComponent<HealthController>().TakeDamage(50);
 
-            // Damage multiplies against boss 1
+            /* // Damage multiplies against boss 1
             if (collision.GetComponent<B1Slam>()
                 || collision.GetComponent<B2Idle>() || collision.GetComponent<B3Idle>()
-            ) collision.GetComponent<HealthController>().TakeDamage(50);
+            ) collision.GetComponent<HealthController>().TakeDamage(50); */
 
             // Prevents hitting again
             collision.GetComponent<HealthController>().InitIFrames();

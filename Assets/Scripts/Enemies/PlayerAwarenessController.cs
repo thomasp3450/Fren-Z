@@ -27,9 +27,7 @@ public class PlayerAwarenessController : MonoBehaviour
         DirectionToPlayer = enemyToPlayerVector.normalized;
 
         if (enemyToPlayerVector.magnitude <= _playerAwarenessDistance || _isPermanantlyAware) {
-            AwareOfPlayer = true;
-        } else {
-            AwareOfPlayer = false;
+            MakePermanantlyAware();
         }
     }
 

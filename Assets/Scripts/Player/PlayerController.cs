@@ -75,15 +75,7 @@ public class PlayerController : MonoBehaviour{
 
     void Start() {
         // gameObject.GetComponent<PlayerPause>()._pauseMenu.SetActive(false);
-        // gameObject.GetComponent<PlayerGameOver>()._gameoverMenu.SetActive(false);
-        try {
-            LoadData();
-            // _amountOfBloodBombs = progressData.bloodBombs;
-            // amountOfSyringes = progressData.syringes;
-        } catch (Exception e) {
-            print("error");
-            progressData = ProgressData.Instance;
-        } 
+        // gameObject.GetComponent<PlayerGameOver>()._gameoverMenu.SetActive(false); 
     }
 
     public void onMovement(InputAction.CallbackContext context){
@@ -140,13 +132,38 @@ public class PlayerController : MonoBehaviour{
         if (collision.GetComponent<EnemyMovement>()) {
             if (_DashCounter > 0 && _isFrenzied) {
                 // The dash attack is activated when the player is in Frenzy state and dashing.
-                collision.GetComponent<HealthController>().TakeDamage((float)3);
+                collision.GetComponent<HealthController>().TakeDamage((float)1);
+            }
+        }
+    }
+
+    private void OnTriggerStay2D (Collider2D collision) { 
+        if (collision.GetComponent<EnemyMovement>()) {
+            // Takes a small fraction of the player's frenzy gauge
+            if (!_gaugeInvincible) {
+                _FrenzyMeter -= (float)0.005;
+                gameObject.GetComponent<SpriteFlash>().StartFlash((float)0.12, new Color((float)255,(float)0.0,(float)0.0), 1);
+            }
+        }
+        if (collision.GetComponent<EnemyMovement>()) {
+            if (_DashCounter > 0 && _isFrenzied) {
+                // The dash attack is activated when the player is in Frenzy state and dashing.
+                collision.GetComponent<HealthController>().TakeDamage((float)0.005);
             }
         }
     }
 
 
     private void FixedUpdate() { //move and rotate with input
+
+        try {
+            LoadData();
+            _amountOfBloodBombs = progressData.bloodBombs;
+            _amountOfSyringes = progressData.syringes;
+        } catch (Exception e) {
+            print("error");
+            progressData = ProgressData.Instance;
+        }
         
         SetPlayerVelocity();
         _UIAmountOfBloodBombs.GetComponent<TMPro.TextMeshProUGUI>().text = "" + _amountOfBloodBombs + "";
@@ -207,10 +224,10 @@ public class PlayerController : MonoBehaviour{
         if (_isFrenzied && _FrenzyMeter <= 0) {
             _FrenzyMeter = 0;
             if (SceneManager.GetActiveScene().name == "Level 1" || SceneManager.GetActiveScene().name == "Level1Boss") {
-                progressData.SetProgressData(1, _amountOfBloodBombs, _amountOfSyringes);
+                progressData.SetProgressData(1, 0, 0);
             }
-            if (SceneManager.GetActiveScene().name == "Level 2" || SceneManager.GetActiveScene().name == "Level2Boss") progressData.SetProgressData(2, _amountOfBloodBombs, _amountOfSyringes);
-            if (SceneManager.GetActiveScene().name == "Level 3" || SceneManager.GetActiveScene().name == "Level3Boss") progressData.SetProgressData(3, _amountOfBloodBombs, _amountOfSyringes);
+            if (SceneManager.GetActiveScene().name == "Level 2" || SceneManager.GetActiveScene().name == "Level2Boss") progressData.SetProgressData(2, 0, 0);
+            if (SceneManager.GetActiveScene().name == "Level 3" || SceneManager.GetActiveScene().name == "Level3Boss") progressData.SetProgressData(3, 0, 0);
             SaveData();
             gameObject.GetComponent<PlayerGameOver>()._gameoverMenu.SetActive(true);
         }
