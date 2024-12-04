@@ -18,6 +18,7 @@ public class GateLogic : MonoBehaviour
     public bool isColliderActive(){
         return isColliderEnabled;
     }
+   
 
 
     IEnumerator wait(){ 
@@ -34,7 +35,6 @@ public class GateLogic : MonoBehaviour
         }
         
         hasAccess = false;
-
         isColliderEnabled = true;
         animator = GetComponent<Animator>();
         

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9064641348579148924}
   - component: {fileID: 7649874253880526224}
   - component: {fileID: 8917114217628474381}
-  - component: {fileID: 7762059698351510482}
+  - component: {fileID: 5067752053316305329}
   m_Layer: 0
   m_Name: Gate
   m_TagString: Gate
@@ -169,8 +169,8 @@ MonoBehaviour:
   Key: {fileID: 0}
   hasAccess: 0
   isColliderEnabled: 1
---- !u!61 &7762059698351510482
-BoxCollider2D:
+--- !u!70 &5067752053316305329
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -202,15 +202,5 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2, y: 0.64}
-    newSize: {x: 3.2, y: 0.64}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.51, y: 3}
-  m_EdgeRadius: 0
+  m_Size: {x: 3.3, y: 1}
+  m_Direction: 1
