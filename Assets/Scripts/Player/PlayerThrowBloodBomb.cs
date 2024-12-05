@@ -28,7 +28,6 @@ public class PlayerThrowBloodBomb : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
       animator = GetComponent<Animator>();
-      progressData = ProgressData.Instance;
     }   
 
     private void ThrowBloodBomb() {
@@ -54,9 +53,6 @@ public class PlayerThrowBloodBomb : MonoBehaviour {
                     gameObject.GetComponent<PlayerController>()._comboLink = 0;
                     gameObject.GetComponent<PlayerController>()._currentComboAttackCooldown += gameObject.GetComponent<PlayerController>().GetComboAttackCooldown();
                 }
-                // animator.SetBool("isThrowingBloodBomb", true);
-            }else{
-                // animator.SetBool("isThrowingBloodBomb", false);
             }
         }
     }
@@ -72,7 +68,6 @@ public class PlayerThrowBloodBomb : MonoBehaviour {
             _bloodBombPrefab.SetActive(false);
             gameObject.GetComponent<PlayerController>()._ActiveSpeed = gameObject.GetComponent<PlayerController>()._Speed;
             gameObject.GetComponent<PlayerController>()._isAttacking = false;
-            // animator.SetBool("isThrowingBloodBomb", false);
         }
     }
 }

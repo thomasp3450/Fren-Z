@@ -25,9 +25,7 @@ public class SceneController : MonoBehaviour
     }
 
      private void Start(){
-        progressData = ProgressData.Instance;
         scene = SceneManager.GetActiveScene();
-        if (player == null) player = GameObject.FindGameObjectWithTag("Player");
         Debug.Log("Active Scene name is: " + scene.name + "\nActive Scene index: " + scene.buildIndex);
      }
 

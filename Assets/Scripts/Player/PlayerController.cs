@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour{
     private Vector2 _SmoothedMovementVelocity; //speed of damping
 
     public bool _isFrenzied;
+    public bool _collectedData = false;
     public bool _gaugeInvincible = false;
     private float _FrenzyMeter;
     [SerializeField] private float _FrenzyMeterMax;
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour{
     private Rigidbody2D _Rigidbody;
     [SerializeField] public GameObject _frenzyBar;
     [SerializeField] public GameObject _frenzyBarBackground;
+    [SerializeField] public GameObject _enterFrenzy;
     [SerializeField] public GameObject _UIAmountOfBloodBombs;
     [SerializeField] public GameObject _UIAmountOfStimPacks;
     GameObject lightAttack1;
@@ -73,11 +75,6 @@ public class PlayerController : MonoBehaviour{
         animator.SetBool("Frenzied", false);
     }
 
-    void Start() {
-        // gameObject.GetComponent<PlayerPause>()._pauseMenu.SetActive(false);
-        // gameObject.GetComponent<PlayerGameOver>()._gameoverMenu.SetActive(false); 
-    }
-
     public void onMovement(InputAction.CallbackContext context){
         _Movement = context.ReadValue<Vector2>(); 
     }
@@ -97,15 +94,6 @@ public class PlayerController : MonoBehaviour{
     }
 
     public void onFrenzy(InputAction.CallbackContext context) {
-        // Debug.Log("Frenzy value: " + _FrenzyMeter);
-        /* if (_isFrenzied == true && _FrenzyMeter >= 100 ) {
-            gameObject.GetComponent<HealthController>().AddHealth(1);
-            ExitFrenzyMode();
-        }
-        else{
-            EnterFrenzyMode();
-        } */
-
         if (!gameObject.GetComponent<PlayerPause>()._pauseMenu.activeSelf && !gameObject.GetComponent<PlayerGameOver>()._gameoverMenu.activeSelf && _isFrenzied == false && _activeTransformCooldown <= 0) {
             EnterFrenzyMode();
             _activeTransformCooldown += _transformCooldown;
@@ -140,13 +128,16 @@ public class PlayerController : MonoBehaviour{
 
     private void FixedUpdate() { //move and rotate with input
 
-        try {
-            LoadData();
-            _amountOfBloodBombs = progressData.bloodBombs;
-            _amountOfSyringes = progressData.syringes;
-        } catch (Exception e) {
-            print("error");
+        if (!_collectedData) {
             progressData = ProgressData.Instance;
+            if (SceneManager.GetActiveScene().name == "Level 1" || SceneManager.GetActiveScene().name == "Level 2" || SceneManager.GetActiveScene().name == "Level 3") progressData.SetProgressData(1, 0, 0);
+            _collectedData = true;
+            try {
+                LoadData();
+                _amountOfBloodBombs = progressData.bloodBombs;
+                _amountOfSyringes = progressData.syringes;
+            } catch (Exception e) {
+            }
         }
         
         SetPlayerVelocity();
@@ -157,8 +148,6 @@ public class PlayerController : MonoBehaviour{
         // Prevents gauge overflow
         if (GetFrenzyMeter() > GetFrenzyMeterMax()) _FrenzyMeter = _FrenzyMeterMax;
 
-        // _comboAttackCooldownText.GetComponent<TMPro.TextMeshProUGUI>().text = "Light Attack Cooldown: " + _currentComboAttackCooldown + "";
-        // _dashAttackCooldownText.GetComponent<TMPro.TextMeshProUGUI>().text = "Dash Cooldown: " + _DashCoolDownCounter + "";
         if (_DashCoolDownCounter < 0) _DashCoolDownCounter = 0;
 
         // Prevents accidental transformations between states
@@ -166,8 +155,6 @@ public class PlayerController : MonoBehaviour{
 
         // Prevents spamming of light attack
         if (_currentComboAttackCooldown > 0) _currentComboAttackCooldown--;
-
-        // Debug.Log("Active speed: " + _ActiveSpeed);
 
         if (lightAttack1 != null) {
             lightAttack1.transform.position = transform.position;
@@ -198,12 +185,6 @@ public class PlayerController : MonoBehaviour{
              _DashCoolDownCounter -= Time.deltaTime;
         }
 
-        // Changes player out of frenzy mode after gauge is filled.
-        /* if (_isFrenzied && GetFrenzyMeter() >= GetFrenzyMeterMax()) { 
-            gameObject.GetComponent<HealthController>().AddHealth(1);
-            ExitFrenzyMode();
-        } */
-
         // Player depletes the Frenzy gauge and loses.
         if (_isFrenzied && _FrenzyMeter <= 0) {
             _FrenzyMeter = 0;
@@ -212,6 +193,7 @@ public class PlayerController : MonoBehaviour{
             }
             if (SceneManager.GetActiveScene().name == "Level 2" || SceneManager.GetActiveScene().name == "Level2Boss") progressData.SetProgressData(2, 0, 0);
             if (SceneManager.GetActiveScene().name == "Level 3" || SceneManager.GetActiveScene().name == "Level3Boss") progressData.SetProgressData(3, 0, 0);
+            
             SaveData();
             gameObject.GetComponent<PlayerGameOver>()._gameoverMenu.SetActive(true);
         }
@@ -268,6 +250,7 @@ public class PlayerController : MonoBehaviour{
         // Debug.Log(_FrenzyMeter);
         _frenzyBar.SetActive(true);
         _frenzyBarBackground.SetActive(true);
+        gameObject.GetComponent<PlayerController>()._enterFrenzy.SetActive(false);
     }
 
     public void ExitFrenzyMode(){
@@ -420,7 +403,7 @@ public class PlayerController : MonoBehaviour{
 
     public void SaveData() {
         string json = JsonUtility.ToJson(progressData);
-        Debug.Log(json);
+        // Debug.Log(json);
 
         using(StreamWriter writer = new StreamWriter(Application.dataPath + Path.AltDirectorySeparatorChar + "SaveData.json")) {
             writer.Write(json);

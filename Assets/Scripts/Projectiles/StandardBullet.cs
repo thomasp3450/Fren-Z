@@ -22,7 +22,7 @@ public class StandardBullet : MonoBehaviour {
             Destroy(gameObject, 0.01f);
 
             // Enemy takes damage
-            collision.GetComponent<HealthController>().TakeDamage((float)2.5);
+            collision.GetComponent<HealthController>().TakeDamage((float)3);
 
             // Prevents repeated hits on the opponent per bullet
             // Invincibility ends when the bullet exits bounding box.

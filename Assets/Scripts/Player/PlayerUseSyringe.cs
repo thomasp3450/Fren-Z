@@ -14,6 +14,7 @@ public class PlayerUseSyringe : MonoBehaviour {
             gameObject.GetComponent<PlayerController>().SaveData();
             gameObject.GetComponent<HealthController>().AddHealth(1);
             gameObject.GetComponent<PlayerController>().ExitFrenzyMode();
+            gameObject.GetComponent<PlayerController>()._enterFrenzy.SetActive(true);
         }
     }
 }

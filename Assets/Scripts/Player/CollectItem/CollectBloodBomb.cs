@@ -5,12 +5,7 @@ using System.IO;
 
 public class CollectBloodBomb : MonoBehaviour {
 
-    private ProgressData progressData; // User data to persist despite changing scenes
     private bool _isUsed = false;
-
-    void Start() {
-        progressData = ProgressData.Instance;
-    }
 
     private void OnTriggerEnter2D (Collider2D collision) {
 
@@ -30,24 +25,5 @@ public class CollectBloodBomb : MonoBehaviour {
         if (collision.GetComponent<PlayerController>()) {
         }
     }
-
-    public void SaveData() {
-        string json = JsonUtility.ToJson(progressData);
-        Debug.Log(json);
-
-        using(StreamWriter writer = new StreamWriter(Application.dataPath + Path.AltDirectorySeparatorChar + "SaveData.json")) {
-            writer.Write(json);
-        }
-    }
-
-    public void LoadData() {
-
-        string json = string.Empty;
-
-        using (StreamReader reader = new StreamReader(Application.dataPath + Path.AltDirectorySeparatorChar + "SaveData.json")) {
-            json = reader.ReadToEnd();
-        }
-        ProgressData data = JsonUtility.FromJson<ProgressData>(json);
-        progressData.SetProgressData(data.level, data.bloodBombs, data.syringes);
-    }
+    
 }

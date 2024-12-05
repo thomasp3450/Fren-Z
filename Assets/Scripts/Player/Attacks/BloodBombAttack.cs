@@ -74,7 +74,7 @@ public class BloodBombAttack : MonoBehaviour {
             _collider.size = new Vector2((float)0.5, (float)0.5);
 
             // The damage itself
-            collision.GetComponent<HealthController>().TakeDamage(50);
+            collision.GetComponent<HealthController>().TakeDamage(40);
 
             /* // Damage multiplies against boss 1
             if (collision.GetComponent<B1Slam>()
@@ -82,7 +82,7 @@ public class BloodBombAttack : MonoBehaviour {
             ) collision.GetComponent<HealthController>().TakeDamage(50); */
 
             // Prevents hitting again
-            collision.GetComponent<HealthController>().InitIFrames();
+            // collision.GetComponent<HealthController>().InitIFrames();
         }
         if(collision.gameObject.tag == "Walls"){ //prevent bullet wall passthrough
 

@@ -15,7 +15,7 @@ public class PlayerPause : MonoBehaviour {
 
     private void FixedUpdate() {
         if (_activePauseCooldown > 1) _activePauseCooldown--;
-        Debug.Log(_activePauseCooldown);
+        // Debug.Log(_activePauseCooldown);
     }
 
     // Start is called before the first frame update
