@@ -16,7 +16,9 @@ public class VolumeSlider : MonoBehaviour {
     }
     void Update () {
         if (_volumeSlider != null) _volume = _volumeSlider.value;
-        _audioManager.GetComponent<AudioManager>().musicSource.volume = _volume;
-        _audioManager.GetComponent<AudioManager>().SFXSource.volume = _volume;
+        if (_audioManager != null) {
+            _audioManager.GetComponent<AudioManager>().musicSource.volume = _volume;
+            _audioManager.GetComponent<AudioManager>().SFXSource.volume = _volume;
+        }
     }
 }
